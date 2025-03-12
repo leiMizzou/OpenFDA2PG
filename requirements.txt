@@ -1,0 +1,13 @@
+requests
+psycopg2-binary
+pandas
+tqdm
+ipython
+matplotlib
+seaborn
+scipy
+scikit-learn
+statsmodels
+wordcloud
+geopandas
+networkx
