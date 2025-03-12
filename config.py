@@ -9,7 +9,7 @@ DB_CONFIG = {
     'port': 5432,
     'dbname': 'fda_device',
     'user': 'postgres',
-    'password': '12345687'
+    'password': '123456'
 }
 
 # 配置文件路径 - 根据实际存放文件结构进行设置
