@@ -140,6 +140,17 @@ The script will:
 1.  Create the database schema (if it doesn't exist).
 2.  Import data from the downloaded files into the corresponding tables.
 3.  Validate the imported data.
+### Imported Data Categories
+
+The `main.py` script imports the following sub-categories of data from the `device` main category:
+
+*   **classification:**  Contains information about device classification, including product codes, device names, and medical specialties.  This data helps categorize and identify devices.
+*   **enforcement:**  Contains information about enforcement actions taken by the FDA, such as recalls and warning letters. This data is related to device safety and compliance.
+*   **event:** Contains reports of adverse events associated with medical devices. This is the primary focus of the data import, as it provides valuable information about device safety and potential problems.
+*   **recall:** Contains information about device recalls, including the reason for the recall, the recalling firm, and the product description. This data is closely related to the `enforcement` and `event` data.
+*   **udi:** Contains Unique Device Identification (UDI) information, which helps track devices throughout their lifecycle. This data is linked to the other categories through device identifiers.
+
+The primary focus is on adverse event (`event`) data, as it provides crucial insights into device safety. The other categories (`classification`, `enforcement`, `recall`, and `udi`) are highly relevant to adverse events as they provide context and supporting information. For example, classification data helps categorize the devices involved in events, enforcement and recall data provide information about actions taken in response to events, and UDI data helps track specific devices.
 ### JSON Sampling
 
 The `json_sampling.py` script is used to create smaller sample datasets from the downloaded JSON files. This is useful for:
