@@ -1,0 +1,15 @@
+project/
+├── config.py                      # Configuration settings
+├── logger.py                      # Logging utilities
+├── utils.py                       # Utility functions
+├── file_handler.py                # File handling utilities
+├── schema_creator.py              # Database schema creation
+├── importers/
+│   ├── __init__.py                # Make it a proper package
+│   ├── base_importer.py           # Base importer with common functionality
+│   ├── classification_importer.py # Classification data importer
+│   ├── recall_importer.py         # Recall data importer
+│   ├── enforcement_importer.py    # Enforcement data importer
+│   ├── adverse_event_importer.py  # Adverse event data importer
+│   └── udi_importer.py            # UDI data importer
+└── main.py                        # Main execution script
