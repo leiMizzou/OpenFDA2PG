@@ -1,0 +1,2105 @@
+{
+  "schema_info": {
+    "name": "device",
+    "table_count": 1,
+    "tables": [
+      "product_codes"
+    ],
+    "relationship_count": 8,
+    "tables_with_relationships": 5
+  },
+  "tables_info": {
+    "product_codes": {
+      "name": "product_codes",
+      "info": {
+        "approximate_row_count": 7275,
+        "total_size": "3496 kB",
+        "table_size": "2392 kB",
+        "index_size": "1104 kB",
+        "total_bytes": 3579904,
+        "description": null,
+        "indexes": [
+          {
+            "index_name": "idx_product_codes_code",
+            "column_names": "product_code",
+            "is_unique": false,
+            "is_primary": false
+          },
+          {
+            "index_name": "idx_product_codes_device_class",
+            "column_names": "device_class",
+            "is_unique": false,
+            "is_primary": false
+          },
+          {
+            "index_name": "idx_product_codes_regulation",
+            "column_names": "regulation_id",
+            "is_unique": false,
+            "is_primary": false
+          },
+          {
+            "index_name": "idx_product_codes_specialty",
+            "column_names": "medical_specialty_id",
+            "is_unique": false,
+            "is_primary": false
+          },
+          {
+            "index_name": "product_codes_pkey",
+            "column_names": "id, id, id, id, id, id",
+            "is_unique": true,
+            "is_primary": true
+          },
+          {
+            "index_name": "product_codes_product_code_key",
+            "column_names": "product_code",
+            "is_unique": true,
+            "is_primary": false
+          }
+        ],
+        "constraints": [
+          {
+            "constraint_name": "product_codes_medical_specialty_id_fkey",
+            "constraint_type": "f",
+            "definition": "FOREIGN KEY (medical_specialty_id) REFERENCES device.medical_specialties(id)"
+          },
+          {
+            "constraint_name": "product_codes_regulation_id_fkey",
+            "constraint_type": "f",
+            "definition": "FOREIGN KEY (regulation_id) REFERENCES device.regulations(id)"
+          },
+          {
+            "constraint_name": "product_codes_review_panel_id_fkey",
+            "constraint_type": "f",
+            "definition": "FOREIGN KEY (review_panel_id) REFERENCES device.regulatory_panels(id)"
+          },
+          {
+            "constraint_name": "product_codes_submission_type_ref_fkey",
+            "constraint_type": "f",
+            "definition": "FOREIGN KEY (submission_type_ref) REFERENCES device.submission_types(id)"
+          },
+          {
+            "constraint_name": "product_codes_pkey",
+            "constraint_type": "p",
+            "definition": "PRIMARY KEY (id)"
+          },
+          {
+            "constraint_name": "product_codes_product_code_key",
+            "constraint_type": "u",
+            "definition": "UNIQUE (product_code)"
+          }
+        ]
+      },
+      "columns": [
+        {
+          "column_name": "id",
+          "data_type": "integer",
+          "character_maximum_length": null,
+          "numeric_precision": 32,
+          "numeric_scale": 0,
+          "is_nullable": "NO",
+          "column_default": "nextval('device.product_codes_id_seq'::regclass)",
+          "column_description": null,
+          "ordinal_position": 1,
+          "statistics": {
+            "total_count": 7315,
+            "non_null_count": 7315,
+            "null_count": 0,
+            "min_value": 1,
+            "max_value": 7315,
+            "avg_value": "3658.0000000000000000",
+            "median_value": 3658.0,
+            "stddev_value": "2111.802942195760",
+            "cardinality_ratio": 1.0
+          },
+          "null_rate": 0.0
+        },
+        {
+          "column_name": "product_code",
+          "data_type": "text",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "NO",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 2,
+          "statistics": {
+            "total_count": 7315,
+            "non_null_count": 7315,
+            "null_count": 0,
+            "min_length": 1,
+            "max_length": 5,
+            "avg_length": "3.0086124401913876",
+            "distinct_count": 7315,
+            "cardinality_ratio": 1.0
+          },
+          "null_rate": 0.0
+        },
+        {
+          "column_name": "device_name",
+          "data_type": "text",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "NO",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 3,
+          "statistics": {
+            "total_count": 7315,
+            "non_null_count": 7315,
+            "null_count": 0,
+            "min_length": 1,
+            "max_length": 1287,
+            "avg_length": "40.3410799726589200",
+            "distinct_count": 6987,
+            "cardinality_ratio": 0.9551606288448393
+          },
+          "null_rate": 0.0
+        },
+        {
+          "column_name": "device_class",
+          "data_type": "text",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 4,
+          "statistics": {
+            "total_count": 7315,
+            "non_null_count": 6971,
+            "null_count": 344,
+            "min_length": 1,
+            "max_length": 1,
+            "avg_length": "1.00000000000000000000",
+            "distinct_count": 6,
+            "cardinality_ratio": 0.0008607086501219337
+          },
+          "null_rate": 0.04702665755297334
+        },
+        {
+          "column_name": "regulation_number",
+          "data_type": "text",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 5,
+          "statistics": {
+            "total_count": 7315,
+            "non_null_count": 6971,
+            "null_count": 344,
+            "min_length": 0,
+            "max_length": 8,
+            "avg_length": "6.9863721130397360",
+            "distinct_count": 2236,
+            "cardinality_ratio": 0.3207574236121073
+          },
+          "null_rate": 0.04702665755297334
+        },
+        {
+          "column_name": "regulation_id",
+          "data_type": "integer",
+          "character_maximum_length": null,
+          "numeric_precision": 32,
+          "numeric_scale": 0,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 6,
+          "statistics": {
+            "total_count": 7315,
+            "non_null_count": 6089,
+            "null_count": 1226,
+            "min_value": 1,
+            "max_value": 2235,
+            "avg_value": "678.9735588766628346",
+            "median_value": 476.0,
+            "stddev_value": "612.592912143971",
+            "cardinality_ratio": 0.36705534570537035
+          },
+          "null_rate": 0.16760082023239917
+        },
+        {
+          "column_name": "medical_specialty_code",
+          "data_type": "text",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 7,
+          "statistics": {
+            "total_count": 7315,
+            "non_null_count": 6971,
+            "null_count": 344,
+            "min_length": 0,
+            "max_length": 2,
+            "avg_length": "1.7469516568641515",
+            "distinct_count": 21,
+            "cardinality_ratio": 0.003012480275426768
+          },
+          "null_rate": 0.04702665755297334
+        },
+        {
+          "column_name": "medical_specialty_id",
+          "data_type": "integer",
+          "character_maximum_length": null,
+          "numeric_precision": 32,
+          "numeric_scale": 0,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 8,
+          "statistics": {
+            "total_count": 7315,
+            "non_null_count": 6089,
+            "null_count": 1226,
+            "min_value": 1,
+            "max_value": 21,
+            "avg_value": "9.9973723107242569",
+            "median_value": 10.0,
+            "stddev_value": "5.7733124224056688",
+            "cardinality_ratio": 0.003284611594678929
+          },
+          "null_rate": 0.16760082023239917
+        },
+        {
+          "column_name": "medical_specialty_description",
+          "data_type": "text",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 9,
+          "statistics": {
+            "total_count": 7315,
+            "non_null_count": 4435,
+            "null_count": 2880,
+            "min_length": 6,
+            "max_length": 25,
+            "avg_length": "14.4703494926719278",
+            "distinct_count": 21,
+            "cardinality_ratio": 0.004735062006764375
+          },
+          "null_rate": 0.39371155160628846
+        },
+        {
+          "column_name": "review_panel_code",
+          "data_type": "text",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 10,
+          "statistics": {
+            "total_count": 7315,
+            "non_null_count": 6971,
+            "null_count": 344,
+            "min_length": 0,
+            "max_length": 2,
+            "avg_length": "1.9386027829579687",
+            "distinct_count": 21,
+            "cardinality_ratio": 0.003012480275426768
+          },
+          "null_rate": 0.04702665755297334
+        },
+        {
+          "column_name": "review_panel_id",
+          "data_type": "integer",
+          "character_maximum_length": null,
+          "numeric_precision": 32,
+          "numeric_scale": 0,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 11,
+          "statistics": {
+            "total_count": 7315,
+            "non_null_count": 6757,
+            "null_count": 558,
+            "min_value": 1,
+            "max_value": 20,
+            "avg_value": "9.3431996448127867",
+            "median_value": 10.0,
+            "stddev_value": "5.3687184648624916",
+            "cardinality_ratio": 0.002959893443836022
+          },
+          "null_rate": 0.07628161312371838
+        },
+        {
+          "column_name": "definition",
+          "data_type": "text",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 12,
+          "statistics": {
+            "total_count": 7315,
+            "non_null_count": 6971,
+            "null_count": 344,
+            "min_length": 0,
+            "max_length": 1827,
+            "avg_length": "91.5164251900731602",
+            "distinct_count": 2107,
+            "cardinality_ratio": 0.30225218763448575
+          },
+          "null_rate": 0.04702665755297334
+        },
+        {
+          "column_name": "implant_flag",
+          "data_type": "boolean",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 13,
+          "statistics": {
+            "total_count": 7315,
+            "non_null_count": 6971,
+            "null_count": 344,
+            "cardinality_ratio": 0.00028690288337397793
+          },
+          "null_rate": 0.04702665755297334
+        },
+        {
+          "column_name": "life_sustain_support_flag",
+          "data_type": "boolean",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 14,
+          "statistics": {
+            "total_count": 7315,
+            "non_null_count": 6971,
+            "null_count": 344,
+            "cardinality_ratio": 0.00028690288337397793
+          },
+          "null_rate": 0.04702665755297334
+        },
+        {
+          "column_name": "gmp_exempt_flag",
+          "data_type": "boolean",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 15,
+          "statistics": {
+            "total_count": 7315,
+            "non_null_count": 6971,
+            "null_count": 344,
+            "cardinality_ratio": 0.00028690288337397793
+          },
+          "null_rate": 0.04702665755297334
+        },
+        {
+          "column_name": "summary_malfunction_reporting",
+          "data_type": "text",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 16,
+          "statistics": {
+            "total_count": 7315,
+            "non_null_count": 6971,
+            "null_count": 344,
+            "min_length": 8,
+            "max_length": 10,
+            "avg_length": "8.4558886816812509",
+            "distinct_count": 2,
+            "cardinality_ratio": 0.00028690288337397793
+          },
+          "null_rate": 0.04702665755297334
+        },
+        {
+          "column_name": "submission_type_id",
+          "data_type": "text",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 17,
+          "statistics": {
+            "total_count": 7315,
+            "non_null_count": 6971,
+            "null_count": 344,
+            "min_length": 0,
+            "max_length": 1,
+            "avg_length": "0.96930139147898436379",
+            "distinct_count": 8,
+            "cardinality_ratio": 0.0011476115334959117
+          },
+          "null_rate": 0.04702665755297334
+        },
+        {
+          "column_name": "submission_type_ref",
+          "data_type": "integer",
+          "character_maximum_length": null,
+          "numeric_precision": 32,
+          "numeric_scale": 0,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 18,
+          "statistics": {
+            "total_count": 7315,
+            "non_null_count": 6418,
+            "null_count": 897,
+            "min_value": 1,
+            "max_value": 6,
+            "avg_value": "2.3839202243689623",
+            "median_value": 2.0,
+            "stddev_value": "1.4613625757177483",
+            "cardinality_ratio": 0.0007790588968526021
+          },
+          "null_rate": 0.12262474367737526
+        },
+        {
+          "column_name": "created_at",
+          "data_type": "timestamp without time zone",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": "CURRENT_TIMESTAMP",
+          "column_description": null,
+          "ordinal_position": 19,
+          "statistics": {
+            "total_count": 7315,
+            "non_null_count": 7315,
+            "null_count": 0,
+            "cardinality_ratio": 0.7155160628844839
+          },
+          "null_rate": 0.0
+        }
+      ],
+      "foreign_keys": [
+        {
+          "constraint_name": "product_codes_regulation_id_fkey",
+          "column_name": "regulation_id",
+          "foreign_table_schema": "device",
+          "foreign_table_name": "regulations",
+          "foreign_column_name": "id"
+        },
+        {
+          "constraint_name": "product_codes_medical_specialty_id_fkey",
+          "column_name": "medical_specialty_id",
+          "foreign_table_schema": "device",
+          "foreign_table_name": "medical_specialties",
+          "foreign_column_name": "id"
+        },
+        {
+          "constraint_name": "product_codes_review_panel_id_fkey",
+          "column_name": "review_panel_id",
+          "foreign_table_schema": "device",
+          "foreign_table_name": "regulatory_panels",
+          "foreign_column_name": "id"
+        },
+        {
+          "constraint_name": "product_codes_submission_type_ref_fkey",
+          "column_name": "submission_type_ref",
+          "foreign_table_schema": "device",
+          "foreign_table_name": "submission_types",
+          "foreign_column_name": "id"
+        }
+      ],
+      "column_count": 19,
+      "high_null_columns": [
+        {
+          "name": "medical_specialty_description",
+          "null_rate": 0.39371155160628846
+        }
+      ]
+    }
+  },
+  "quality_results": {
+    "product_codes": {
+      "null_checker": {
+        "overall_null_rate": 0.07157894736842105,
+        "columns_null_rates": {
+          "id": 0.0,
+          "product_code": 0.0,
+          "device_name": 0.0,
+          "device_class": 0.055,
+          "regulation_number": 0.055,
+          "regulation_id": 0.125,
+          "medical_specialty_code": 0.055,
+          "medical_specialty_id": 0.125,
+          "medical_specialty_description": 0.385,
+          "review_panel_code": 0.055,
+          "review_panel_id": 0.065,
+          "definition": 0.055,
+          "implant_flag": 0.055,
+          "life_sustain_support_flag": 0.055,
+          "gmp_exempt_flag": 0.055,
+          "summary_malfunction_reporting": 0.055,
+          "submission_type_id": 0.055,
+          "submission_type_ref": 0.11,
+          "created_at": 0.0
+        },
+        "columns_above_threshold": [
+          "medical_specialty_description"
+        ],
+        "columns_with_issues": [
+          {
+            "column": "medical_specialty_description",
+            "issues": [
+              {
+                "type": "high_null_rate",
+                "description": "空值率 (38.50%) 超过阈值 (30.00%)"
+              }
+            ]
+          }
+        ],
+        "null_pattern_correlated": [
+          {
+            "columns": [
+              "device_class",
+              "regulation_number"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 device_class 和 regulation_number 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "device_class",
+              "medical_specialty_code"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 device_class 和 medical_specialty_code 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "device_class",
+              "review_panel_code"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 device_class 和 review_panel_code 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "device_class",
+              "review_panel_id"
+            ],
+            "coincidence_rate": 0.8461538461538461,
+            "description": "列 device_class 和 review_panel_id 的空值高度相关 (84.62%)"
+          },
+          {
+            "columns": [
+              "device_class",
+              "definition"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 device_class 和 definition 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "device_class",
+              "implant_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 device_class 和 implant_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "device_class",
+              "life_sustain_support_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 device_class 和 life_sustain_support_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "device_class",
+              "gmp_exempt_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 device_class 和 gmp_exempt_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "device_class",
+              "summary_malfunction_reporting"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 device_class 和 summary_malfunction_reporting 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "device_class",
+              "submission_type_id"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 device_class 和 submission_type_id 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "regulation_number",
+              "medical_specialty_code"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 regulation_number 和 medical_specialty_code 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "regulation_number",
+              "review_panel_code"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 regulation_number 和 review_panel_code 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "regulation_number",
+              "review_panel_id"
+            ],
+            "coincidence_rate": 0.8461538461538461,
+            "description": "列 regulation_number 和 review_panel_id 的空值高度相关 (84.62%)"
+          },
+          {
+            "columns": [
+              "regulation_number",
+              "definition"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 regulation_number 和 definition 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "regulation_number",
+              "implant_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 regulation_number 和 implant_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "regulation_number",
+              "life_sustain_support_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 regulation_number 和 life_sustain_support_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "regulation_number",
+              "gmp_exempt_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 regulation_number 和 gmp_exempt_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "regulation_number",
+              "summary_malfunction_reporting"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 regulation_number 和 summary_malfunction_reporting 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "regulation_number",
+              "submission_type_id"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 regulation_number 和 submission_type_id 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "regulation_id",
+              "medical_specialty_id"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 regulation_id 和 medical_specialty_id 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "medical_specialty_code",
+              "review_panel_code"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 medical_specialty_code 和 review_panel_code 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "medical_specialty_code",
+              "review_panel_id"
+            ],
+            "coincidence_rate": 0.8461538461538461,
+            "description": "列 medical_specialty_code 和 review_panel_id 的空值高度相关 (84.62%)"
+          },
+          {
+            "columns": [
+              "medical_specialty_code",
+              "definition"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 medical_specialty_code 和 definition 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "medical_specialty_code",
+              "implant_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 medical_specialty_code 和 implant_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "medical_specialty_code",
+              "life_sustain_support_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 medical_specialty_code 和 life_sustain_support_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "medical_specialty_code",
+              "gmp_exempt_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 medical_specialty_code 和 gmp_exempt_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "medical_specialty_code",
+              "summary_malfunction_reporting"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 medical_specialty_code 和 summary_malfunction_reporting 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "medical_specialty_code",
+              "submission_type_id"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 medical_specialty_code 和 submission_type_id 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "review_panel_code",
+              "review_panel_id"
+            ],
+            "coincidence_rate": 0.8461538461538461,
+            "description": "列 review_panel_code 和 review_panel_id 的空值高度相关 (84.62%)"
+          },
+          {
+            "columns": [
+              "review_panel_code",
+              "definition"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 review_panel_code 和 definition 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "review_panel_code",
+              "implant_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 review_panel_code 和 implant_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "review_panel_code",
+              "life_sustain_support_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 review_panel_code 和 life_sustain_support_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "review_panel_code",
+              "gmp_exempt_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 review_panel_code 和 gmp_exempt_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "review_panel_code",
+              "summary_malfunction_reporting"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 review_panel_code 和 summary_malfunction_reporting 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "review_panel_code",
+              "submission_type_id"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 review_panel_code 和 submission_type_id 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "review_panel_id",
+              "definition"
+            ],
+            "coincidence_rate": 0.8461538461538461,
+            "description": "列 review_panel_id 和 definition 的空值高度相关 (84.62%)"
+          },
+          {
+            "columns": [
+              "review_panel_id",
+              "implant_flag"
+            ],
+            "coincidence_rate": 0.8461538461538461,
+            "description": "列 review_panel_id 和 implant_flag 的空值高度相关 (84.62%)"
+          },
+          {
+            "columns": [
+              "review_panel_id",
+              "life_sustain_support_flag"
+            ],
+            "coincidence_rate": 0.8461538461538461,
+            "description": "列 review_panel_id 和 life_sustain_support_flag 的空值高度相关 (84.62%)"
+          },
+          {
+            "columns": [
+              "review_panel_id",
+              "gmp_exempt_flag"
+            ],
+            "coincidence_rate": 0.8461538461538461,
+            "description": "列 review_panel_id 和 gmp_exempt_flag 的空值高度相关 (84.62%)"
+          },
+          {
+            "columns": [
+              "review_panel_id",
+              "summary_malfunction_reporting"
+            ],
+            "coincidence_rate": 0.8461538461538461,
+            "description": "列 review_panel_id 和 summary_malfunction_reporting 的空值高度相关 (84.62%)"
+          },
+          {
+            "columns": [
+              "review_panel_id",
+              "submission_type_id"
+            ],
+            "coincidence_rate": 0.8461538461538461,
+            "description": "列 review_panel_id 和 submission_type_id 的空值高度相关 (84.62%)"
+          },
+          {
+            "columns": [
+              "definition",
+              "implant_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 definition 和 implant_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "definition",
+              "life_sustain_support_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 definition 和 life_sustain_support_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "definition",
+              "gmp_exempt_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 definition 和 gmp_exempt_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "definition",
+              "summary_malfunction_reporting"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 definition 和 summary_malfunction_reporting 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "definition",
+              "submission_type_id"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 definition 和 submission_type_id 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "implant_flag",
+              "life_sustain_support_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 implant_flag 和 life_sustain_support_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "implant_flag",
+              "gmp_exempt_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 implant_flag 和 gmp_exempt_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "implant_flag",
+              "summary_malfunction_reporting"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 implant_flag 和 summary_malfunction_reporting 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "implant_flag",
+              "submission_type_id"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 implant_flag 和 submission_type_id 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "life_sustain_support_flag",
+              "gmp_exempt_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 life_sustain_support_flag 和 gmp_exempt_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "life_sustain_support_flag",
+              "summary_malfunction_reporting"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 life_sustain_support_flag 和 summary_malfunction_reporting 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "life_sustain_support_flag",
+              "submission_type_id"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 life_sustain_support_flag 和 submission_type_id 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "gmp_exempt_flag",
+              "summary_malfunction_reporting"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 gmp_exempt_flag 和 summary_malfunction_reporting 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "gmp_exempt_flag",
+              "submission_type_id"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 gmp_exempt_flag 和 submission_type_id 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "summary_malfunction_reporting",
+              "submission_type_id"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 summary_malfunction_reporting 和 submission_type_id 的空值高度相关 (100.00%)"
+          }
+        ],
+        "column_results": {
+          "id": {
+            "null_count": 0,
+            "null_rate": 0.0,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "no_nulls",
+              "description": "没有空值"
+            }
+          },
+          "product_code": {
+            "null_count": 0,
+            "null_rate": 0.0,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "no_nulls",
+              "description": "没有空值"
+            }
+          },
+          "device_name": {
+            "null_count": 0,
+            "null_rate": 0.0,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "no_nulls",
+              "description": "没有空值"
+            }
+          },
+          "device_class": {
+            "null_count": 11,
+            "null_rate": 0.055,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "regulation_number": {
+            "null_count": 11,
+            "null_rate": 0.055,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "regulation_id": {
+            "null_count": 25,
+            "null_rate": 0.125,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "medical_specialty_code": {
+            "null_count": 11,
+            "null_rate": 0.055,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "medical_specialty_id": {
+            "null_count": 25,
+            "null_rate": 0.125,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "medical_specialty_description": {
+            "null_count": 77,
+            "null_rate": 0.385,
+            "above_threshold": "True",
+            "issues": [
+              {
+                "type": "high_null_rate",
+                "description": "空值率 (38.50%) 超过阈值 (30.00%)"
+              }
+            ],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "review_panel_code": {
+            "null_count": 11,
+            "null_rate": 0.055,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "review_panel_id": {
+            "null_count": 13,
+            "null_rate": 0.065,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "definition": {
+            "null_count": 11,
+            "null_rate": 0.055,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "implant_flag": {
+            "null_count": 11,
+            "null_rate": 0.055,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "life_sustain_support_flag": {
+            "null_count": 11,
+            "null_rate": 0.055,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "gmp_exempt_flag": {
+            "null_count": 11,
+            "null_rate": 0.055,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "summary_malfunction_reporting": {
+            "null_count": 11,
+            "null_rate": 0.055,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "submission_type_id": {
+            "null_count": 11,
+            "null_rate": 0.055,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "submission_type_ref": {
+            "null_count": 22,
+            "null_rate": 0.11,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "created_at": {
+            "null_count": 0,
+            "null_rate": 0.0,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "no_nulls",
+              "description": "没有空值"
+            }
+          }
+        }
+      },
+      "distribution_checker": {
+        "id": {
+          "distribution_type": "discrete",
+          "basic_stats": {
+            "count": 200,
+            "min": 52.0,
+            "max": 7307.0,
+            "mean": 3615.94,
+            "median": 3472.0,
+            "std": 2087.9070924092057,
+            "skewness": 0.085252270246542,
+            "kurtosis": -1.0850713516402708,
+            "percentile_1": 137.33,
+            "percentile_5": 354.75000000000006,
+            "percentile_25": 1957.75,
+            "percentile_50": 3472.0,
+            "percentile_75": 5339.75,
+            "percentile_95": 7048.499999999999,
+            "percentile_99": 7250.139999999999
+          },
+          "unique_count": 200,
+          "unique_ratio": 1.0,
+          "outliers": {
+            "count": 0,
+            "percentage": 0.0,
+            "lower_bound": -8188.25,
+            "upper_bound": 15485.75,
+            "values": []
+          },
+          "histogram": {
+            "counts": [
+              16,
+              11,
+              16,
+              11,
+              15,
+              19,
+              22,
+              13,
+              9,
+              15,
+              13,
+              12,
+              10,
+              18
+            ],
+            "bins": [
+              52.0,
+              570.2142857142857,
+              1088.4285714285713,
+              1606.6428571428569,
+              2124.8571428571427,
+              2643.0714285714284,
+              3161.2857142857138,
+              3679.4999999999995,
+              4197.714285714285,
+              4715.928571428571,
+              5234.142857142857,
+              5752.357142857142,
+              6270.5714285714275,
+              6788.785714285714,
+              7307.0
+            ],
+            "bin_labels": [
+              "52.00 - 570.21",
+              "570.21 - 1088.43",
+              "1088.43 - 1606.64",
+              "1606.64 - 2124.86",
+              "2124.86 - 2643.07",
+              "2643.07 - 3161.29",
+              "3161.29 - 3679.50",
+              "3679.50 - 4197.71",
+              "4197.71 - 4715.93",
+              "4715.93 - 5234.14",
+              "5234.14 - 5752.36",
+              "5752.36 - 6270.57",
+              "6270.57 - 6788.79",
+              "6788.79 - 7307.00"
+            ]
+          },
+          "issues": []
+        },
+        "product_code": {
+          "distribution_type": "text",
+          "length_stats": {
+            "min": 3,
+            "max": 5,
+            "mean": 3.01,
+            "median": 3.0,
+            "std": 0.14142135623730961
+          },
+          "unique_count": 200,
+          "unique_ratio": 1.0,
+          "character_stats": {
+            "starts_with": {
+              "N": 23,
+              "K": 18,
+              "H": 18,
+              "P": 17,
+              "Q": 15
+            },
+            "ends_with": {
+              "W": 12,
+              "D": 11,
+              "F": 11,
+              "T": 11,
+              "C": 10
+            },
+            "contains_digits": 0.005,
+            "contains_special": 0.005,
+            "all_upper": 0.995,
+            "all_lower": 0.0
+          },
+          "issues": [
+            {
+              "type": "high_cardinality",
+              "description": "唯一值比例很高 (100.00%)",
+              "severity": "info"
+            }
+          ]
+        },
+        "device_name": {
+          "distribution_type": "text",
+          "length_stats": {
+            "min": 1,
+            "max": 998,
+            "mean": 42.05,
+            "median": 25.0,
+            "std": 93.27291505800106
+          },
+          "unique_count": 200,
+          "unique_ratio": 1.0,
+          "character_stats": {
+            "starts_with": {
+              "A": 25,
+              "S": 24,
+              "C": 15,
+              "E": 14,
+              "I": 11
+            },
+            "ends_with": {
+              "E": 17,
+              "R": 13,
+              ".": 13,
+              "T": 12,
+              "S": 11
+            },
+            "contains_digits": 0.175,
+            "contains_special": 0.46,
+            "all_upper": 0.6,
+            "all_lower": 0.0
+          },
+          "issues": [
+            {
+              "type": "high_cardinality",
+              "description": "唯一值比例很高 (100.00%)",
+              "severity": "info"
+            },
+            {
+              "type": "mixed_formats",
+              "description": "部分值包含数字 (17.50%)，数据格式可能不一致",
+              "severity": "low"
+            },
+            {
+              "type": "mixed_special_chars",
+              "description": "部分值包含特殊字符 (46.00%)，格式可能不一致",
+              "severity": "low"
+            },
+            {
+              "type": "variable_length",
+              "description": "文本长度变化很大 (std=93.27, min=1, max=998)",
+              "severity": "low"
+            }
+          ]
+        },
+        "device_class": {
+          "distribution_type": "categorical",
+          "unique_count": 4,
+          "unique_ratio": 0.021164021164021163,
+          "entropy": 1.3798431150182033,
+          "most_common": {
+            "2": 102,
+            "1": 72,
+            "3": 8,
+            "N": 7
+          },
+          "least_common": {
+            "2": 102,
+            "1": 72,
+            "3": 8,
+            "N": 7
+          },
+          "imbalance_ratio": 14.571428571428571,
+          "value_counts": {
+            "2": 102,
+            "1": 72,
+            "3": 8,
+            "N": 7
+          },
+          "issues": []
+        },
+        "regulation_number": {
+          "distribution_type": "text",
+          "length_stats": {
+            "min": 0,
+            "max": 8,
+            "mean": 7.407407407407407,
+            "median": 8.0,
+            "std": 2.1006959708296016
+          },
+          "unique_count": 145,
+          "unique_ratio": 0.7671957671957672,
+          "character_stats": {
+            "starts_with": {
+              "8": 175,
+              "": 14
+            },
+            "ends_with": {
+              "0": 141,
+              "5": 28,
+              "": 14,
+              "8": 3,
+              "1": 1
+            },
+            "contains_digits": 0.9259259259259259,
+            "contains_special": 0.9259259259259259,
+            "all_upper": 0.0,
+            "all_lower": 0.0
+          },
+          "issues": []
+        },
+        "regulation_id": {
+          "distribution_type": "discrete",
+          "basic_stats": {
+            "count": 175,
+            "min": 1.0,
+            "max": 2228.0,
+            "mean": 661.4685714285714,
+            "median": 432.0,
+            "std": 621.6282733382262,
+            "skewness": 0.931293795006094,
+            "kurtosis": -0.2809074088606378,
+            "percentile_1": 9.18,
+            "percentile_5": 21.1,
+            "percentile_25": 144.0,
+            "percentile_50": 432.0,
+            "percentile_75": 1052.0,
+            "percentile_95": 1890.0999999999995,
+            "percentile_99": 2198.0599999999995
+          },
+          "unique_count": 144,
+          "unique_ratio": 0.8228571428571428,
+          "outliers": {
+            "count": 0,
+            "percentage": 0.0,
+            "lower_bound": -2580.0,
+            "upper_bound": 3776.0,
+            "values": []
+          },
+          "histogram": {
+            "counts": [
+              50,
+              28,
+              15,
+              11,
+              18,
+              6,
+              12,
+              6,
+              7,
+              3,
+              10,
+              3,
+              6
+            ],
+            "bins": [
+              1.0,
+              172.30769230769232,
+              343.61538461538464,
+              514.9230769230769,
+              686.2307692307693,
+              857.5384615384617,
+              1028.8461538461538,
+              1200.1538461538462,
+              1371.4615384615386,
+              1542.769230769231,
+              1714.0769230769233,
+              1885.3846153846155,
+              2056.6923076923076,
+              2228.0
+            ],
+            "bin_labels": [
+              "1.00 - 172.31",
+              "172.31 - 343.62",
+              "343.62 - 514.92",
+              "514.92 - 686.23",
+              "686.23 - 857.54",
+              "857.54 - 1028.85",
+              "1028.85 - 1200.15",
+              "1200.15 - 1371.46",
+              "1371.46 - 1542.77",
+              "1542.77 - 1714.08",
+              "1714.08 - 1885.38",
+              "1885.38 - 2056.69",
+              "2056.69 - 2228.00"
+            ]
+          },
+          "issues": []
+        },
+        "medical_specialty_code": {
+          "distribution_type": "text",
+          "length_stats": {
+            "min": 0,
+            "max": 2,
+            "mean": 1.8518518518518519,
+            "median": 2.0,
+            "std": 0.5251739927074004
+          },
+          "unique_count": 21,
+          "unique_ratio": 0.1111111111111111,
+          "character_stats": {
+            "starts_with": {
+              "S": 21,
+              "O": 21,
+              "H": 21,
+              "C": 20,
+              "G": 18
+            },
+            "ends_with": {
+              "U": 39,
+              "E": 34,
+              "H": 15,
+              "": 14,
+              "A": 14
+            },
+            "contains_digits": 0.0,
+            "contains_special": 0.0,
+            "all_upper": 0.9259259259259259,
+            "all_lower": 0.0
+          },
+          "issues": []
+        },
+        "medical_specialty_id": {
+          "distribution_type": "discrete",
+          "basic_stats": {
+            "count": 175,
+            "min": 1.0,
+            "max": 21.0,
+            "mean": 10.811428571428571,
+            "median": 11.0,
+            "std": 5.821470931776934,
+            "skewness": 0.03955818084470165,
+            "kurtosis": -1.2631344889088396,
+            "percentile_1": 1.0,
+            "percentile_5": 2.700000000000001,
+            "percentile_25": 5.0,
+            "percentile_50": 11.0,
+            "percentile_75": 16.0,
+            "percentile_95": 20.0,
+            "percentile_99": 20.0
+          },
+          "unique_count": 20,
+          "unique_ratio": 0.11428571428571428,
+          "outliers": {
+            "count": 0,
+            "percentage": 0.0,
+            "lower_bound": -28.0,
+            "upper_bound": 49.0,
+            "values": []
+          },
+          "histogram": {
+            "counts": [
+              9,
+              29,
+              7,
+              18,
+              6,
+              15,
+              4,
+              28,
+              9,
+              15,
+              5,
+              15,
+              15
+            ],
+            "bins": [
+              1.0,
+              2.5384615384615383,
+              4.076923076923077,
+              5.615384615384616,
+              7.153846153846154,
+              8.692307692307693,
+              10.230769230769232,
+              11.76923076923077,
+              13.307692307692308,
+              14.846153846153847,
+              16.384615384615387,
+              17.923076923076923,
+              19.461538461538463,
+              21.0
+            ],
+            "bin_labels": [
+              "1.00 - 2.54",
+              "2.54 - 4.08",
+              "4.08 - 5.62",
+              "5.62 - 7.15",
+              "7.15 - 8.69",
+              "8.69 - 10.23",
+              "10.23 - 11.77",
+              "11.77 - 13.31",
+              "13.31 - 14.85",
+              "14.85 - 16.38",
+              "16.38 - 17.92",
+              "17.92 - 19.46",
+              "19.46 - 21.00"
+            ]
+          },
+          "issues": []
+        },
+        "medical_specialty_description": {
+          "distribution_type": "text",
+          "length_stats": {
+            "min": 6,
+            "max": 25,
+            "mean": 14.788617886178862,
+            "median": 14.0,
+            "std": 6.318398884808262
+          },
+          "unique_count": 21,
+          "unique_ratio": 0.17073170731707318,
+          "character_stats": {
+            "starts_with": {
+              "G": 32,
+              "O": 18,
+              "C": 16,
+              "P": 9,
+              "U": 8
+            },
+            "ends_with": {
+              "y": 77,
+              "l": 14,
+              "c": 12,
+              "n": 8,
+              "e": 4
+            },
+            "contains_digits": 0.0,
+            "contains_special": 0.2764227642276423,
+            "all_upper": 0.0,
+            "all_lower": 0.0
+          },
+          "issues": [
+            {
+              "type": "mixed_special_chars",
+              "description": "部分值包含特殊字符 (27.64%)，格式可能不一致",
+              "severity": "low"
+            }
+          ]
+        },
+        "review_panel_code": {
+          "distribution_type": "text",
+          "length_stats": {
+            "min": 0,
+            "max": 2,
+            "mean": 1.9788359788359788,
+            "median": 2.0,
+            "std": 0.20518989538162677
+          },
+          "unique_count": 20,
+          "unique_ratio": 0.10582010582010581,
+          "character_stats": {
+            "starts_with": {
+              "O": 26,
+              "C": 22,
+              "G": 19,
+              "P": 19,
+              "S": 17
+            },
+            "ends_with": {
+              "U": 36,
+              "E": 25,
+              "A": 23,
+              "H": 15,
+              "M": 14
+            },
+            "contains_digits": 0.0,
+            "contains_special": 0.0,
+            "all_upper": 0.9894179894179894,
+            "all_lower": 0.0
+          },
+          "issues": []
+        },
+        "review_panel_id": {
+          "distribution_type": "discrete",
+          "basic_stats": {
+            "count": 187,
+            "min": 1.0,
+            "max": 19.0,
+            "mean": 9.529411764705882,
+            "median": 10.0,
+            "std": 5.5651508956027955,
+            "skewness": 0.024586062576826835,
+            "kurtosis": -1.2805577496451652,
+            "percentile_1": 1.0,
+            "percentile_5": 1.0,
+            "percentile_25": 5.0,
+            "percentile_50": 10.0,
+            "percentile_75": 14.0,
+            "percentile_95": 18.0,
+            "percentile_99": 19.0
+          },
+          "unique_count": 19,
+          "unique_ratio": 0.10160427807486631,
+          "outliers": {
+            "count": 0,
+            "percentage": 0.0,
+            "lower_bound": -22.0,
+            "upper_bound": 41.0,
+            "values": []
+          },
+          "histogram": {
+            "counts": [
+              30,
+              6,
+              24,
+              9,
+              9,
+              10,
+              11,
+              21,
+              15,
+              8,
+              19,
+              6,
+              19
+            ],
+            "bins": [
+              1.0,
+              2.3846153846153846,
+              3.769230769230769,
+              5.153846153846153,
+              6.538461538461538,
+              7.923076923076923,
+              9.307692307692307,
+              10.692307692307692,
+              12.076923076923077,
+              13.461538461538462,
+              14.846153846153847,
+              16.23076923076923,
+              17.615384615384613,
+              19.0
+            ],
+            "bin_labels": [
+              "1.00 - 2.38",
+              "2.38 - 3.77",
+              "3.77 - 5.15",
+              "5.15 - 6.54",
+              "6.54 - 7.92",
+              "7.92 - 9.31",
+              "9.31 - 10.69",
+              "10.69 - 12.08",
+              "12.08 - 13.46",
+              "13.46 - 14.85",
+              "14.85 - 16.23",
+              "16.23 - 17.62",
+              "17.62 - 19.00"
+            ]
+          },
+          "issues": []
+        },
+        "definition": {
+          "distribution_type": "text",
+          "length_stats": {
+            "min": 0,
+            "max": 657,
+            "mean": 87.96825396825396,
+            "median": 0.0,
+            "std": 156.98112451793003
+          },
+          "unique_count": 60,
+          "unique_ratio": 0.31746031746031744,
+          "character_stats": {
+            "starts_with": {
+              "": 127,
+              "A": 18,
+              "T": 18,
+              "I": 7,
+              "D": 5
+            },
+            "ends_with": {
+              "": 127,
+              ".": 60,
+              "y": 2
+            },
+            "contains_digits": 0.08465608465608465,
+            "contains_special": 0.32275132275132273,
+            "all_upper": 0.0,
+            "all_lower": 0.0
+          },
+          "issues": [
+            {
+              "type": "mixed_special_chars",
+              "description": "部分值包含特殊字符 (32.28%)，格式可能不一致",
+              "severity": "low"
+            },
+            {
+              "type": "variable_length",
+              "description": "文本长度变化很大 (std=156.98, min=0, max=657)",
+              "severity": "low"
+            }
+          ]
+        },
+        "implant_flag": {
+          "distribution_type": "categorical",
+          "unique_count": 2,
+          "unique_ratio": 0.010582010582010581,
+          "entropy": 0.43629318554373614,
+          "most_common": {
+            "false": 172,
+            "true": 17
+          },
+          "least_common": {
+            "false": 172,
+            "true": 17
+          },
+          "imbalance_ratio": 10.117647058823529,
+          "value_counts": {
+            "false": 172,
+            "true": 17
+          },
+          "issues": []
+        },
+        "life_sustain_support_flag": {
+          "distribution_type": "categorical",
+          "unique_count": 2,
+          "unique_ratio": 0.010582010582010581,
+          "entropy": 0.20307392998664564,
+          "most_common": {
+            "false": 183,
+            "true": 6
+          },
+          "least_common": {
+            "false": 183,
+            "true": 6
+          },
+          "imbalance_ratio": 30.5,
+          "value_counts": {
+            "false": 183,
+            "true": 6
+          },
+          "issues": []
+        },
+        "gmp_exempt_flag": {
+          "distribution_type": "categorical",
+          "unique_count": 2,
+          "unique_ratio": 0.010582010582010581,
+          "entropy": 0.5491087450260073,
+          "most_common": {
+            "false": 165,
+            "true": 24
+          },
+          "least_common": {
+            "false": 165,
+            "true": 24
+          },
+          "imbalance_ratio": 6.875,
+          "value_counts": {
+            "false": 165,
+            "true": 24
+          },
+          "issues": []
+        },
+        "summary_malfunction_reporting": {
+          "distribution_type": "categorical",
+          "unique_count": 2,
+          "unique_ratio": 0.010582010582010581,
+          "entropy": 0.7133812783390825,
+          "most_common": {
+            "Eligible": 152,
+            "Ineligible": 37
+          },
+          "least_common": {
+            "Eligible": 152,
+            "Ineligible": 37
+          },
+          "imbalance_ratio": 4.108108108108108,
+          "value_counts": {
+            "Eligible": 152,
+            "Ineligible": 37
+          },
+          "issues": []
+        },
+        "submission_type_id": {
+          "distribution_type": "categorical",
+          "unique_count": 7,
+          "unique_ratio": 0.037037037037037035,
+          "entropy": 1.6441267315916854,
+          "most_common": {
+            "4": 85,
+            "1": 82,
+            "2": 8,
+            "7": 7,
+            "3": 3
+          },
+          "least_common": {
+            "2": 8,
+            "7": 7,
+            "3": 3,
+            "8": 2,
+            "": 2
+          },
+          "imbalance_ratio": 42.5,
+          "value_counts": {
+            "4": 85,
+            "1": 82,
+            "2": 8,
+            "7": 7,
+            "3": 3,
+            "8": 2,
+            "": 2
+          },
+          "issues": []
+        },
+        "submission_type_ref": {
+          "distribution_type": "discrete",
+          "basic_stats": {
+            "count": 178,
+            "min": 1.0,
+            "max": 4.0,
+            "mean": 2.5112359550561796,
+            "median": 2.0,
+            "std": 1.4622896837329824,
+            "skewness": -0.00590324126167084,
+            "kurtosis": -1.948758904928856,
+            "percentile_1": 1.0,
+            "percentile_5": 1.0,
+            "percentile_25": 1.0,
+            "percentile_50": 2.0,
+            "percentile_75": 4.0,
+            "percentile_95": 4.0,
+            "percentile_99": 4.0
+          },
+          "unique_count": 4,
+          "unique_ratio": 0.02247191011235955,
+          "outliers": {
+            "count": 0,
+            "percentage": 0.0,
+            "lower_bound": -8.0,
+            "upper_bound": 13.0,
+            "values": []
+          },
+          "histogram": {
+            "counts": [
+              82,
+              0,
+              0,
+              0,
+              8,
+              0,
+              0,
+              0,
+              3,
+              0,
+              0,
+              0,
+              85
+            ],
+            "bins": [
+              1.0,
+              1.2307692307692308,
+              1.4615384615384617,
+              1.6923076923076923,
+              1.9230769230769231,
+              2.153846153846154,
+              2.3846153846153846,
+              2.6153846153846154,
+              2.8461538461538463,
+              3.076923076923077,
+              3.307692307692308,
+              3.5384615384615388,
+              3.769230769230769,
+              4.0
+            ],
+            "bin_labels": [
+              "1.00 - 1.23",
+              "1.23 - 1.46",
+              "1.46 - 1.69",
+              "1.69 - 1.92",
+              "1.92 - 2.15",
+              "2.15 - 2.38",
+              "2.38 - 2.62",
+              "2.62 - 2.85",
+              "2.85 - 3.08",
+              "3.08 - 3.31",
+              "3.31 - 3.54",
+              "3.54 - 3.77",
+              "3.77 - 4.00"
+            ]
+          },
+          "issues": []
+        },
+        "created_at": {
+          "distribution_type": "datetime",
+          "min_date": "2025-03-13 09:38:15.257044",
+          "max_date": "2025-03-13 12:06:31.225794",
+          "range_days": 0,
+          "unique_dates": 197,
+          "timestamps_per_day": 200.0,
+          "year_distribution": {
+            "2025": 200
+          },
+          "month_distribution": {
+            "3": 200
+          },
+          "day_distribution": {
+            "13": 200
+          },
+          "weekday_distribution": {
+            "3": 200
+          },
+          "time_intervals": {
+            "median_seconds": 0.199033,
+            "mean_seconds": 44.70336,
+            "min_seconds": 0.0,
+            "max_seconds": 2950.343166,
+            "is_regular": false,
+            "missing_points": []
+          },
+          "issues": []
+        }
+      },
+      "consistency_checker": {
+        "error": "float() argument must be a string or a real number, not 'Timestamp'",
+        "issues": []
+      }
+    }
+  },
+  "unstructured_results": {},
+  "preprocessor_results": {},
+  "optimization_results": {
+    "product_codes": {
+      "storage_optimization": [],
+      "query_optimization": [],
+      "maintenance_recommendations": [],
+      "schema_improvements": [
+        "考虑将表 product_codes 中的高空值率列(medical_specialty_description等)移至单独的表"
+      ]
+    },
+    "schema_overall": {
+      "storage_optimization": [],
+      "query_optimization": [],
+      "maintenance_recommendations": [
+        "定期重建索引并更新统计信息，特别是在大量数据变更后",
+        "实施定期数据质量检查流程，确保数据一致性和完整性"
+      ],
+      "schema_improvements": [
+        "审查数据类型一致性，确保在整个数据库中对相似数据使用一致的类型"
+      ],
+      "priority_recommendations": [
+        {
+          "type": "schema",
+          "suggestion": "审查数据类型一致性，确保在整个数据库中对相似数据使用一致的类型",
+          "priority": "medium"
+        },
+        {
+          "type": "maintenance",
+          "suggestion": "定期重建索引并更新统计信息，特别是在大量数据变更后",
+          "priority": "medium"
+        },
+        {
+          "type": "maintenance",
+          "suggestion": "实施定期数据质量检查流程，确保数据一致性和完整性",
+          "priority": "medium"
+        }
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-03-13T12:18:32.748964"
+}

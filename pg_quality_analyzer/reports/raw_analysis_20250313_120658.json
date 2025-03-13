@@ -1,0 +1,2979 @@
+{
+  "schema_info": {
+    "name": "device",
+    "table_count": 1,
+    "tables": [
+      "product_codes"
+    ],
+    "relationship_count": 8,
+    "tables_with_relationships": 5
+  },
+  "tables_info": {
+    "product_codes": {
+      "name": "product_codes",
+      "info": {
+        "approximate_row_count": 7275,
+        "total_size": "3496 kB",
+        "table_size": "2392 kB",
+        "index_size": "1104 kB",
+        "total_bytes": 3579904,
+        "description": null,
+        "indexes": [
+          {
+            "index_name": "idx_product_codes_code",
+            "column_names": "product_code",
+            "is_unique": false,
+            "is_primary": false
+          },
+          {
+            "index_name": "idx_product_codes_device_class",
+            "column_names": "device_class",
+            "is_unique": false,
+            "is_primary": false
+          },
+          {
+            "index_name": "idx_product_codes_regulation",
+            "column_names": "regulation_id",
+            "is_unique": false,
+            "is_primary": false
+          },
+          {
+            "index_name": "idx_product_codes_specialty",
+            "column_names": "medical_specialty_id",
+            "is_unique": false,
+            "is_primary": false
+          },
+          {
+            "index_name": "product_codes_pkey",
+            "column_names": "id, id, id, id, id, id",
+            "is_unique": true,
+            "is_primary": true
+          },
+          {
+            "index_name": "product_codes_product_code_key",
+            "column_names": "product_code",
+            "is_unique": true,
+            "is_primary": false
+          }
+        ],
+        "constraints": [
+          {
+            "constraint_name": "product_codes_medical_specialty_id_fkey",
+            "constraint_type": "f",
+            "definition": "FOREIGN KEY (medical_specialty_id) REFERENCES device.medical_specialties(id)"
+          },
+          {
+            "constraint_name": "product_codes_regulation_id_fkey",
+            "constraint_type": "f",
+            "definition": "FOREIGN KEY (regulation_id) REFERENCES device.regulations(id)"
+          },
+          {
+            "constraint_name": "product_codes_review_panel_id_fkey",
+            "constraint_type": "f",
+            "definition": "FOREIGN KEY (review_panel_id) REFERENCES device.regulatory_panels(id)"
+          },
+          {
+            "constraint_name": "product_codes_submission_type_ref_fkey",
+            "constraint_type": "f",
+            "definition": "FOREIGN KEY (submission_type_ref) REFERENCES device.submission_types(id)"
+          },
+          {
+            "constraint_name": "product_codes_pkey",
+            "constraint_type": "p",
+            "definition": "PRIMARY KEY (id)"
+          },
+          {
+            "constraint_name": "product_codes_product_code_key",
+            "constraint_type": "u",
+            "definition": "UNIQUE (product_code)"
+          }
+        ]
+      },
+      "columns": [
+        {
+          "column_name": "id",
+          "data_type": "integer",
+          "character_maximum_length": null,
+          "numeric_precision": 32,
+          "numeric_scale": 0,
+          "is_nullable": "NO",
+          "column_default": "nextval('device.product_codes_id_seq'::regclass)",
+          "column_description": null,
+          "ordinal_position": 1,
+          "statistics": {
+            "total_count": 7307,
+            "non_null_count": 7307,
+            "null_count": 0,
+            "min_value": 1,
+            "max_value": 7307,
+            "avg_value": "3654.0000000000000000",
+            "median_value": 3654.0,
+            "stddev_value": "2109.493541113601",
+            "cardinality_ratio": 1.0
+          },
+          "null_rate": 0.0
+        },
+        {
+          "column_name": "product_code",
+          "data_type": "text",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "NO",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 2,
+          "statistics": {
+            "total_count": 7307,
+            "non_null_count": 7307,
+            "null_count": 0,
+            "min_length": 1,
+            "max_length": 5,
+            "avg_length": "3.0087587245107431",
+            "distinct_count": 7307,
+            "cardinality_ratio": 1.0
+          },
+          "null_rate": 0.0
+        },
+        {
+          "column_name": "device_name",
+          "data_type": "text",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "NO",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 3,
+          "statistics": {
+            "total_count": 7307,
+            "non_null_count": 7307,
+            "null_count": 0,
+            "min_length": 1,
+            "max_length": 1287,
+            "avg_length": "40.8927056247433967",
+            "distinct_count": 6988,
+            "cardinality_ratio": 0.9563432325167648
+          },
+          "null_rate": 0.0
+        },
+        {
+          "column_name": "device_class",
+          "data_type": "text",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 4,
+          "statistics": {
+            "total_count": 7307,
+            "non_null_count": 6971,
+            "null_count": 336,
+            "min_length": 1,
+            "max_length": 1,
+            "avg_length": "1.00000000000000000000",
+            "distinct_count": 6,
+            "cardinality_ratio": 0.0008607086501219337
+          },
+          "null_rate": 0.0459833036814014
+        },
+        {
+          "column_name": "regulation_number",
+          "data_type": "text",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 5,
+          "statistics": {
+            "total_count": 7307,
+            "non_null_count": 6971,
+            "null_count": 336,
+            "min_length": 0,
+            "max_length": 8,
+            "avg_length": "6.9863721130397360",
+            "distinct_count": 2236,
+            "cardinality_ratio": 0.3207574236121073
+          },
+          "null_rate": 0.0459833036814014
+        },
+        {
+          "column_name": "regulation_id",
+          "data_type": "integer",
+          "character_maximum_length": null,
+          "numeric_precision": 32,
+          "numeric_scale": 0,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 6,
+          "statistics": {
+            "total_count": 7307,
+            "non_null_count": 6089,
+            "null_count": 1218,
+            "min_value": 1,
+            "max_value": 2235,
+            "avg_value": "678.9735588766628346",
+            "median_value": 476.0,
+            "stddev_value": "612.592912143971",
+            "cardinality_ratio": 0.36705534570537035
+          },
+          "null_rate": 0.16668947584508007
+        },
+        {
+          "column_name": "medical_specialty_code",
+          "data_type": "text",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 7,
+          "statistics": {
+            "total_count": 7307,
+            "non_null_count": 6971,
+            "null_count": 336,
+            "min_length": 0,
+            "max_length": 2,
+            "avg_length": "1.7469516568641515",
+            "distinct_count": 21,
+            "cardinality_ratio": 0.003012480275426768
+          },
+          "null_rate": 0.0459833036814014
+        },
+        {
+          "column_name": "medical_specialty_id",
+          "data_type": "integer",
+          "character_maximum_length": null,
+          "numeric_precision": 32,
+          "numeric_scale": 0,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 8,
+          "statistics": {
+            "total_count": 7307,
+            "non_null_count": 6089,
+            "null_count": 1218,
+            "min_value": 1,
+            "max_value": 21,
+            "avg_value": "9.9973723107242569",
+            "median_value": 10.0,
+            "stddev_value": "5.7733124224056688",
+            "cardinality_ratio": 0.003284611594678929
+          },
+          "null_rate": 0.16668947584508007
+        },
+        {
+          "column_name": "medical_specialty_description",
+          "data_type": "text",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 9,
+          "statistics": {
+            "total_count": 7307,
+            "non_null_count": 4375,
+            "null_count": 2932,
+            "min_length": 6,
+            "max_length": 25,
+            "avg_length": "14.5005714285714286",
+            "distinct_count": 21,
+            "cardinality_ratio": 0.0048
+          },
+          "null_rate": 0.4012590666484193
+        },
+        {
+          "column_name": "review_panel_code",
+          "data_type": "text",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 10,
+          "statistics": {
+            "total_count": 7307,
+            "non_null_count": 6971,
+            "null_count": 336,
+            "min_length": 0,
+            "max_length": 2,
+            "avg_length": "1.9386027829579687",
+            "distinct_count": 21,
+            "cardinality_ratio": 0.003012480275426768
+          },
+          "null_rate": 0.0459833036814014
+        },
+        {
+          "column_name": "review_panel_id",
+          "data_type": "integer",
+          "character_maximum_length": null,
+          "numeric_precision": 32,
+          "numeric_scale": 0,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 11,
+          "statistics": {
+            "total_count": 7307,
+            "non_null_count": 6757,
+            "null_count": 550,
+            "min_value": 1,
+            "max_value": 20,
+            "avg_value": "9.3431996448127867",
+            "median_value": 10.0,
+            "stddev_value": "5.3687184648624916",
+            "cardinality_ratio": 0.002959893443836022
+          },
+          "null_rate": 0.07527028876419871
+        },
+        {
+          "column_name": "definition",
+          "data_type": "text",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 12,
+          "statistics": {
+            "total_count": 7307,
+            "non_null_count": 6971,
+            "null_count": 336,
+            "min_length": 0,
+            "max_length": 1827,
+            "avg_length": "91.5164251900731602",
+            "distinct_count": 2107,
+            "cardinality_ratio": 0.30225218763448575
+          },
+          "null_rate": 0.0459833036814014
+        },
+        {
+          "column_name": "implant_flag",
+          "data_type": "boolean",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 13,
+          "statistics": {
+            "total_count": 7307,
+            "non_null_count": 6971,
+            "null_count": 336,
+            "cardinality_ratio": 0.00028690288337397793
+          },
+          "null_rate": 0.0459833036814014
+        },
+        {
+          "column_name": "life_sustain_support_flag",
+          "data_type": "boolean",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 14,
+          "statistics": {
+            "total_count": 7307,
+            "non_null_count": 6971,
+            "null_count": 336,
+            "cardinality_ratio": 0.00028690288337397793
+          },
+          "null_rate": 0.0459833036814014
+        },
+        {
+          "column_name": "gmp_exempt_flag",
+          "data_type": "boolean",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 15,
+          "statistics": {
+            "total_count": 7307,
+            "non_null_count": 6971,
+            "null_count": 336,
+            "cardinality_ratio": 0.00028690288337397793
+          },
+          "null_rate": 0.0459833036814014
+        },
+        {
+          "column_name": "summary_malfunction_reporting",
+          "data_type": "text",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 16,
+          "statistics": {
+            "total_count": 7307,
+            "non_null_count": 6971,
+            "null_count": 336,
+            "min_length": 8,
+            "max_length": 10,
+            "avg_length": "8.4558886816812509",
+            "distinct_count": 2,
+            "cardinality_ratio": 0.00028690288337397793
+          },
+          "null_rate": 0.0459833036814014
+        },
+        {
+          "column_name": "submission_type_id",
+          "data_type": "text",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 17,
+          "statistics": {
+            "total_count": 7307,
+            "non_null_count": 6971,
+            "null_count": 336,
+            "min_length": 0,
+            "max_length": 1,
+            "avg_length": "0.96930139147898436379",
+            "distinct_count": 8,
+            "cardinality_ratio": 0.0011476115334959117
+          },
+          "null_rate": 0.0459833036814014
+        },
+        {
+          "column_name": "submission_type_ref",
+          "data_type": "integer",
+          "character_maximum_length": null,
+          "numeric_precision": 32,
+          "numeric_scale": 0,
+          "is_nullable": "YES",
+          "column_default": null,
+          "column_description": null,
+          "ordinal_position": 18,
+          "statistics": {
+            "total_count": 7307,
+            "non_null_count": 6418,
+            "null_count": 889,
+            "min_value": 1,
+            "max_value": 6,
+            "avg_value": "2.3839202243689623",
+            "median_value": 2.0,
+            "stddev_value": "1.4613625757177483",
+            "cardinality_ratio": 0.0007790588968526021
+          },
+          "null_rate": 0.1216641576570412
+        },
+        {
+          "column_name": "created_at",
+          "data_type": "timestamp without time zone",
+          "character_maximum_length": null,
+          "numeric_precision": null,
+          "numeric_scale": null,
+          "is_nullable": "YES",
+          "column_default": "CURRENT_TIMESTAMP",
+          "column_description": null,
+          "ordinal_position": 19,
+          "statistics": {
+            "total_count": 7307,
+            "non_null_count": 7307,
+            "null_count": 0,
+            "cardinality_ratio": 0.7152045983303681
+          },
+          "null_rate": 0.0
+        }
+      ],
+      "foreign_keys": [
+        {
+          "constraint_name": "product_codes_regulation_id_fkey",
+          "column_name": "regulation_id",
+          "foreign_table_schema": "device",
+          "foreign_table_name": "regulations",
+          "foreign_column_name": "id"
+        },
+        {
+          "constraint_name": "product_codes_medical_specialty_id_fkey",
+          "column_name": "medical_specialty_id",
+          "foreign_table_schema": "device",
+          "foreign_table_name": "medical_specialties",
+          "foreign_column_name": "id"
+        },
+        {
+          "constraint_name": "product_codes_review_panel_id_fkey",
+          "column_name": "review_panel_id",
+          "foreign_table_schema": "device",
+          "foreign_table_name": "regulatory_panels",
+          "foreign_column_name": "id"
+        },
+        {
+          "constraint_name": "product_codes_submission_type_ref_fkey",
+          "column_name": "submission_type_ref",
+          "foreign_table_schema": "device",
+          "foreign_table_name": "submission_types",
+          "foreign_column_name": "id"
+        }
+      ],
+      "column_count": 19,
+      "high_null_columns": [
+        {
+          "name": "medical_specialty_description",
+          "null_rate": 0.4012590666484193
+        }
+      ]
+    }
+  },
+  "quality_results": {
+    "product_codes": {
+      "null_checker": {
+        "overall_null_rate": 0.07052631578947369,
+        "columns_null_rates": {
+          "id": 0.0,
+          "product_code": 0.0,
+          "device_name": 0.0,
+          "device_class": 0.03,
+          "regulation_number": 0.03,
+          "regulation_id": 0.18,
+          "medical_specialty_code": 0.03,
+          "medical_specialty_id": 0.18,
+          "medical_specialty_description": 0.46,
+          "review_panel_code": 0.03,
+          "review_panel_id": 0.07,
+          "definition": 0.03,
+          "implant_flag": 0.03,
+          "life_sustain_support_flag": 0.03,
+          "gmp_exempt_flag": 0.03,
+          "summary_malfunction_reporting": 0.03,
+          "submission_type_id": 0.03,
+          "submission_type_ref": 0.15,
+          "created_at": 0.0
+        },
+        "columns_above_threshold": [
+          "medical_specialty_description"
+        ],
+        "columns_with_issues": [
+          {
+            "column": "medical_specialty_description",
+            "issues": [
+              {
+                "type": "high_null_rate",
+                "description": "空值率 (46.00%) 超过阈值 (30.00%)"
+              }
+            ]
+          }
+        ],
+        "null_pattern_correlated": [
+          {
+            "columns": [
+              "device_class",
+              "regulation_number"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 device_class 和 regulation_number 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "device_class",
+              "medical_specialty_code"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 device_class 和 medical_specialty_code 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "device_class",
+              "review_panel_code"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 device_class 和 review_panel_code 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "device_class",
+              "definition"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 device_class 和 definition 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "device_class",
+              "implant_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 device_class 和 implant_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "device_class",
+              "life_sustain_support_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 device_class 和 life_sustain_support_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "device_class",
+              "gmp_exempt_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 device_class 和 gmp_exempt_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "device_class",
+              "summary_malfunction_reporting"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 device_class 和 summary_malfunction_reporting 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "device_class",
+              "submission_type_id"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 device_class 和 submission_type_id 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "regulation_number",
+              "medical_specialty_code"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 regulation_number 和 medical_specialty_code 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "regulation_number",
+              "review_panel_code"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 regulation_number 和 review_panel_code 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "regulation_number",
+              "definition"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 regulation_number 和 definition 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "regulation_number",
+              "implant_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 regulation_number 和 implant_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "regulation_number",
+              "life_sustain_support_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 regulation_number 和 life_sustain_support_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "regulation_number",
+              "gmp_exempt_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 regulation_number 和 gmp_exempt_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "regulation_number",
+              "summary_malfunction_reporting"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 regulation_number 和 summary_malfunction_reporting 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "regulation_number",
+              "submission_type_id"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 regulation_number 和 submission_type_id 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "regulation_id",
+              "medical_specialty_id"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 regulation_id 和 medical_specialty_id 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "medical_specialty_code",
+              "review_panel_code"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 medical_specialty_code 和 review_panel_code 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "medical_specialty_code",
+              "definition"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 medical_specialty_code 和 definition 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "medical_specialty_code",
+              "implant_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 medical_specialty_code 和 implant_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "medical_specialty_code",
+              "life_sustain_support_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 medical_specialty_code 和 life_sustain_support_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "medical_specialty_code",
+              "gmp_exempt_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 medical_specialty_code 和 gmp_exempt_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "medical_specialty_code",
+              "summary_malfunction_reporting"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 medical_specialty_code 和 summary_malfunction_reporting 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "medical_specialty_code",
+              "submission_type_id"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 medical_specialty_code 和 submission_type_id 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "review_panel_code",
+              "definition"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 review_panel_code 和 definition 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "review_panel_code",
+              "implant_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 review_panel_code 和 implant_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "review_panel_code",
+              "life_sustain_support_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 review_panel_code 和 life_sustain_support_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "review_panel_code",
+              "gmp_exempt_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 review_panel_code 和 gmp_exempt_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "review_panel_code",
+              "summary_malfunction_reporting"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 review_panel_code 和 summary_malfunction_reporting 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "review_panel_code",
+              "submission_type_id"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 review_panel_code 和 submission_type_id 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "definition",
+              "implant_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 definition 和 implant_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "definition",
+              "life_sustain_support_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 definition 和 life_sustain_support_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "definition",
+              "gmp_exempt_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 definition 和 gmp_exempt_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "definition",
+              "summary_malfunction_reporting"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 definition 和 summary_malfunction_reporting 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "definition",
+              "submission_type_id"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 definition 和 submission_type_id 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "implant_flag",
+              "life_sustain_support_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 implant_flag 和 life_sustain_support_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "implant_flag",
+              "gmp_exempt_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 implant_flag 和 gmp_exempt_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "implant_flag",
+              "summary_malfunction_reporting"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 implant_flag 和 summary_malfunction_reporting 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "implant_flag",
+              "submission_type_id"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 implant_flag 和 submission_type_id 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "life_sustain_support_flag",
+              "gmp_exempt_flag"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 life_sustain_support_flag 和 gmp_exempt_flag 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "life_sustain_support_flag",
+              "summary_malfunction_reporting"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 life_sustain_support_flag 和 summary_malfunction_reporting 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "life_sustain_support_flag",
+              "submission_type_id"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 life_sustain_support_flag 和 submission_type_id 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "gmp_exempt_flag",
+              "summary_malfunction_reporting"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 gmp_exempt_flag 和 summary_malfunction_reporting 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "gmp_exempt_flag",
+              "submission_type_id"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 gmp_exempt_flag 和 submission_type_id 的空值高度相关 (100.00%)"
+          },
+          {
+            "columns": [
+              "summary_malfunction_reporting",
+              "submission_type_id"
+            ],
+            "coincidence_rate": 1.0,
+            "description": "列 summary_malfunction_reporting 和 submission_type_id 的空值高度相关 (100.00%)"
+          }
+        ],
+        "column_results": {
+          "id": {
+            "null_count": 0,
+            "null_rate": 0.0,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "no_nulls",
+              "description": "没有空值"
+            }
+          },
+          "product_code": {
+            "null_count": 0,
+            "null_rate": 0.0,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "no_nulls",
+              "description": "没有空值"
+            }
+          },
+          "device_name": {
+            "null_count": 0,
+            "null_rate": 0.0,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "no_nulls",
+              "description": "没有空值"
+            }
+          },
+          "device_class": {
+            "null_count": 3,
+            "null_rate": 0.03,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "regulation_number": {
+            "null_count": 3,
+            "null_rate": 0.03,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "regulation_id": {
+            "null_count": 18,
+            "null_rate": 0.18,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "medical_specialty_code": {
+            "null_count": 3,
+            "null_rate": 0.03,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "medical_specialty_id": {
+            "null_count": 18,
+            "null_rate": 0.18,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "medical_specialty_description": {
+            "null_count": 46,
+            "null_rate": 0.46,
+            "above_threshold": "True",
+            "issues": [
+              {
+                "type": "high_null_rate",
+                "description": "空值率 (46.00%) 超过阈值 (30.00%)"
+              }
+            ],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "review_panel_code": {
+            "null_count": 3,
+            "null_rate": 0.03,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "review_panel_id": {
+            "null_count": 7,
+            "null_rate": 0.07,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "definition": {
+            "null_count": 3,
+            "null_rate": 0.03,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "implant_flag": {
+            "null_count": 3,
+            "null_rate": 0.03,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "life_sustain_support_flag": {
+            "null_count": 3,
+            "null_rate": 0.03,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "gmp_exempt_flag": {
+            "null_count": 3,
+            "null_rate": 0.03,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "summary_malfunction_reporting": {
+            "null_count": 3,
+            "null_rate": 0.03,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "submission_type_id": {
+            "null_count": 3,
+            "null_rate": 0.03,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "submission_type_ref": {
+            "null_count": 15,
+            "null_rate": 0.15,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "random",
+              "description": "空值呈随机分布"
+            }
+          },
+          "created_at": {
+            "null_count": 0,
+            "null_rate": 0.0,
+            "above_threshold": "False",
+            "issues": [],
+            "null_pattern": {
+              "pattern_type": "no_nulls",
+              "description": "没有空值"
+            }
+          }
+        }
+      },
+      "distribution_checker": {
+        "id": {
+          "distribution_type": "discrete",
+          "basic_stats": {
+            "count": 100,
+            "min": 50.0,
+            "max": 7306.0,
+            "mean": 3167.5,
+            "median": 2819.0,
+            "std": 2253.790398776284,
+            "skewness": 0.30237888028264764,
+            "kurtosis": -1.2805019096282841,
+            "percentile_1": 86.63,
+            "percentile_5": 217.85,
+            "percentile_25": 1104.5,
+            "percentile_50": 2819.0,
+            "percentile_75": 5307.0,
+            "percentile_95": 6903.75,
+            "percentile_99": 7251.55
+          },
+          "unique_count": 100,
+          "unique_ratio": 1.0,
+          "outliers": {
+            "count": 0,
+            "percentage": 0.0,
+            "lower_bound": -11503.0,
+            "upper_bound": 17914.5,
+            "values": []
+          },
+          "histogram": {
+            "counts": [
+              17,
+              16,
+              11,
+              9,
+              8,
+              3,
+              8,
+              12,
+              6,
+              10
+            ],
+            "bins": [
+              50.0,
+              775.6,
+              1501.2,
+              2226.8,
+              2952.4,
+              3678.0,
+              4403.6,
+              5129.2,
+              5854.8,
+              6580.400000000001,
+              7306.0
+            ],
+            "bin_labels": [
+              "50.00 - 775.60",
+              "775.60 - 1501.20",
+              "1501.20 - 2226.80",
+              "2226.80 - 2952.40",
+              "2952.40 - 3678.00",
+              "3678.00 - 4403.60",
+              "4403.60 - 5129.20",
+              "5129.20 - 5854.80",
+              "5854.80 - 6580.40",
+              "6580.40 - 7306.00"
+            ]
+          },
+          "issues": []
+        },
+        "product_code": {
+          "distribution_type": "text",
+          "length_stats": {
+            "min": 3,
+            "max": 3,
+            "mean": 3.0,
+            "median": 3.0,
+            "std": 0.0
+          },
+          "unique_count": 100,
+          "unique_ratio": 1.0,
+          "character_stats": {
+            "starts_with": {
+              "J": 14,
+              "N": 11,
+              "Q": 9,
+              "M": 8,
+              "H": 7
+            },
+            "ends_with": {
+              "C": 9,
+              "W": 8,
+              "Q": 8,
+              "E": 7,
+              "Z": 7
+            },
+            "contains_digits": 0.0,
+            "contains_special": 0.0,
+            "all_upper": 1.0,
+            "all_lower": 0.0
+          },
+          "issues": [
+            {
+              "type": "high_cardinality",
+              "description": "唯一值比例很高 (100.00%)",
+              "severity": "info"
+            }
+          ]
+        },
+        "device_name": {
+          "distribution_type": "text",
+          "length_stats": {
+            "min": 1,
+            "max": 660,
+            "mean": 33.43,
+            "median": 25.5,
+            "std": 65.41742501008042
+          },
+          "unique_count": 98,
+          "unique_ratio": 0.98,
+          "character_stats": {
+            "starts_with": {
+              "A": 14,
+              "S": 8,
+              "L": 8,
+              "C": 8,
+              "P": 7
+            },
+            "ends_with": {
+              "e": 10,
+              "T": 8,
+              "E": 7,
+              "R": 6,
+              "S": 6
+            },
+            "contains_digits": 0.16,
+            "contains_special": 0.49,
+            "all_upper": 0.52,
+            "all_lower": 0.0
+          },
+          "issues": [
+            {
+              "type": "high_cardinality",
+              "description": "唯一值比例很高 (98.00%)",
+              "severity": "info"
+            },
+            {
+              "type": "mixed_formats",
+              "description": "部分值包含数字 (16.00%)，数据格式可能不一致",
+              "severity": "low"
+            },
+            {
+              "type": "mixed_special_chars",
+              "description": "部分值包含特殊字符 (49.00%)，格式可能不一致",
+              "severity": "low"
+            },
+            {
+              "type": "variable_length",
+              "description": "文本长度变化很大 (std=65.42, min=1, max=660)",
+              "severity": "low"
+            }
+          ]
+        },
+        "device_class": {
+          "distribution_type": "categorical",
+          "unique_count": 6,
+          "unique_ratio": 0.061855670103092786,
+          "entropy": 1.7714535072392865,
+          "most_common": {
+            "2": 46,
+            "1": 34,
+            "3": 7,
+            "N": 7,
+            "U": 2
+          },
+          "least_common": {
+            "1": 34,
+            "3": 7,
+            "N": 7,
+            "U": 2,
+            "f": 1
+          },
+          "imbalance_ratio": 46.0,
+          "value_counts": {
+            "2": 46,
+            "1": 34,
+            "3": 7,
+            "N": 7,
+            "U": 2,
+            "f": 1
+          },
+          "issues": []
+        },
+        "regulation_number": {
+          "distribution_type": "text",
+          "length_stats": {
+            "min": 0,
+            "max": 8,
+            "mean": 6.762886597938144,
+            "median": 8.0,
+            "std": 2.907508941933401
+          },
+          "unique_count": 73,
+          "unique_ratio": 0.7525773195876289,
+          "character_stats": {
+            "starts_with": {
+              "8": 82,
+              "": 15
+            },
+            "ends_with": {
+              "0": 62,
+              "5": 18,
+              "": 15,
+              "1": 1,
+              "3": 1
+            },
+            "contains_digits": 0.845360824742268,
+            "contains_special": 0.845360824742268,
+            "all_upper": 0.0,
+            "all_lower": 0.0
+          },
+          "issues": [
+            {
+              "type": "mixed_formats",
+              "description": "部分值包含数字 (84.54%)，数据格式可能不一致",
+              "severity": "low"
+            },
+            {
+              "type": "mixed_special_chars",
+              "description": "部分值包含特殊字符 (84.54%)，格式可能不一致",
+              "severity": "low"
+            }
+          ]
+        },
+        "regulation_id": {
+          "distribution_type": "discrete",
+          "basic_stats": {
+            "count": 82,
+            "min": 11.0,
+            "max": 2235.0,
+            "mean": 599.6341463414634,
+            "median": 459.0,
+            "std": 528.9726010360017,
+            "skewness": 1.1275883567168354,
+            "kurtosis": 0.8267000723650479,
+            "percentile_1": 11.0,
+            "percentile_5": 34.449999999999996,
+            "percentile_25": 149.0,
+            "percentile_50": 459.0,
+            "percentile_75": 874.75,
+            "percentile_95": 1673.7500000000007,
+            "percentile_99": 2187.21
+          },
+          "unique_count": 72,
+          "unique_ratio": 0.8780487804878049,
+          "outliers": {
+            "count": 0,
+            "percentage": 0.0,
+            "lower_bound": -2028.25,
+            "upper_bound": 3052.0,
+            "values": []
+          },
+          "histogram": {
+            "counts": [
+              28,
+              13,
+              11,
+              10,
+              8,
+              5,
+              2,
+              2,
+              1,
+              2
+            ],
+            "bins": [
+              11.0,
+              233.4,
+              455.8,
+              678.2,
+              900.6,
+              1123.0,
+              1345.4,
+              1567.8,
+              1790.2,
+              2012.6000000000001,
+              2235.0
+            ],
+            "bin_labels": [
+              "11.00 - 233.40",
+              "233.40 - 455.80",
+              "455.80 - 678.20",
+              "678.20 - 900.60",
+              "900.60 - 1123.00",
+              "1123.00 - 1345.40",
+              "1345.40 - 1567.80",
+              "1567.80 - 1790.20",
+              "1790.20 - 2012.60",
+              "2012.60 - 2235.00"
+            ]
+          },
+          "issues": [
+            {
+              "type": "skewed_distribution",
+              "description": "分布显著右偏 (偏度=1.13)",
+              "severity": "low"
+            }
+          ]
+        },
+        "medical_specialty_code": {
+          "distribution_type": "text",
+          "length_stats": {
+            "min": 0,
+            "max": 2,
+            "mean": 1.690721649484536,
+            "median": 2.0,
+            "std": 0.7268772354833503
+          },
+          "unique_count": 20,
+          "unique_ratio": 0.20618556701030927,
+          "character_stats": {
+            "starts_with": {
+              "C": 16,
+              "": 15,
+              "O": 11,
+              "S": 9,
+              "A": 8
+            },
+            "ends_with": {
+              "U": 16,
+              "": 15,
+              "H": 12,
+              "N": 10,
+              "E": 9
+            },
+            "contains_digits": 0.0,
+            "contains_special": 0.0,
+            "all_upper": 0.845360824742268,
+            "all_lower": 0.0
+          },
+          "issues": []
+        },
+        "medical_specialty_id": {
+          "distribution_type": "discrete",
+          "basic_stats": {
+            "count": 82,
+            "min": 1.0,
+            "max": 20.0,
+            "mean": 9.853658536585366,
+            "median": 9.5,
+            "std": 5.9713760666095075,
+            "skewness": 0.042486060800983286,
+            "kurtosis": -1.2792962564731638,
+            "percentile_1": 1.0,
+            "percentile_5": 1.0,
+            "percentile_25": 4.0,
+            "percentile_50": 9.5,
+            "percentile_75": 16.0,
+            "percentile_95": 19.0,
+            "percentile_99": 20.0
+          },
+          "unique_count": 19,
+          "unique_ratio": 0.23170731707317074,
+          "outliers": {
+            "count": 0,
+            "percentage": 0.0,
+            "lower_bound": -32.0,
+            "upper_bound": 52.0,
+            "values": []
+          },
+          "histogram": {
+            "counts": [
+              12,
+              10,
+              8,
+              7,
+              6,
+              6,
+              10,
+              12,
+              5,
+              6
+            ],
+            "bins": [
+              1.0,
+              2.9,
+              4.8,
+              6.699999999999999,
+              8.6,
+              10.5,
+              12.399999999999999,
+              14.299999999999999,
+              16.2,
+              18.099999999999998,
+              20.0
+            ],
+            "bin_labels": [
+              "1.00 - 2.90",
+              "2.90 - 4.80",
+              "4.80 - 6.70",
+              "6.70 - 8.60",
+              "8.60 - 10.50",
+              "10.50 - 12.40",
+              "12.40 - 14.30",
+              "14.30 - 16.20",
+              "16.20 - 18.10",
+              "18.10 - 20.00"
+            ]
+          },
+          "issues": []
+        },
+        "medical_specialty_description": {
+          "distribution_type": "text",
+          "length_stats": {
+            "min": 6,
+            "max": 25,
+            "mean": 15.833333333333334,
+            "median": 14.0,
+            "std": 6.523542271924426
+          },
+          "unique_count": 16,
+          "unique_ratio": 0.2962962962962963,
+          "character_stats": {
+            "starts_with": {
+              "G": 15,
+              "O": 9,
+              "C": 9,
+              "U": 8,
+              "A": 5
+            },
+            "ends_with": {
+              "y": 33,
+              "n": 8,
+              "c": 5,
+              "r": 4,
+              "t": 2
+            },
+            "contains_digits": 0.0,
+            "contains_special": 0.37037037037037035,
+            "all_upper": 0.0,
+            "all_lower": 0.0
+          },
+          "issues": [
+            {
+              "type": "mixed_special_chars",
+              "description": "部分值包含特殊字符 (37.04%)，格式可能不一致",
+              "severity": "low"
+            }
+          ]
+        },
+        "review_panel_code": {
+          "distribution_type": "text",
+          "length_stats": {
+            "min": 0,
+            "max": 2,
+            "mean": 1.9175257731958764,
+            "median": 2.0,
+            "std": 0.3997421849554907
+          },
+          "unique_count": 20,
+          "unique_ratio": 0.20618556701030927,
+          "character_stats": {
+            "starts_with": {
+              "C": 21,
+              "O": 12,
+              "S": 10,
+              "A": 9,
+              "G": 7
+            },
+            "ends_with": {
+              "U": 17,
+              "H": 13,
+              "N": 12,
+              "A": 9,
+              "E": 8
+            },
+            "contains_digits": 0.0,
+            "contains_special": 0.0,
+            "all_upper": 0.9587628865979382,
+            "all_lower": 0.0
+          },
+          "issues": []
+        },
+        "review_panel_id": {
+          "distribution_type": "discrete",
+          "basic_stats": {
+            "count": 93,
+            "min": 1.0,
+            "max": 19.0,
+            "mean": 8.817204301075268,
+            "median": 8.0,
+            "std": 5.417255515157377,
+            "skewness": 0.22273448185554587,
+            "kurtosis": -1.316594603219159,
+            "percentile_1": 1.0,
+            "percentile_5": 2.0,
+            "percentile_25": 4.0,
+            "percentile_50": 8.0,
+            "percentile_75": 13.0,
+            "percentile_95": 18.0,
+            "percentile_99": 18.08
+          },
+          "unique_count": 19,
+          "unique_ratio": 0.20430107526881722,
+          "outliers": {
+            "count": 0,
+            "percentage": 0.0,
+            "lower_bound": -23.0,
+            "upper_bound": 40.0,
+            "values": []
+          },
+          "histogram": {
+            "counts": [
+              11,
+              17,
+              13,
+              7,
+              1,
+              10,
+              14,
+              6,
+              8,
+              6
+            ],
+            "bins": [
+              1.0,
+              2.8,
+              4.6,
+              6.4,
+              8.2,
+              10.0,
+              11.8,
+              13.6,
+              15.4,
+              17.2,
+              19.0
+            ],
+            "bin_labels": [
+              "1.00 - 2.80",
+              "2.80 - 4.60",
+              "4.60 - 6.40",
+              "6.40 - 8.20",
+              "8.20 - 10.00",
+              "10.00 - 11.80",
+              "11.80 - 13.60",
+              "13.60 - 15.40",
+              "15.40 - 17.20",
+              "17.20 - 19.00"
+            ]
+          },
+          "issues": []
+        },
+        "definition": {
+          "distribution_type": "text",
+          "length_stats": {
+            "min": 0,
+            "max": 691,
+            "mean": 89.21649484536083,
+            "median": 0.0,
+            "std": 146.08254136532747
+          },
+          "unique_count": 37,
+          "unique_ratio": 0.38144329896907214,
+          "character_stats": {
+            "starts_with": {
+              "": 58,
+              "A": 9,
+              "T": 8,
+              "F": 5,
+              "R": 4
+            },
+            "ends_with": {
+              "": 58,
+              ".": 34,
+              "s": 3,
+              "6": 2
+            },
+            "contains_digits": 0.13402061855670103,
+            "contains_special": 0.3917525773195876,
+            "all_upper": 0.0,
+            "all_lower": 0.0
+          },
+          "issues": [
+            {
+              "type": "mixed_formats",
+              "description": "部分值包含数字 (13.40%)，数据格式可能不一致",
+              "severity": "low"
+            },
+            {
+              "type": "mixed_special_chars",
+              "description": "部分值包含特殊字符 (39.18%)，格式可能不一致",
+              "severity": "low"
+            },
+            {
+              "type": "variable_length",
+              "description": "文本长度变化很大 (std=146.08, min=0, max=691)",
+              "severity": "low"
+            }
+          ]
+        },
+        "implant_flag": {
+          "distribution_type": "categorical",
+          "unique_count": 2,
+          "unique_ratio": 0.020618556701030927,
+          "entropy": 0.445693177722561,
+          "most_common": {
+            "false": 88,
+            "true": 9
+          },
+          "least_common": {
+            "false": 88,
+            "true": 9
+          },
+          "imbalance_ratio": 9.777777777777779,
+          "value_counts": {
+            "false": 88,
+            "true": 9
+          },
+          "issues": []
+        },
+        "life_sustain_support_flag": {
+          "distribution_type": "categorical",
+          "unique_count": 2,
+          "unique_ratio": 0.020618556701030927,
+          "entropy": 0.2929299511388597,
+          "most_common": {
+            "false": 92,
+            "true": 5
+          },
+          "least_common": {
+            "false": 92,
+            "true": 5
+          },
+          "imbalance_ratio": 18.4,
+          "value_counts": {
+            "false": 92,
+            "true": 5
+          },
+          "issues": []
+        },
+        "gmp_exempt_flag": {
+          "distribution_type": "categorical",
+          "unique_count": 2,
+          "unique_ratio": 0.020618556701030927,
+          "entropy": 0.4787235113859628,
+          "most_common": {
+            "false": 87,
+            "true": 10
+          },
+          "least_common": {
+            "false": 87,
+            "true": 10
+          },
+          "imbalance_ratio": 8.7,
+          "value_counts": {
+            "false": 87,
+            "true": 10
+          },
+          "issues": []
+        },
+        "summary_malfunction_reporting": {
+          "distribution_type": "categorical",
+          "unique_count": 2,
+          "unique_ratio": 0.020618556701030927,
+          "entropy": 0.8386398715015523,
+          "most_common": {
+            "Eligible": 71,
+            "Ineligible": 26
+          },
+          "least_common": {
+            "Eligible": 71,
+            "Ineligible": 26
+          },
+          "imbalance_ratio": 2.730769230769231,
+          "value_counts": {
+            "Eligible": 71,
+            "Ineligible": 26
+          },
+          "issues": []
+        },
+        "submission_type_id": {
+          "distribution_type": "categorical",
+          "unique_count": 7,
+          "unique_ratio": 0.07216494845360824,
+          "entropy": 1.9510655050737788,
+          "most_common": {
+            "1": 41,
+            "4": 36,
+            "2": 7,
+            "7": 6,
+            "": 4
+          },
+          "least_common": {
+            "2": 7,
+            "7": 6,
+            "": 4,
+            "8": 2,
+            "6": 1
+          },
+          "imbalance_ratio": 41.0,
+          "value_counts": {
+            "1": 41,
+            "4": 36,
+            "2": 7,
+            "7": 6,
+            "": 4,
+            "8": 2,
+            "6": 1
+          },
+          "issues": []
+        },
+        "submission_type_ref": {
+          "distribution_type": "discrete",
+          "basic_stats": {
+            "count": 85,
+            "min": 1.0,
+            "max": 6.0,
+            "mean": 2.411764705882353,
+            "median": 2.0,
+            "std": 1.4903987773096707,
+            "skewness": 0.269757055559701,
+            "kurtosis": -1.6378784891126486,
+            "percentile_1": 1.0,
+            "percentile_5": 1.0,
+            "percentile_25": 1.0,
+            "percentile_50": 2.0,
+            "percentile_75": 4.0,
+            "percentile_95": 4.0,
+            "percentile_99": 4.319999999999993
+          },
+          "unique_count": 4,
+          "unique_ratio": 0.047058823529411764,
+          "outliers": {
+            "count": 0,
+            "percentage": 0.0,
+            "lower_bound": -8.0,
+            "upper_bound": 13.0,
+            "values": []
+          },
+          "histogram": {
+            "counts": [
+              41,
+              0,
+              7,
+              0,
+              0,
+              0,
+              36,
+              0,
+              0,
+              1
+            ],
+            "bins": [
+              1.0,
+              1.5,
+              2.0,
+              2.5,
+              3.0,
+              3.5,
+              4.0,
+              4.5,
+              5.0,
+              5.5,
+              6.0
+            ],
+            "bin_labels": [
+              "1.00 - 1.50",
+              "1.50 - 2.00",
+              "2.00 - 2.50",
+              "2.50 - 3.00",
+              "3.00 - 3.50",
+              "3.50 - 4.00",
+              "4.00 - 4.50",
+              "4.50 - 5.00",
+              "5.00 - 5.50",
+              "5.50 - 6.00"
+            ]
+          },
+          "issues": []
+        },
+        "created_at": {
+          "distribution_type": "datetime",
+          "min_date": "2025-03-13 09:38:15.254676",
+          "max_date": "2025-03-13 11:55:32.783825",
+          "range_days": 0,
+          "unique_dates": 99,
+          "timestamps_per_day": 100.0,
+          "year_distribution": {
+            "2025": 100
+          },
+          "month_distribution": {
+            "3": 100
+          },
+          "day_distribution": {
+            "13": 100
+          },
+          "weekday_distribution": {
+            "3": 100
+          },
+          "time_intervals": {
+            "median_seconds": 0.365765,
+            "mean_seconds": 83.207365,
+            "min_seconds": 0.0,
+            "max_seconds": 3570.552256,
+            "is_regular": false,
+            "missing_points": []
+          },
+          "issues": []
+        }
+      },
+      "consistency_checker": {
+        "error": "float() argument must be a string or a real number, not 'Timestamp'",
+        "issues": []
+      },
+      "unstructured_checker": {
+        "id": {
+          "data_type": "text",
+          "analysis": {
+            "length_stats": {
+              "min": 2,
+              "max": 4,
+              "mean": 3.75,
+              "median": 4.0,
+              "std": 0.4793724854411023
+            },
+            "sentence_stats": {
+              "min": 1,
+              "max": 1,
+              "mean": 1.0
+            },
+            "word_stats": {
+              "unique_words": 100,
+              "total_words": 100,
+              "top_words": {
+                "4405": 1,
+                "2953": 1,
+                "4434": 1,
+                "3077": 1,
+                "3059": 1,
+                "5252": 1,
+                "5942": 1,
+                "5262": 1,
+                "2327": 1,
+                "305": 1
+              }
+            },
+            "character_stats": {
+              "total_chars": 375,
+              "special_chars": 0,
+              "special_ratio": 0.0,
+              "top_chars": {
+                "1": 49,
+                "7": 48,
+                "4": 47,
+                "2": 47,
+                "5": 46,
+                "3": 30,
+                "6": 30,
+                "8": 29,
+                "0": 26,
+                "9": 23
+              }
+            },
+            "ai_insights": {
+              "error": "Invalid format specifier ' \"识别的数据类型\",\n            \"key_information_structures\": [\"关键信息结构\"],\n            \"parsing_preprocessing_methods\": [\"建议的解析和预处理方法\"],\n            \"quality_check_standards\": [\"建议的质量检查标准\"],\n            \"structuring_recommendation\": \"是否需要结构化转换及建议\"\n        ' for object of type 'str'"
+            }
+          },
+          "issues": []
+        },
+        "product_code": {
+          "data_type": "text",
+          "analysis": {
+            "length_stats": {
+              "min": 3,
+              "max": 3,
+              "mean": 3.0,
+              "median": 3.0,
+              "std": 0.0
+            },
+            "sentence_stats": {
+              "min": 1,
+              "max": 1,
+              "mean": 1.0
+            },
+            "word_stats": {
+              "unique_words": 100,
+              "total_words": 100,
+              "top_words": {
+                "HDC": 1,
+                "EHR": 1,
+                "PZE": 1,
+                "MCW": 1,
+                "ENW": 1,
+                "PVO": 1,
+                "HQE": 1,
+                "FOC": 1,
+                "JCT": 1,
+                "FZE": 1
+              }
+            },
+            "character_stats": {
+              "total_chars": 300,
+              "special_chars": 0,
+              "special_ratio": 0.0,
+              "top_chars": {
+                "Q": 21,
+                "J": 21,
+                "H": 17,
+                "C": 17,
+                "N": 17,
+                "O": 17,
+                "M": 15,
+                "R": 14,
+                "Z": 14,
+                "L": 13
+              }
+            },
+            "ai_insights": {
+              "error": "Invalid format specifier ' \"识别的数据类型\",\n            \"key_information_structures\": [\"关键信息结构\"],\n            \"parsing_preprocessing_methods\": [\"建议的解析和预处理方法\"],\n            \"quality_check_standards\": [\"建议的质量检查标准\"],\n            \"structuring_recommendation\": \"是否需要结构化转换及建议\"\n        ' for object of type 'str'"
+            }
+          },
+          "issues": []
+        },
+        "device_name": {
+          "data_type": "text",
+          "analysis": {
+            "length_stats": {
+              "min": 1,
+              "max": 660,
+              "mean": 33.43,
+              "median": 25.5,
+              "std": 65.41742501008042
+            },
+            "sentence_stats": {
+              "min": 1,
+              "max": 17,
+              "mean": 1.22
+            },
+            "word_stats": {
+              "unique_words": 413,
+              "total_words": 459,
+              "top_words": {
+                "For": 6,
+                "Acid,": 5,
+                "*": 3,
+                "healing": 3,
+                "SYSTEM": 2,
+                "SOLUTION": 2,
+                "TEST": 2,
+                "STRIPS": 2,
+                "RX": 2,
+                "Emission": 2
+              }
+            },
+            "character_stats": {
+              "total_chars": 3343,
+              "special_chars": 167,
+              "special_ratio": 0.04995513012264433,
+              "top_chars": {
+                "e": 174,
+                "i": 143,
+                "t": 129,
+                "a": 124,
+                "o": 122,
+                "r": 121,
+                "n": 118,
+                "A": 116,
+                "E": 107
+              }
+            },
+            "ai_insights": {
+              "error": "Invalid format specifier ' \"识别的数据类型\",\n            \"key_information_structures\": [\"关键信息结构\"],\n            \"parsing_preprocessing_methods\": [\"建议的解析和预处理方法\"],\n            \"quality_check_standards\": [\"建议的质量检查标准\"],\n            \"structuring_recommendation\": \"是否需要结构化转换及建议\"\n        ' for object of type 'str'"
+            }
+          },
+          "issues": [
+            {
+              "type": "variable_length",
+              "description": "文本长度变化很大 (mean=33.4, std=65.4)",
+              "severity": "low"
+            }
+          ]
+        },
+        "device_class": {
+          "data_type": "text",
+          "analysis": {
+            "length_stats": {
+              "min": 1,
+              "max": 1,
+              "mean": 1.0,
+              "median": 1.0,
+              "std": 0.0
+            },
+            "sentence_stats": {
+              "min": 1,
+              "max": 1,
+              "mean": 1.0
+            },
+            "word_stats": {
+              "unique_words": 6,
+              "total_words": 97,
+              "top_words": {
+                "2": 46,
+                "1": 34,
+                "3": 7,
+                "N": 7,
+                "U": 2,
+                "f": 1
+              }
+            },
+            "character_stats": {
+              "total_chars": 97,
+              "special_chars": 0,
+              "special_ratio": 0.0,
+              "top_chars": {
+                "2": 46,
+                "1": 34,
+                "3": 7,
+                "N": 7,
+                "U": 2,
+                "f": 1
+              }
+            },
+            "ai_insights": {
+              "error": "Invalid format specifier ' \"识别的数据类型\",\n            \"key_information_structures\": [\"关键信息结构\"],\n            \"parsing_preprocessing_methods\": [\"建议的解析和预处理方法\"],\n            \"quality_check_standards\": [\"建议的质量检查标准\"],\n            \"structuring_recommendation\": \"是否需要结构化转换及建议\"\n        ' for object of type 'str'"
+            }
+          },
+          "issues": []
+        },
+        "regulation_number": {
+          "data_type": "text",
+          "analysis": {
+            "length_stats": {
+              "min": 0,
+              "max": 8,
+              "mean": 6.762886597938144,
+              "median": 8.0,
+              "std": 2.907508941933401
+            },
+            "sentence_stats": {
+              "min": 0,
+              "max": 2,
+              "mean": 1.690721649484536
+            },
+            "word_stats": {
+              "unique_words": 72,
+              "total_words": 82,
+              "top_words": {
+                "862.1775": 3,
+                "864.1850": 3,
+                "884.4530": 2,
+                "862.1415": 2,
+                "878.4800": 2,
+                "878.4810": 2,
+                "864.4010": 2,
+                "876.1500": 2,
+                "872.3540": 1,
+                "870.4875": 1
+              }
+            },
+            "character_stats": {
+              "total_chars": 656,
+              "special_chars": 82,
+              "special_ratio": 0.125,
+              "top_chars": {
+                "8": 136,
+                "0": 92,
+                ".": 82,
+                "6": 75,
+                "5": 63,
+                "7": 46,
+                "2": 44,
+                "4": 42,
+                "1": 34,
+                "3": 25
+              }
+            },
+            "ai_insights": {
+              "error": "Invalid format specifier ' \"识别的数据类型\",\n            \"key_information_structures\": [\"关键信息结构\"],\n            \"parsing_preprocessing_methods\": [\"建议的解析和预处理方法\"],\n            \"quality_check_standards\": [\"建议的质量检查标准\"],\n            \"structuring_recommendation\": \"是否需要结构化转换及建议\"\n        ' for object of type 'str'"
+            }
+          },
+          "issues": []
+        },
+        "regulation_id": {
+          "data_type": "text",
+          "analysis": {
+            "length_stats": {
+              "min": 4,
+              "max": 6,
+              "mean": 5.060975609756097,
+              "median": 5.0,
+              "std": 0.5951980887317011
+            },
+            "sentence_stats": {
+              "min": 2,
+              "max": 2,
+              "mean": 2.0
+            },
+            "word_stats": {
+              "unique_words": 72,
+              "total_words": 82,
+              "top_words": {
+                "780.0": 3,
+                "120.0": 3,
+                "114.0": 2,
+                "307.0": 2,
+                "86.0": 2,
+                "447.0": 2,
+                "134.0": 2,
+                "11.0": 2,
+                "850.0": 1,
+                "191.0": 1
+              }
+            },
+            "character_stats": {
+              "total_chars": 415,
+              "special_chars": 82,
+              "special_ratio": 0.19759036144578312,
+              "top_chars": {
+                "0": 107,
+                ".": 82,
+                "1": 53,
+                "3": 31,
+                "4": 30,
+                "2": 27,
+                "7": 25,
+                "6": 18,
+                "8": 16,
+                "9": 15
+              }
+            },
+            "ai_insights": {
+              "error": "Invalid format specifier ' \"识别的数据类型\",\n            \"key_information_structures\": [\"关键信息结构\"],\n            \"parsing_preprocessing_methods\": [\"建议的解析和预处理方法\"],\n            \"quality_check_standards\": [\"建议的质量检查标准\"],\n            \"structuring_recommendation\": \"是否需要结构化转换及建议\"\n        ' for object of type 'str'"
+            }
+          },
+          "issues": []
+        },
+        "medical_specialty_code": {
+          "data_type": "text",
+          "analysis": {
+            "length_stats": {
+              "min": 0,
+              "max": 2,
+              "mean": 1.690721649484536,
+              "median": 2.0,
+              "std": 0.7268772354833503
+            },
+            "sentence_stats": {
+              "min": 0,
+              "max": 1,
+              "mean": 0.845360824742268
+            },
+            "word_stats": {
+              "unique_words": 19,
+              "total_words": 82,
+              "top_words": {
+                "CH": 12,
+                "SU": 9,
+                "AN": 8,
+                "GU": 7,
+                "MI": 6,
+                "OB": 5,
+                "CV": 4,
+                "OP": 4,
+                "RA": 4,
+                "HE": 4
+              }
+            },
+            "character_stats": {
+              "total_chars": 164,
+              "special_chars": 0,
+              "special_ratio": 0.0,
+              "top_chars": {
+                "H": 18,
+                "C": 16,
+                "U": 16,
+                "A": 14,
+                "O": 13,
+                "N": 12,
+                "E": 11,
+                "M": 11,
+                "S": 9,
+                "I": 9
+              }
+            },
+            "ai_insights": {
+              "error": "Invalid format specifier ' \"识别的数据类型\",\n            \"key_information_structures\": [\"关键信息结构\"],\n            \"parsing_preprocessing_methods\": [\"建议的解析和预处理方法\"],\n            \"quality_check_standards\": [\"建议的质量检查标准\"],\n            \"structuring_recommendation\": \"是否需要结构化转换及建议\"\n        ' for object of type 'str'"
+            }
+          },
+          "issues": []
+        },
+        "medical_specialty_id": {
+          "data_type": "text",
+          "analysis": {
+            "length_stats": {
+              "min": 3,
+              "max": 4,
+              "mean": 3.5,
+              "median": 3.5,
+              "std": 0.5030769521187454
+            },
+            "sentence_stats": {
+              "min": 2,
+              "max": 2,
+              "mean": 2.0
+            },
+            "word_stats": {
+              "unique_words": 19,
+              "total_words": 82,
+              "top_words": {
+                "16.0": 12,
+                "13.0": 9,
+                "1.0": 8,
+                "4.0": 7,
+                "6.0": 6,
+                "8.0": 5,
+                "2.0": 4,
+                "9.0": 4,
+                "12.0": 4,
+                "20.0": 4
+              }
+            },
+            "character_stats": {
+              "total_chars": 287,
+              "special_chars": 82,
+              "special_ratio": 0.2857142857142857,
+              "top_chars": {
+                "0": 88,
+                ".": 82,
+                "1": 47,
+                "6": 18,
+                "3": 12,
+                "2": 12,
+                "8": 8,
+                "4": 8,
+                "9": 6,
+                "7": 4
+              }
+            },
+            "ai_insights": {
+              "error": "Invalid format specifier ' \"识别的数据类型\",\n            \"key_information_structures\": [\"关键信息结构\"],\n            \"parsing_preprocessing_methods\": [\"建议的解析和预处理方法\"],\n            \"quality_check_standards\": [\"建议的质量检查标准\"],\n            \"structuring_recommendation\": \"是否需要结构化转换及建议\"\n        ' for object of type 'str'"
+            }
+          },
+          "issues": []
+        },
+        "medical_specialty_description": {
+          "data_type": "text",
+          "analysis": {
+            "length_stats": {
+              "min": 6,
+              "max": 25,
+              "mean": 15.833333333333334,
+              "median": 14.0,
+              "std": 6.523542271924426
+            },
+            "sentence_stats": {
+              "min": 1,
+              "max": 1,
+              "mean": 1.0
+            },
+            "word_stats": {
+              "unique_words": 23,
+              "total_words": 86,
+              "top_words": {
+                "Unknown": 8,
+                "General,": 8,
+                "Plastic": 8,
+                "Surgery": 8,
+                "Gastroenterology,": 6,
+                "Urology": 6,
+                "Anesthesiology": 5,
+                "Clinical": 5,
+                "Chemistry": 5,
+                "Obstetrics/Gynecology": 4
+              }
+            },
+            "character_stats": {
+              "total_chars": 855,
+              "special_chars": 22,
+              "special_ratio": 0.025730994152046785,
+              "top_chars": {
+                "o": 78,
+                "e": 69,
+                "r": 68,
+                "l": 62,
+                "n": 55,
+                "a": 51,
+                "t": 49,
+                "s": 44,
+                "i": 44,
+                "y": 43
+              }
+            },
+            "ai_insights": {
+              "error": "Invalid format specifier ' \"识别的数据类型\",\n            \"key_information_structures\": [\"关键信息结构\"],\n            \"parsing_preprocessing_methods\": [\"建议的解析和预处理方法\"],\n            \"quality_check_standards\": [\"建议的质量检查标准\"],\n            \"structuring_recommendation\": \"是否需要结构化转换及建议\"\n        ' for object of type 'str'"
+            }
+          },
+          "issues": []
+        },
+        "review_panel_code": {
+          "data_type": "text",
+          "analysis": {
+            "length_stats": {
+              "min": 0,
+              "max": 2,
+              "mean": 1.9175257731958764,
+              "median": 2.0,
+              "std": 0.3997421849554907
+            },
+            "sentence_stats": {
+              "min": 0,
+              "max": 1,
+              "mean": 0.9587628865979382
+            },
+            "word_stats": {
+              "unique_words": 19,
+              "total_words": 93,
+              "top_words": {
+                "CH": 13,
+                "SU": 10,
+                "AN": 9,
+                "CV": 8,
+                "GU": 7,
+                "MI": 6,
+                "PA": 5,
+                "OB": 4,
+                "DE": 4,
+                "OP": 4
+              }
+            },
+            "character_stats": {
+              "total_chars": 186,
+              "special_chars": 0,
+              "special_ratio": 0.0,
+              "top_chars": {
+                "C": 21,
+                "A": 18,
+                "U": 17,
+                "H": 16,
+                "N": 15,
+                "O": 14,
+                "E": 11,
+                "M": 11,
+                "P": 10,
+                "S": 10
+              }
+            },
+            "ai_insights": {
+              "error": "Invalid format specifier ' \"识别的数据类型\",\n            \"key_information_structures\": [\"关键信息结构\"],\n            \"parsing_preprocessing_methods\": [\"建议的解析和预处理方法\"],\n            \"quality_check_standards\": [\"建议的质量检查标准\"],\n            \"structuring_recommendation\": \"是否需要结构化转换及建议\"\n        ' for object of type 'str'"
+            }
+          },
+          "issues": []
+        },
+        "review_panel_id": {
+          "data_type": "text",
+          "analysis": {
+            "length_stats": {
+              "min": 3,
+              "max": 4,
+              "mean": 3.4731182795698925,
+              "median": 3.0,
+              "std": 0.5019829775708743
+            },
+            "sentence_stats": {
+              "min": 2,
+              "max": 2,
+              "mean": 2.0
+            },
+            "word_stats": {
+              "unique_words": 19,
+              "total_words": 93,
+              "top_words": {
+                "13.0": 13,
+                "5.0": 10,
+                "3.0": 9,
+                "4.0": 8,
+                "2.0": 7,
+                "11.0": 6,
+                "18.0": 5,
+                "17.0": 4,
+                "1.0": 4,
+                "7.0": 4
+              }
+            },
+            "character_stats": {
+              "total_chars": 323,
+              "special_chars": 93,
+              "special_ratio": 0.28792569659442724,
+              "top_chars": {
+                "0": 97,
+                ".": 93,
+                "1": 54,
+                "3": 22,
+                "4": 12,
+                "5": 12,
+                "7": 8,
+                "8": 8,
+                "2": 8,
+                "6": 7
+              }
+            },
+            "ai_insights": {
+              "error": "Invalid format specifier ' \"识别的数据类型\",\n            \"key_information_structures\": [\"关键信息结构\"],\n            \"parsing_preprocessing_methods\": [\"建议的解析和预处理方法\"],\n            \"quality_check_standards\": [\"建议的质量检查标准\"],\n            \"structuring_recommendation\": \"是否需要结构化转换及建议\"\n        ' for object of type 'str'"
+            }
+          },
+          "issues": []
+        },
+        "definition": {
+          "data_type": "text",
+          "analysis": {
+            "length_stats": {
+              "min": 0,
+              "max": 691,
+              "mean": 89.21649484536083,
+              "median": 0.0,
+              "std": 146.08254136532747
+            },
+            "sentence_stats": {
+              "min": 0,
+              "max": 6,
+              "mean": 0.9587628865979382
+            },
+            "word_stats": {
+              "unique_words": 504,
+              "total_words": 1212,
+              "top_words": {
+                "the": 38,
+                "in": 35,
+                "of": 33,
+                "for": 33,
+                "to": 32,
+                "and": 30,
+                "a": 29,
+                "is": 18,
+                "as": 15,
+                "device": 14
+              }
+            },
+            "character_stats": {
+              "total_chars": 8654,
+              "special_chars": 318,
+              "special_ratio": 0.03674601340420615,
+              "top_chars": {
+                "e": 795,
+                "i": 628,
+                "t": 585,
+                "a": 573,
+                "n": 520,
+                "o": 508,
+                "r": 444,
+                "s": 403,
+                "d": 368
+              }
+            },
+            "ai_insights": {
+              "error": "Invalid format specifier ' \"识别的数据类型\",\n            \"key_information_structures\": [\"关键信息结构\"],\n            \"parsing_preprocessing_methods\": [\"建议的解析和预处理方法\"],\n            \"quality_check_standards\": [\"建议的质量检查标准\"],\n            \"structuring_recommendation\": \"是否需要结构化转换及建议\"\n        ' for object of type 'str'"
+            }
+          },
+          "issues": [
+            {
+              "type": "variable_length",
+              "description": "文本长度变化很大 (mean=89.2, std=146.1)",
+              "severity": "low"
+            }
+          ]
+        },
+        "implant_flag": {
+          "data_type": "text",
+          "analysis": {
+            "length_stats": {
+              "min": 4,
+              "max": 5,
+              "mean": 4.907216494845361,
+              "median": 5.0,
+              "std": 0.2916359826766109
+            },
+            "sentence_stats": {
+              "min": 1,
+              "max": 1,
+              "mean": 1.0
+            },
+            "word_stats": {
+              "unique_words": 2,
+              "total_words": 97,
+              "top_words": {
+                "False": 88,
+                "True": 9
+              }
+            },
+            "character_stats": {
+              "total_chars": 476,
+              "special_chars": 0,
+              "special_ratio": 0.0,
+              "top_chars": {
+                "e": 97,
+                "F": 88,
+                "a": 88,
+                "l": 88,
+                "s": 88,
+                "T": 9,
+                "r": 9,
+                "u": 9
+              }
+            },
+            "ai_insights": {
+              "error": "Invalid format specifier ' \"识别的数据类型\",\n            \"key_information_structures\": [\"关键信息结构\"],\n            \"parsing_preprocessing_methods\": [\"建议的解析和预处理方法\"],\n            \"quality_check_standards\": [\"建议的质量检查标准\"],\n            \"structuring_recommendation\": \"是否需要结构化转换及建议\"\n        ' for object of type 'str'"
+            }
+          },
+          "issues": []
+        },
+        "life_sustain_support_flag": {
+          "data_type": "text",
+          "analysis": {
+            "length_stats": {
+              "min": 4,
+              "max": 5,
+              "mean": 4.948453608247423,
+              "median": 5.0,
+              "std": 0.2222580154450076
+            },
+            "sentence_stats": {
+              "min": 1,
+              "max": 1,
+              "mean": 1.0
+            },
+            "word_stats": {
+              "unique_words": 2,
+              "total_words": 97,
+              "top_words": {
+                "False": 92,
+                "True": 5
+              }
+            },
+            "character_stats": {
+              "total_chars": 480,
+              "special_chars": 0,
+              "special_ratio": 0.0,
+              "top_chars": {
+                "e": 97,
+                "F": 92,
+                "a": 92,
+                "l": 92,
+                "s": 92,
+                "T": 5,
+                "r": 5,
+                "u": 5
+              }
+            },
+            "ai_insights": {
+              "error": "Invalid format specifier ' \"识别的数据类型\",\n            \"key_information_structures\": [\"关键信息结构\"],\n            \"parsing_preprocessing_methods\": [\"建议的解析和预处理方法\"],\n            \"quality_check_standards\": [\"建议的质量检查标准\"],\n            \"structuring_recommendation\": \"是否需要结构化转换及建议\"\n        ' for object of type 'str'"
+            }
+          },
+          "issues": []
+        },
+        "gmp_exempt_flag": {
+          "data_type": "text",
+          "analysis": {
+            "length_stats": {
+              "min": 4,
+              "max": 5,
+              "mean": 4.896907216494846,
+              "median": 5.0,
+              "std": 0.30565967194176324
+            },
+            "sentence_stats": {
+              "min": 1,
+              "max": 1,
+              "mean": 1.0
+            },
+            "word_stats": {
+              "unique_words": 2,
+              "total_words": 97,
+              "top_words": {
+                "False": 87,
+                "True": 10
+              }
+            },
+            "character_stats": {
+              "total_chars": 475,
+              "special_chars": 0,
+              "special_ratio": 0.0,
+              "top_chars": {
+                "e": 97,
+                "F": 87,
+                "a": 87,
+                "l": 87,
+                "s": 87,
+                "T": 10,
+                "r": 10,
+                "u": 10
+              }
+            },
+            "ai_insights": {
+              "error": "Invalid format specifier ' \"识别的数据类型\",\n            \"key_information_structures\": [\"关键信息结构\"],\n            \"parsing_preprocessing_methods\": [\"建议的解析和预处理方法\"],\n            \"quality_check_standards\": [\"建议的质量检查标准\"],\n            \"structuring_recommendation\": \"是否需要结构化转换及建议\"\n        ' for object of type 'str'"
+            }
+          },
+          "issues": []
+        },
+        "summary_malfunction_reporting": {
+          "data_type": "text",
+          "analysis": {
+            "length_stats": {
+              "min": 8,
+              "max": 10,
+              "mean": 8.536082474226804,
+              "median": 8.0,
+              "std": 0.8904803908343409
+            },
+            "sentence_stats": {
+              "min": 1,
+              "max": 1,
+              "mean": 1.0
+            },
+            "word_stats": {
+              "unique_words": 2,
+              "total_words": 97,
+              "top_words": {
+                "Eligible": 71,
+                "Ineligible": 26
+              }
+            },
+            "character_stats": {
+              "total_chars": 828,
+              "special_chars": 0,
+              "special_ratio": 0.0,
+              "top_chars": {
+                "l": 194,
+                "i": 194,
+                "e": 123,
+                "g": 97,
+                "b": 97,
+                "E": 71,
+                "I": 26,
+                "n": 26
+              }
+            },
+            "ai_insights": {
+              "error": "Invalid format specifier ' \"识别的数据类型\",\n            \"key_information_structures\": [\"关键信息结构\"],\n            \"parsing_preprocessing_methods\": [\"建议的解析和预处理方法\"],\n            \"quality_check_standards\": [\"建议的质量检查标准\"],\n            \"structuring_recommendation\": \"是否需要结构化转换及建议\"\n        ' for object of type 'str'"
+            }
+          },
+          "issues": []
+        },
+        "submission_type_id": {
+          "data_type": "text",
+          "analysis": {
+            "length_stats": {
+              "min": 0,
+              "max": 1,
+              "mean": 0.9587628865979382,
+              "median": 1.0,
+              "std": 0.19987109247774534
+            },
+            "sentence_stats": {
+              "min": 0,
+              "max": 1,
+              "mean": 0.9587628865979382
+            },
+            "word_stats": {
+              "unique_words": 6,
+              "total_words": 93,
+              "top_words": {
+                "1": 41,
+                "4": 36,
+                "2": 7,
+                "7": 6,
+                "8": 2,
+                "6": 1
+              }
+            },
+            "character_stats": {
+              "total_chars": 93,
+              "special_chars": 0,
+              "special_ratio": 0.0,
+              "top_chars": {
+                "1": 41,
+                "4": 36,
+                "2": 7,
+                "7": 6,
+                "8": 2,
+                "6": 1
+              }
+            },
+            "ai_insights": {
+              "error": "Invalid format specifier ' \"识别的数据类型\",\n            \"key_information_structures\": [\"关键信息结构\"],\n            \"parsing_preprocessing_methods\": [\"建议的解析和预处理方法\"],\n            \"quality_check_standards\": [\"建议的质量检查标准\"],\n            \"structuring_recommendation\": \"是否需要结构化转换及建议\"\n        ' for object of type 'str'"
+            }
+          },
+          "issues": []
+        },
+        "submission_type_ref": {
+          "data_type": "text",
+          "analysis": {
+            "length_stats": {
+              "min": 3,
+              "max": 3,
+              "mean": 3.0,
+              "median": 3.0,
+              "std": 0.0
+            },
+            "sentence_stats": {
+              "min": 2,
+              "max": 2,
+              "mean": 2.0
+            },
+            "word_stats": {
+              "unique_words": 4,
+              "total_words": 85,
+              "top_words": {
+                "1.0": 41,
+                "4.0": 36,
+                "2.0": 7,
+                "6.0": 1
+              }
+            },
+            "character_stats": {
+              "total_chars": 255,
+              "special_chars": 85,
+              "special_ratio": 0.3333333333333333,
+              "top_chars": {
+                ".": 85,
+                "0": 85,
+                "1": 41,
+                "4": 36,
+                "2": 7,
+                "6": 1
+              }
+            },
+            "ai_insights": {
+              "error": "Invalid format specifier ' \"识别的数据类型\",\n            \"key_information_structures\": [\"关键信息结构\"],\n            \"parsing_preprocessing_methods\": [\"建议的解析和预处理方法\"],\n            \"quality_check_standards\": [\"建议的质量检查标准\"],\n            \"structuring_recommendation\": \"是否需要结构化转换及建议\"\n        ' for object of type 'str'"
+            }
+          },
+          "issues": [
+            {
+              "type": "high_special_chars",
+              "description": "特殊字符比例较高 (33.3%)",
+              "severity": "medium"
+            }
+          ]
+        },
+        "created_at": {
+          "data_type": "text",
+          "analysis": {
+            "length_stats": {
+              "min": 26,
+              "max": 26,
+              "mean": 26.0,
+              "median": 26.0,
+              "std": 0.0
+            },
+            "sentence_stats": {
+              "min": 2,
+              "max": 2,
+              "mean": 2.0
+            },
+            "word_stats": {
+              "unique_words": 100,
+              "total_words": 200,
+              "top_words": {
+                "2025-03-13": 100,
+                "09:39:01.130213": 2,
+                "09:38:53.671847": 1,
+                "09:38:42.422907": 1,
+                "09:38:53.808131": 1,
+                "09:38:43.195952": 1,
+                "09:38:43.146428": 1,
+                "09:38:59.888540": 1,
+                "09:39:04.902122": 1,
+                "09:38:59.931591": 1
+              }
+            },
+            "character_stats": {
+              "total_chars": 2600,
+              "special_chars": 500,
+              "special_ratio": 0.19230769230769232,
+              "top_chars": {
+                "3": 382,
+                "0": 376,
+                "2": 306,
+                "1": 208,
+                "-": 200,
+                ":": 200,
+                "9": 192,
+                "5": 185,
+                "8": 142
+              }
+            },
+            "ai_insights": {
+              "error": "Invalid format specifier ' \"识别的数据类型\",\n            \"key_information_structures\": [\"关键信息结构\"],\n            \"parsing_preprocessing_methods\": [\"建议的解析和预处理方法\"],\n            \"quality_check_standards\": [\"建议的质量检查标准\"],\n            \"structuring_recommendation\": \"是否需要结构化转换及建议\"\n        ' for object of type 'str'"
+            }
+          },
+          "issues": []
+        }
+      },
+      "custom_checker": {
+        "table_issues": [],
+        "column_results": {},
+        "table_checks": []
+      }
+    }
+  },
+  "unstructured_results": {},
+  "preprocessor_results": {},
+  "optimization_results": {
+    "product_codes": {
+      "storage_optimization": [],
+      "query_optimization": [],
+      "maintenance_recommendations": [],
+      "schema_improvements": [
+        "考虑将表 product_codes 中的高空值率列(medical_specialty_description等)移至单独的表"
+      ]
+    },
+    "schema_overall": {
+      "overall_assessment": "由于只提供了一个表 `product_codes` 和关系数量，无法进行全面的schema设计评估。缺乏其他表的信息，无法判断schema的完整性和合理性。 仅凭一个表和关系数量，无法判断其是否满足业务需求，以及是否存在冗余或缺失。",
+      "data_modeling_patterns": [
+        "无法识别。由于只有一个表，无法判断是否存在星型模式、雪花模式或其他数据建模模式。需要更多表的信息才能进行判断。"
+      ],
+      "potential_issues": [
+        "数据孤岛：只有一个表，可能导致数据孤岛，无法与其他业务数据关联。",
+        "关系数量的意义不明：8个关系对于一个表来说，可能意味着表内存在自引用关系或复杂的约束，需要进一步了解关系的具体定义才能评估其合理性。",
+        "缺乏上下文：没有业务背景信息，无法判断 `product_codes` 表的设计是否合理，例如字段类型、索引等。",
+        "可扩展性问题：如果未来需要存储更多设备相关的信息，单一的 `product_codes` 表可能难以满足需求，需要进行扩展或拆分。"
+      ],
+      "optimization_suggestions": [
+        "提供更多表的信息：需要提供schema中所有表的定义（包括字段名、数据类型、约束、索引等），以及表之间的关系，才能进行更全面的评估和优化。",
+        "提供业务背景信息：了解schema所服务的业务场景，例如设备管理、监控、数据分析等，有助于判断schema设计的合理性。",
+        "审查关系定义：详细审查 `product_codes` 表的8个关系，了解其具体含义和作用，判断是否存在冗余或不合理的设计。",
+        "考虑数据规范化：如果 `product_codes` 表中存在大量重复数据，可以考虑进行数据规范化，拆分成多个表，以减少数据冗余和提高数据一致性。",
+        "评估索引策略：根据查询需求，评估 `product_codes` 表的索引策略，确保查询性能。",
+        "考虑分区策略：如果 `product_codes` 表的数据量很大，可以考虑使用分区策略，以提高查询性能和管理效率。",
+        "考虑使用枚举类型：如果 `product_codes` 表中存在一些固定值的字段，可以考虑使用枚举类型，以提高数据质量和可读性。"
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-03-13T12:06:58.152913"
+}

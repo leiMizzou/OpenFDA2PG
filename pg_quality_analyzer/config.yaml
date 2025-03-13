@@ -1,0 +1,53 @@
+# PostgreSQL数据质量检查与分析程序配置
+
+# 数据库连接配置
+database:
+  host: localhost
+  port: 5432
+  user: postgres
+  password: 12345687
+  dbname: fda_device
+  schema: device
+
+# 分析配置
+analysis:
+  sample_size: 100       # 减少采样大小以降低内存占用和提高性能
+  sample_method: random  # random采样更高效
+  max_tables: 20         # 限制一次分析的表数量
+  exclude_tables: ["adverse_events", "event_texts", "event_devices"]  # 排除可能引起超时的大表
+  include_tables: []     # 可以指定仅分析特定表
+
+# 质量检查配置
+quality_checks:
+  null_threshold: 0.3
+  cardinality_threshold: 0.9
+  outlier_threshold: 3.0    
+  correlation_threshold: 0.8
+  enable_all: true
+  checks:
+    null_analysis: true       # 基本空值分析通常较快
+    distribution_analysis: true  # 分布分析可能较消耗资源
+    consistency_analysis: true   
+    unstructured_analysis: false  # 禁用非结构化数据分析以减少计算开销
+
+# Gemini API配置
+gemini:
+  api_key: AIzaSyCeV5Cu43yzOEkqFnHsU8Vi2RDDukYznWc
+  model: gemini-2.0-flash  # 使用更快的模型
+  temperature: 0.2
+  max_tokens: 1024  # 减少token数
+  enable: false     # 暂时禁用AI功能
+  custom_check_generation: false
+  unstructured_analysis: false
+
+# 输出配置
+output:
+  format: html
+  path: ./reports
+  filename: pgsql_quality_report
+  show_plots: true  # 可视化在小样本上应该没有性能问题
+
+# 日志配置
+logging:
+  level: INFO
+  file: pgsql_analyzer.log
