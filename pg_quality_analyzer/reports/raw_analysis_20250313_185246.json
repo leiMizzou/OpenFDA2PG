@@ -1,0 +1,44 @@
+{
+  "schema_info": {
+    "name": "device",
+    "table_count": 0,
+    "tables": [],
+    "relationship_count": 0,
+    "tables_with_relationships": 0
+  },
+  "tables_info": {},
+  "quality_results": {},
+  "unstructured_results": {},
+  "preprocessor_results": {},
+  "optimization_results": {
+    "schema_overall": {
+      "storage_optimization": [],
+      "query_optimization": [],
+      "maintenance_recommendations": [
+        "定期重建索引并更新统计信息，特别是在大量数据变更后",
+        "实施定期数据质量检查流程，确保数据一致性和完整性"
+      ],
+      "schema_improvements": [
+        "审查数据类型一致性，确保在整个数据库中对相似数据使用一致的类型"
+      ],
+      "priority_recommendations": [
+        {
+          "type": "schema",
+          "suggestion": "审查数据类型一致性，确保在整个数据库中对相似数据使用一致的类型",
+          "priority": "medium"
+        },
+        {
+          "type": "maintenance",
+          "suggestion": "定期重建索引并更新统计信息，特别是在大量数据变更后",
+          "priority": "medium"
+        },
+        {
+          "type": "maintenance",
+          "suggestion": "实施定期数据质量检查流程，确保数据一致性和完整性",
+          "priority": "medium"
+        }
+      ]
+    }
+  },
+  "analysis_timestamp": "2025-03-13T18:52:46.150314"
+}

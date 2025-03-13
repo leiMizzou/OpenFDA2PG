@@ -1,30 +1,23 @@
 Data Consistency Validation Report
-Generated on: 2025-03-12 11:30:08
+Generated on: 2025-03-13 15:10:02
 
 Summary Statistics:
      Data Type  Total Records  Sampled Records  Matched Records  Mismatched Records Match Percentage
-Classification           6971              139              139                   0          100.00%
-        Recall          54687             1093             1093                   0          100.00%
-   Enforcement          35451              709              708                   0           99.86%
- Adverse Event       20982859           419657           419641                  16          100.00%
-           Udi        4306508            86130            86130                   0          100.00%
-       OVERALL       25386476           507728           507711                  16          100.00%
+Classification           6971               69               69                   0          100.00%
+        Recall          54687              546              546                   0          100.00%
+   Enforcement          35451              354              354                   0          100.00%
+ Adverse Event       20982859           209828           209819                   9          100.00%
+           Udi        4306508            43065            43065                   0          100.00%
+       OVERALL       25386476           253862           253853                   9          100.00%
 
 Mismatches Details:
-    Data Type              Key Value                    Source File                                    Field          JSON Value            DB Value
-Adverse Event     2938836-1996-00019 device-event-0001-of-0001.json report_source_code -> report_source_code  Distributor report Manufacturer report
-Adverse Event     6000002-2007-02750 device-event-0001-of-0001.json                 event_type -> event_type         Malfunction               Other
-Adverse Event  3010511300-2023-00126 device-event-0002-of-0006.json report_source_code -> report_source_code Manufacturer report  Distributor report
-Adverse Event 3012236936-2024-000217 device-event-0002-of-0007.json                 event_type -> event_type              Injury         Malfunction
-Adverse Event 3012236936-2024-000252 device-event-0004-of-0007.json                 event_type -> event_type              Injury         Malfunction
-Adverse Event 3012236936-2024-000211 device-event-0003-of-0007.json                 event_type -> event_type         Malfunction              Injury
-Adverse Event 3012236936-2024-000181 device-event-0006-of-0007.json                 event_type -> event_type         Malfunction              Injury
-Adverse Event 3012236936-2024-000216 device-event-0007-of-0007.json                 event_type -> event_type              Injury         Malfunction
-Adverse Event 3012236936-2024-000322 device-event-0001-of-0008.json                 event_type -> event_type         Malfunction              Injury
-Adverse Event 3012236936-2024-000293 device-event-0001-of-0008.json                 event_type -> event_type         Malfunction              Injury
-Adverse Event 3012236936-2024-000299 device-event-0001-of-0008.json                 event_type -> event_type         Malfunction              Injury
-Adverse Event 3012236936-2024-000340 device-event-0006-of-0008.json                 event_type -> event_type         Malfunction              Injury
-Adverse Event 3012236936-2024-000335 device-event-0003-of-0008.json                 event_type -> event_type              Injury         Malfunction
-Adverse Event 3012236936-2024-000127 device-event-0004-of-0007.json                 event_type -> event_type              Injury         Malfunction
-Adverse Event 3012236936-2024-000147 device-event-0001-of-0007.json                 event_type -> event_type              Injury         Malfunction
-Adverse Event 3012236936-2024-000126 device-event-0006-of-0007.json                 event_type -> event_type         Malfunction              Injury
+    Data Type              Key Value                    Source File                                    Field         JSON Value            DB Value
+Adverse Event     1721493-1996-00004 device-event-0001-of-0001.json report_source_code -> report_source_code Distributor report Manufacturer report
+Adverse Event     2126317-2008-00001 device-event-0001-of-0001.json                 event_type -> event_type        Malfunction               Other
+Adverse Event 3012236936-2024-000237 device-event-0002-of-0007.json                 event_type -> event_type             Injury         Malfunction
+Adverse Event 3012236936-2024-000185 device-event-0006-of-0007.json                 event_type -> event_type             Injury         Malfunction
+Adverse Event 3012236936-2024-000244 device-event-0007-of-0007.json                 event_type -> event_type             Injury         Malfunction
+Adverse Event 3012236936-2024-000241 device-event-0007-of-0007.json                 event_type -> event_type             Injury         Malfunction
+Adverse Event 3012236936-2024-000343 device-event-0003-of-0008.json                 event_type -> event_type             Injury         Malfunction
+Adverse Event 3010757606-2024-000027 device-event-0002-of-0007.json                 event_type -> event_type              Death              Injury
+Adverse Event 3012236936-2024-000142 device-event-0001-of-0007.json                 event_type -> event_type             Injury         Malfunction

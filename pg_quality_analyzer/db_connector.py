@@ -2,10 +2,10 @@
 数据库连接模块，负责管理PostgreSQL连接和查询执行
 """
 import logging
-import time
 import psycopg2
 import pandas as pd
 import numpy as np
+import time
 from psycopg2 import sql
 from psycopg2.extras import RealDictCursor
 from sqlalchemy import create_engine
@@ -25,10 +25,9 @@ class DBConnector:
         self.cursor = None
         self.engine = None
         self.schema = config.get('database.schema')
-        self.max_retries = 3  # 最大重试次数
-        self.retry_delay = 2  # 重试延迟（秒）
-        self.is_connected = False
-        
+        self.max_retries = 3
+        self.retry_delay = 1  # 初始重试延迟(秒)
+    
     def connect(self):
         """
         连接到PostgreSQL数据库
@@ -37,94 +36,108 @@ class DBConnector:
             bool: 连接成功返回True，否则返回False
         """
         db_config = self.config.get('database')
-        retry_count = 0
-        
-        while retry_count < self.max_retries:
-            try:
-                # 创建psycopg2连接
-                self.conn = psycopg2.connect(
-                    host=db_config['host'],
-                    port=db_config['port'],
-                    user=db_config['user'],
-                    password=db_config['password'],
-                    dbname=db_config['dbname'],
-                    # 添加超时设置
-                    connect_timeout=120,  # 连接超时，单位秒
-                    options="-c statement_timeout=120000"  # 查询超时，单位毫秒
-                )
-                self.conn.autocommit = False  # 明确设置非自动提交模式
-                self.cursor = self.conn.cursor(cursor_factory=RealDictCursor)
-                
-                # 测试连接是否有效
-                self.cursor.execute("SELECT 1")
-                result = self.cursor.fetchone()
-                if not result or result.get('?column?', None) != 1:
-                    raise Exception("Connection test failed")
-                
-                # 创建SQLAlchemy引擎，用于pandas查询
-                db_url = f"postgresql://{db_config['user']}:{db_config['password']}@{db_config['host']}:{db_config['port']}/{db_config['dbname']}"
-                self.engine = create_engine(db_url)
-                
-                self.is_connected = True
-                logging.info(f"成功连接到数据库 {db_config['dbname']} 在 {db_config['host']}:{db_config['port']}")
-                return True
-                
-            except Exception as e:
-                retry_count += 1
-                if retry_count >= self.max_retries:
-                    logging.error(f"数据库连接失败，已达最大重试次数: {str(e)}")
-                    self.is_connected = False
-                    return False
-                
-                logging.warning(f"数据库连接失败，将在{self.retry_delay}秒后重试 ({retry_count}/{self.max_retries}): {str(e)}")
-                time.sleep(self.retry_delay)
-                # 指数退避增加延迟
-                self.retry_delay *= 1.5
+        try:
+            # 创建psycopg2连接
+            self.conn = psycopg2.connect(
+                host=db_config['host'],
+                port=db_config['port'],
+                user=db_config['user'],
+                password=db_config['password'],
+                dbname=db_config['dbname'],
+                # 添加超时设置
+                connect_timeout=120,  # 连接超时，单位秒
+                options="-c statement_timeout=120000"  # 查询超时，单位毫秒
+            )
+            self.cursor = self.conn.cursor(cursor_factory=RealDictCursor)
+            
+            # 创建SQLAlchemy引擎，用于pandas查询
+            db_url = f"postgresql://{db_config['user']}:{db_config['password']}@{db_config['host']}:{db_config['port']}/{db_config['dbname']}"
+            self.engine = create_engine(db_url)
+            
+            logging.info(f"成功连接到数据库 {db_config['dbname']} 在 {db_config['host']}:{db_config['port']}")
+            return True
+        except Exception as e:
+            logging.error(f"数据库连接失败: {str(e)}")
+            return False
     
     def disconnect(self):
         """关闭数据库连接"""
-        try:
-            if self.cursor:
-                self.cursor.close()
-                self.cursor = None
-                
-            if self.conn:
-                self.conn.close()
-                self.conn = None
-                
-            if self.engine:
-                self.engine.dispose()
-                self.engine = None
-                
-            self.is_connected = False
-            logging.info("数据库连接已关闭")
-        except Exception as e:
-            logging.error(f"关闭数据库连接时出错: {str(e)}")
+        if self.cursor:
+            self.cursor.close()
+        if self.conn:
+            self.conn.close()
+        if self.engine:
+            self.engine.dispose()
+        logging.info("数据库连接已关闭")
     
     def check_connection(self):
         """
-        检查连接是否有效，如果无效则尝试重新连接
+        检查连接是否有效，如失效则重连
         
         Returns:
             bool: 连接有效返回True，否则返回False
         """
-        if not self.is_connected or not self.conn or not self.cursor:
-            logging.warning("数据库连接不存在或未初始化，尝试重新连接")
-            return self.connect()
-        
         try:
-            # 检查连接是否还有效
-            self.cursor.execute("SELECT 1")
-            result = self.cursor.fetchone()
-            return result is not None and result.get('?column?', None) == 1
-        except Exception as e:
-            logging.warning(f"数据库连接已断开，尝试重新连接: {str(e)}")
-            # 关闭旧连接
+            # 执行简单查询测试连接
+            if self.conn and not self.conn.closed:
+                self.cursor.execute("SELECT 1")
+                return True
+            else:
+                return self.connect()
+        except Exception:
+            # 连接失效，尝试重连
+            logging.warning("数据库连接已失效，尝试重连")
             self.disconnect()
-            # 重新连接
             return self.connect()
     
-    def execute_query(self, query, params=None, timeout=60, fetch_all=True):
+    def set_timeout(self, seconds):
+        """
+        安全设置查询超时
+        
+        Args:
+            seconds (int): 超时秒数
+            
+        Returns:
+            bool: 设置成功返回True，否则返回False
+        """
+        for attempt in range(self.max_retries):
+            try:
+                if not self.check_connection():
+                    continue
+                
+                # 使用SQL命令设置超时，可以在事务内执行
+                self.cursor.execute(f"SET statement_timeout = {seconds * 1000}")
+                return True
+            except Exception as e:
+                logging.warning(f"设置超时失败(尝试{attempt+1}/{self.max_retries}): {str(e)}")
+                time.sleep(self.retry_delay)  # 延迟重试
+        
+        logging.error("设置查询超时失败")
+        return False
+
+    def reset_timeout(self):
+        """
+        重置查询超时设置
+        
+        Returns:
+            bool: 重置成功返回True，否则返回False
+        """
+        for attempt in range(self.max_retries):
+            try:
+                if not self.check_connection():
+                    continue
+                
+                # 使用SQL命令重置超时，可以在事务内执行
+                self.cursor.execute("SET statement_timeout = 0")
+                return True
+            except Exception as e:
+                logging.warning(f"重置超时失败(尝试{attempt+1}/{self.max_retries}): {str(e)}")
+                time.sleep(self.retry_delay)  # 延迟重试
+        
+        logging.error("重置查询超时失败")
+        return False
+    
+    def execute_query(self, query, params=None, timeout=60, max_retries=3):
         """
         执行SQL查询并返回结果
         
@@ -132,62 +145,63 @@ class DBConnector:
             query (str): SQL查询语句
             params (tuple, optional): 查询参数
             timeout (int, optional): 查询超时秒数
-            fetch_all (bool, optional): 是否获取所有结果
+            max_retries (int, optional): 最大重试次数
             
         Returns:
             list: 查询结果列表
         """
+        # 使用指数退避重试策略
         retry_count = 0
+        retry_delay = self.retry_delay
         
-        while retry_count < self.max_retries:
+        while retry_count < max_retries:
             try:
-                # 检查连接是否有效
+                # 先检查连接
                 if not self.check_connection():
-                    raise Exception("无法建立数据库连接")
+                    retry_count += 1
+                    retry_delay *= 2  # 增加重试延迟
+                    logging.warning(f"连接检查失败，重试({retry_count}/{max_retries})")
+                    time.sleep(retry_delay)
+                    continue
                 
-                # 设置查询超时
-                self.cursor.execute(f"SET statement_timeout = '{timeout * 1000}'")
+                # 设置超时
+                if not self.set_timeout(timeout):
+                    retry_count += 1
+                    retry_delay *= 2
+                    logging.warning(f"设置超时失败，重试({retry_count}/{max_retries})")
+                    time.sleep(retry_delay)
+                    continue
                 
                 # 执行查询
                 self.cursor.execute(query, params)
+                result = self.cursor.fetchall()
                 
-                # 获取结果
-                if fetch_all:
-                    result = self.cursor.fetchall()
-                else:
-                    result = self.cursor.fetchone()
-                
-                # 重置超时设置
-                self.cursor.execute("RESET statement_timeout")
-                self.conn.commit()  # 提交事务，确保超时设置生效
+                # 重置超时
+                self.reset_timeout()
                 
                 return result
-                
             except Exception as e:
                 retry_count += 1
+                # 记录错误并回滚
                 logging.error(f"查询执行失败: {str(e)}")
                 logging.error(f"查询: {query}")
                 
                 # 回滚事务以避免 "transaction is aborted" 错误
                 if self.conn:
-                    try:
-                        self.conn.rollback()
-                    except:
-                        pass
+                    self.conn.rollback()
                 
-                if retry_count >= self.max_retries:
-                    logging.error(f"已达最大重试次数，查询失败")
-                    return [] if fetch_all else None
-                
-                # 如果是连接问题，尝试重新连接
-                if "connection" in str(e).lower() or "terminating" in str(e).lower():
-                    self.check_connection()
-                    
-                time.sleep(self.retry_delay)
-                # 指数退避增加延迟
-                self.retry_delay *= 1.5
+                if retry_count < max_retries:
+                    # 增加延迟并重试
+                    logging.info(f"将在 {retry_delay}秒后重试 ({retry_count}/{max_retries})")
+                    time.sleep(retry_delay)
+                    retry_delay *= 2  # 指数退避
+                else:
+                    logging.error("已达最大重试次数，查询失败")
+                    break
+        
+        return []
     
-    def execute_query_df(self, query, params=None, timeout=60):
+    def execute_query_df(self, query, params=None, timeout=60, max_retries=3):
         """
         执行SQL查询并返回pandas DataFrame
         
@@ -195,63 +209,61 @@ class DBConnector:
             query (str): SQL查询语句
             params (tuple, optional): 查询参数
             timeout (int, optional): 查询超时秒数
+            max_retries (int, optional): 最大重试次数
             
         Returns:
             DataFrame: 查询结果DataFrame
         """
+        # 使用指数退避重试策略
         retry_count = 0
+        retry_delay = self.retry_delay
         
-        while retry_count < self.max_retries:
+        while retry_count < max_retries:
             try:
-                # 检查连接是否有效
+                # 先检查连接
                 if not self.check_connection():
-                    raise Exception("无法建立数据库连接")
+                    retry_count += 1
+                    retry_delay *= 2
+                    logging.warning(f"连接检查失败，重试({retry_count}/{max_retries})")
+                    time.sleep(retry_delay)
+                    continue
                 
-                # 设置查询超时 (直接执行SQL，不使用cursor)
+                # 设置超时（使用连接参数设置）
+                if timeout > 0:
+                    self.set_timeout(timeout)
+                
+                # 使用SQLAlchemy引擎执行查询
                 if self.engine:
-                    with self.engine.connect() as conn:
-                        conn.execute(f"SET statement_timeout = '{timeout * 1000}'")
-                        
-                        # 使用SQLAlchemy引擎执行查询
-                        df = pd.read_sql_query(query, conn, params=params)
-                        
-                        # 重置超时设置
-                        conn.execute("RESET statement_timeout")
-                        return df
+                    df = pd.read_sql_query(query, self.engine, params=params)
                 else:
                     # 降级为直接使用psycopg2连接
-                    self.cursor.execute(f"SET statement_timeout = '{timeout * 1000}'")
-                    self.conn.commit()  # 确保设置生效
-                    
                     df = pd.read_sql_query(query, self.conn, params=params)
-                    
-                    self.cursor.execute("RESET statement_timeout")
-                    self.conn.commit()  # 确保重置生效
-                    return df
-                    
+                
+                # 重置超时
+                if timeout > 0:
+                    self.reset_timeout()
+                
+                return df
             except Exception as e:
                 retry_count += 1
+                # 记录错误并回滚
                 logging.error(f"查询执行失败: {str(e)}")
                 logging.error(f"查询: {query}")
                 
                 # 回滚事务以避免 "transaction is aborted" 错误
                 if self.conn:
-                    try:
-                        self.conn.rollback()
-                    except:
-                        pass
+                    self.conn.rollback()
                 
-                if retry_count >= self.max_retries:
-                    logging.error(f"已达最大重试次数，查询失败")
-                    return pd.DataFrame()
-                
-                # 如果是连接问题，尝试重新连接
-                if "connection" in str(e).lower() or "terminating" in str(e).lower():
-                    self.check_connection()
-                    
-                time.sleep(self.retry_delay)
-                # 指数退避增加延迟
-                self.retry_delay *= 1.5
+                if retry_count < max_retries:
+                    # 增加延迟并重试
+                    logging.info(f"将在 {retry_delay}秒后重试 ({retry_count}/{max_retries})")
+                    time.sleep(retry_delay)
+                    retry_delay *= 2  # 指数退避
+                else:
+                    logging.error("已达最大重试次数，查询失败")
+                    break
+        
+        return pd.DataFrame()
     
     def transaction(self):
         """
@@ -261,36 +273,21 @@ class DBConnector:
             Transaction: 事务上下文管理器
         """
         class Transaction:
-            def __init__(self, connector):
-                self.connector = connector
-                self.conn = connector.conn
+            def __init__(self, conn):
+                self.conn = conn
                 
             def __enter__(self):
-                # 确保连接有效
-                if not self.connector.check_connection():
-                    raise Exception("无法建立数据库连接")
                 return self.conn
                 
             def __exit__(self, exc_type, exc_val, exc_tb):
                 if exc_type is not None:
-                    logging.info(f"事务出错，回滚: {str(exc_val)}")
-                    try:
-                        self.conn.rollback()
-                        logging.info("事务已回滚")
-                    except Exception as e:
-                        logging.error(f"回滚事务失败: {str(e)}")
+                    self.conn.rollback()
+                    logging.info("事务已回滚")
                 else:
-                    try:
-                        self.conn.commit()
-                        logging.info("事务已提交")
-                    except Exception as e:
-                        logging.error(f"提交事务失败: {str(e)}")
-                        try:
-                            self.conn.rollback()
-                        except:
-                            pass
+                    self.conn.commit()
+                    logging.info("事务已提交")
                     
-        return Transaction(self)
+        return Transaction(self.conn)
     
     def get_tables(self):
         """
@@ -309,6 +306,40 @@ class DBConnector:
         result = self.execute_query(query, (self.schema,))
         return [record['table_name'] for record in result]
     
+    def get_table_size_estimate(self, table_name):
+        """
+        获取表大小估计
+        
+        Args:
+            table_name (str): 表名
+            
+        Returns:
+            dict: 包含行数和大小信息的字典
+        """
+        query = """
+            SELECT 
+                reltuples::bigint AS row_estimate,
+                pg_size_pretty(pg_total_relation_size(%s)) AS total_size,
+                pg_total_relation_size(%s) AS size_bytes
+            FROM pg_class c
+            JOIN pg_namespace n ON n.oid = c.relnamespace
+            WHERE n.nspname = %s AND c.relname = %s
+        """
+        full_table_name = f"{self.schema}.{table_name}"
+        result = self.execute_query(query, (full_table_name, full_table_name, self.schema, table_name))
+        
+        if result:
+            return {
+                'row_estimate': result[0]['row_estimate'],
+                'total_size': result[0]['total_size'],
+                'size_bytes': result[0]['size_bytes']
+            }
+        return {
+            'row_estimate': 0,
+            'total_size': '0 bytes',
+            'size_bytes': 0
+        }
+
     def get_table_info(self, table_name):
         """
         获取表的详细信息
@@ -434,9 +465,31 @@ class DBConnector:
         """
         return self.execute_query(query, (self.schema, table_name))
     
+    def get_primary_key(self, table_name):
+        """
+        获取表的主键
+        
+        Args:
+            table_name (str): 表名
+            
+        Returns:
+            list: 主键列名列表
+        """
+        query = """
+            SELECT a.attname as column_name
+            FROM pg_index i
+            JOIN pg_attribute a ON a.attrelid = i.indrelid AND a.attnum = ANY(i.indkey)
+            WHERE i.indrelid = %s::regclass
+            AND i.indisprimary
+        """
+        full_table_name = f"{self.schema}.{table_name}"
+        result = self.execute_query(query, (full_table_name,))
+        
+        return [col['column_name'] for col in result]
+        
     def get_column_statistics(self, table_name, column_name):
         """
-        获取列的统计信息
+        获取列的统计信息 - 优化版本，适用于大表
         
         Args:
             table_name (str): 表名
@@ -450,32 +503,44 @@ class DBConnector:
             column_info = self.get_column_type(table_name, column_name)
             data_type = column_info.get('data_type', '').lower()
             
-            # 检查是否是文本类型, 以便区别处理
-            is_text = data_type in ('text', 'varchar', 'character varying')
+            # 获取表大小估计
+            size_info = self.get_table_size_estimate(table_name)
+            row_estimate = size_info['row_estimate']
+            
+            # 对大表使用不同的采样策略
+            sample_clause = ""
+            if row_estimate > 100000:
+                sample_percent = min(10.0, 1000000 / row_estimate * 100)
+                sample_clause = f"TABLESAMPLE SYSTEM({sample_percent})"
+                logging.info(f"表 {table_name} 较大 ({row_estimate} 行)，使用 {sample_percent:.2f}% 采样")
             
             # 计算基本的计数统计信息
-            query = sql.SQL("""
+            count_query = sql.SQL("""
                 SELECT 
                     COUNT(*) AS total_count,
                     COUNT({}) AS non_null_count,
                     COUNT(*) - COUNT({}) AS null_count
-                FROM {}.{}
+                FROM {}.{} {}
             """).format(
                 sql.Identifier(column_name),
                 sql.Identifier(column_name),
                 sql.Identifier(self.schema),
-                sql.Identifier(table_name)
+                sql.Identifier(table_name),
+                sql.SQL(sample_clause)
             )
             
-            with self.transaction():
-                self.cursor.execute("SET statement_timeout = '30000'")  # 30秒
-                result = self.execute_query(query.as_string(self.conn))
-                self.cursor.execute("RESET statement_timeout")
+            # 使用更短的超时
+            self.set_timeout(15)  # 15秒
+            result = self.execute_query(count_query.as_string(self.conn))
+            self.reset_timeout()
             
             if not result:
                 return {}
             
             stats = dict(result[0])
+            
+            # 检查是否是文本类型
+            is_text = data_type in ('text', 'varchar', 'character varying')
             
             # 对文本类型，获取长度统计信息
             if is_text:
@@ -486,7 +551,7 @@ class DBConnector:
                         AVG(LENGTH({})) AS avg_length,
                         COUNT(DISTINCT {}) AS distinct_count
                     FROM (
-                        SELECT {} FROM {}.{} 
+                        SELECT {} FROM {}.{} {}
                         WHERE {} IS NOT NULL
                         LIMIT 1000
                     ) AS sample
@@ -498,127 +563,104 @@ class DBConnector:
                     sql.Identifier(column_name),
                     sql.Identifier(self.schema),
                     sql.Identifier(table_name),
+                    sql.SQL(sample_clause),
                     sql.Identifier(column_name)
                 )
                 
-                with self.transaction():
-                    self.cursor.execute("SET statement_timeout = '30000'")
-                    text_stats = self.execute_query(text_query.as_string(self.conn))
-                    self.cursor.execute("RESET statement_timeout")
+                self.set_timeout(15)
+                text_stats = self.execute_query(text_query.as_string(self.conn))
+                self.reset_timeout()
                 
                 if text_stats:
                     stats.update(dict(text_stats[0]))
             
             # 根据数据类型执行特定的统计分析
             if data_type in ('integer', 'bigint', 'smallint', 'numeric', 'decimal', 'real', 'double precision'):
-                # 数值类型
-                num_query = sql.SQL("""
-                    SELECT 
-                        MIN({}) AS min_value,
-                        MAX({}) AS max_value,
-                        AVG({}) AS avg_value,
-                        PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY {}) AS median_value,
-                        STDDEV({}) AS stddev_value
-                    FROM {}.{}
-                    WHERE {} IS NOT NULL
-                    LIMIT 10000
-                """).format(
-                    sql.Identifier(column_name),
-                    sql.Identifier(column_name),
-                    sql.Identifier(column_name),
-                    sql.Identifier(column_name),
-                    sql.Identifier(column_name),
-                    sql.Identifier(self.schema),
-                    sql.Identifier(table_name),
-                    sql.Identifier(column_name)
-                )
+                # 对于大表，使用近似统计
+                if row_estimate > 100000:
+                    num_query = sql.SQL("""
+                        SELECT 
+                            MIN({}) AS min_value,
+                            MAX({}) AS max_value,
+                            AVG({}) AS avg_value,
+                            PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY {}) AS median_value
+                        FROM {}.{} {}
+                        WHERE {} IS NOT NULL
+                    """).format(
+                        sql.Identifier(column_name),
+                        sql.Identifier(column_name),
+                        sql.Identifier(column_name),
+                        sql.Identifier(column_name),
+                        sql.Identifier(self.schema),
+                        sql.Identifier(table_name),
+                        sql.SQL(sample_clause),
+                        sql.Identifier(column_name)
+                    )
+                else:
+                    # 对于小表，使用完整统计
+                    num_query = sql.SQL("""
+                        SELECT 
+                            MIN({}) AS min_value,
+                            MAX({}) AS max_value,
+                            AVG({}) AS avg_value,
+                            PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY {}) AS median_value,
+                            STDDEV({}) AS stddev_value
+                        FROM {}.{} {}
+                        WHERE {} IS NOT NULL
+                        LIMIT 10000
+                    """).format(
+                        sql.Identifier(column_name),
+                        sql.Identifier(column_name),
+                        sql.Identifier(column_name),
+                        sql.Identifier(column_name),
+                        sql.Identifier(column_name),
+                        sql.Identifier(self.schema),
+                        sql.Identifier(table_name),
+                        sql.SQL(sample_clause),
+                        sql.Identifier(column_name)
+                    )
                 
-                with self.transaction():
-                    self.cursor.execute("SET statement_timeout = '30000'")
-                    num_stats = self.execute_query(num_query.as_string(self.conn))
-                    self.cursor.execute("RESET statement_timeout")
+                self.set_timeout(20)
+                num_stats = self.execute_query(num_query.as_string(self.conn))
+                self.reset_timeout()
                 
                 if num_stats:
                     stats.update(dict(num_stats[0]))
-                    
-            elif data_type == 'boolean':
-                # 布尔类型特殊处理
-                bool_query = sql.SQL("""
-                    SELECT 
-                        CAST(MIN(CAST({} AS INT)) AS BOOLEAN) AS min_value,
-                        CAST(MAX(CAST({} AS INT)) AS BOOLEAN) AS max_value,
-                        AVG(CAST({} AS INT)) AS avg_value,
-                        PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY CAST({} AS INT)) AS median_value,
-                        STDDEV(CAST({} AS INT)) AS stddev_value
-                    FROM {}.{}
+            
+            # 计算基数率（唯一值比例）- 使用限制行数或TABLESAMPLE
+            if row_estimate > 100000:
+                # 对于大表，使用近似唯一值计数
+                cardinality_query = sql.SQL("""
+                    SELECT COUNT(DISTINCT {}) AS distinct_count
+                    FROM {}.{} {}
                     WHERE {} IS NOT NULL
-                    LIMIT 10000
                 """).format(
                     sql.Identifier(column_name),
-                    sql.Identifier(column_name),
-                    sql.Identifier(column_name),
+                    sql.Identifier(self.schema),
+                    sql.Identifier(table_name),
+                    sql.SQL(sample_clause),
+                    sql.Identifier(column_name)
+                )
+            else:
+                # 对于小表，使用完整唯一值计数
+                cardinality_query = sql.SQL("""
+                    SELECT COUNT(DISTINCT {}) AS distinct_count
+                    FROM (
+                        SELECT {} FROM {}.{} 
+                        WHERE {} IS NOT NULL
+                        LIMIT 10000
+                    ) AS limited_data
+                """).format(
                     sql.Identifier(column_name),
                     sql.Identifier(column_name),
                     sql.Identifier(self.schema),
                     sql.Identifier(table_name),
                     sql.Identifier(column_name)
                 )
-                
-                with self.transaction():
-                    self.cursor.execute("SET statement_timeout = '30000'")
-                    bool_stats = self.execute_query(bool_query.as_string(self.conn))
-                    self.cursor.execute("RESET statement_timeout")
-                
-                if bool_stats:
-                    stats.update(dict(bool_stats[0]))
             
-            elif data_type in ('timestamp', 'timestamp without time zone', 'timestamp with time zone', 'date', 'time'):
-                # 日期时间类型
-                date_query = sql.SQL("""
-                    SELECT 
-                        MIN({})::TEXT AS min_value,
-                        MAX({})::TEXT AS max_value,
-                        COUNT(DISTINCT {}) AS distinct_count
-                    FROM {}.{}
-                    WHERE {} IS NOT NULL
-                    LIMIT 10000
-                """).format(
-                    sql.Identifier(column_name),
-                    sql.Identifier(column_name),
-                    sql.Identifier(column_name),
-                    sql.Identifier(self.schema),
-                    sql.Identifier(table_name),
-                    sql.Identifier(column_name)
-                )
-                
-                with self.transaction():
-                    self.cursor.execute("SET statement_timeout = '30000'")
-                    date_stats = self.execute_query(date_query.as_string(self.conn))
-                    self.cursor.execute("RESET statement_timeout")
-                
-                if date_stats:
-                    stats.update(dict(date_stats[0]))
-            
-            # 计算基数率（唯一值比例）- 使用限制行数
-            cardinality_query = sql.SQL("""
-                SELECT COUNT(DISTINCT {}) AS distinct_count
-                FROM (
-                    SELECT {} FROM {}.{} 
-                    WHERE {} IS NOT NULL
-                    LIMIT 10000
-                ) AS limited_data
-            """).format(
-                sql.Identifier(column_name),
-                sql.Identifier(column_name),
-                sql.Identifier(self.schema),
-                sql.Identifier(table_name),
-                sql.Identifier(column_name)
-            )
-            
-            with self.transaction():
-                self.cursor.execute("SET statement_timeout = '30000'")
-                distinct_result = self.execute_query(cardinality_query.as_string(self.conn))
-                self.cursor.execute("RESET statement_timeout")
+            self.set_timeout(20)
+            distinct_result = self.execute_query(cardinality_query.as_string(self.conn))
+            self.reset_timeout()
             
             if distinct_result and distinct_result[0]['distinct_count'] is not None and stats.get('non_null_count', 0) > 0:
                 sample_size = min(stats['non_null_count'], 10000)  # 限制为样本大小或者实际非空值数量
@@ -631,10 +673,7 @@ class DBConnector:
             logging.error(f"获取列统计信息失败: {str(e)}")
             # 回滚事务以避免 "transaction is aborted" 错误
             if self.conn:
-                try:
-                    self.conn.rollback()
-                except:
-                    pass
+                self.conn.rollback()
             return {}
 
     def get_column_type(self, table_name, column_name):
@@ -667,114 +706,201 @@ class DBConnector:
     
     def get_sample_data(self, table_name, columns=None, sample_size=1000, method='random'):
         """
-        从表中获取采样数据
+        从表中获取采样数据，针对大表优化
         
         Args:
             table_name (str): 表名
             columns (list, optional): 列名列表，如果为None则获取所有列
             sample_size (int, optional): 采样大小
-            method (str, optional): 采样方法，'random'或'sequential'
+            method (str, optional): 采样方法，'random', 'sequential', 'system'
             
         Returns:
             DataFrame: 采样数据
         """
         try:
-            # 检查连接是否有效
-            if not self.check_connection():
-                raise Exception("无法建立数据库连接")
-                
-            # 构建选择的列
-            if columns:
-                columns_sql = sql.SQL(', ').join(sql.Identifier(col) for col in columns)
+            # 获取表大小信息
+            size_info = self.get_table_size_estimate(table_name)
+            row_estimate = size_info['row_estimate']
+            
+            # 针对大小确定采样策略
+            if row_estimate > 1000000:  # 超过100万行
+                return self._sample_very_large_table(table_name, columns, sample_size, method)
+            elif row_estimate > 100000:  # 超过10万行
+                return self._sample_large_table(table_name, columns, sample_size, method)
             else:
-                columns_sql = sql.SQL('*')
-            
-            # 首先检查表的大小，以决定是否使用限制的采样方法
-            size_query = sql.SQL("""
-                SELECT reltuples::bigint AS estimate_rows
-                FROM pg_class
-                WHERE relname = {}
-            """).format(sql.Literal(table_name))
-            
-            size_result = self.execute_query(size_query.as_string(self.conn))
-            estimated_rows = size_result[0]['estimate_rows'] if size_result else 0
-            
-            # 对于大表使用更高效的采样
-            if estimated_rows > 1000000:  # 百万行以上的表
-                if method == 'random':
-                    query = sql.SQL("""
-                        SELECT {}
-                        FROM {}.{}
-                        TABLESAMPLE SYSTEM(0.1)  
-                        LIMIT %s
-                    """).format(
-                        columns_sql,
-                        sql.Identifier(self.schema),
-                        sql.Identifier(table_name)
-                    )
-                else:
-                    query = sql.SQL("""
-                        SELECT {}
-                        FROM {}.{}
-                        LIMIT %s
-                    """).format(
-                        columns_sql,
-                        sql.Identifier(self.schema),
-                        sql.Identifier(table_name)
-                    )
-            else:
-                # 对于小表使用原来的方法
-                if method == 'random':
-                    query = sql.SQL("""
-                        SELECT {}
-                        FROM {}.{}
-                        ORDER BY RANDOM()
-                        LIMIT %s
-                    """).format(
-                        columns_sql,
-                        sql.Identifier(self.schema),
-                        sql.Identifier(table_name)
-                    )
-                else:  # 顺序采样
-                    query = sql.SQL("""
-                        SELECT {}
-                        FROM {}.{}
-                        LIMIT %s
-                    """).format(
-                        columns_sql,
-                        sql.Identifier(self.schema),
-                        sql.Identifier(table_name)
-                    )
-            
-            # 使用事务确保语句超时设置生效
-            with self.transaction():
-                # 设置较长的超时
-                self.cursor.execute("SET statement_timeout = '60000'")  # 60秒
-                
-                # 使用SQLAlchemy引擎执行查询
-                if self.engine:
-                    df = pd.read_sql(query.as_string(self.conn), self.engine, params=(sample_size,))
-                else:
-                    df = pd.read_sql_query(query.as_string(self.conn), self.conn, params=(sample_size,))
-                
-                # 重置超时
-                self.cursor.execute("RESET statement_timeout")
-                    
-            if df.empty:
-                logging.warning(f"表 {table_name} 采样返回空DataFrame")
-            
-            return df
+                return self._sample_regular_table(table_name, columns, sample_size, method)
                 
         except Exception as e:
             logging.error(f"获取采样数据失败: {str(e)}")
             # 回滚事务以避免 "transaction is aborted" 错误
             if self.conn:
-                try:
-                    self.conn.rollback()
-                except:
-                    pass
+                self.conn.rollback()
             return pd.DataFrame()
     
+    def _sample_very_large_table(self, table_name, columns=None, sample_size=100, method='system'):
+        """
+        从超大表中获取采样数据
+        
+        Args:
+            table_name (str): 表名
+            columns (list, optional): 列名列表
+            sample_size (int, optional): 采样大小
+            method (str, optional): 采样方法
+            
+        Returns:
+            DataFrame: 采样数据
+        """
+        logging.info(f"使用超大表采样策略采样表 {table_name}")
+        
+        # 确定采样百分比，确保不会返回太多行
+        size_info = self.get_table_size_estimate(table_name)
+        row_estimate = size_info['row_estimate']
+        
+        # 根据表大小计算采样百分比，确保获取合理数量的样本
+        sample_percent = min(0.1, (sample_size / row_estimate) * 100)
+        logging.info(f"表 {table_name} 估计有 {row_estimate} 行，使用 {sample_percent:.4f}% 系统采样")
+        
+        # 构建选择的列
+        if columns:
+            columns_sql = sql.SQL(', ').join(sql.Identifier(col) for col in columns)
+        else:
+            columns_sql = sql.SQL('*')
+        
+        # 使用TABLESAMPLE系统采样
+        query = sql.SQL("""
+            SELECT {}
+            FROM {}.{}
+            TABLESAMPLE SYSTEM({})
+            LIMIT %s
+        """).format(
+            columns_sql,
+            sql.Identifier(self.schema),
+            sql.Identifier(table_name),
+            sql.SQL(str(sample_percent))
+        )
+        
+        # 使用较短的超时并执行查询
+        return self.execute_query_df(query.as_string(self.conn), params=(sample_size,), timeout=30)
+    
+    def _sample_large_table(self, table_name, columns=None, sample_size=100, method='system'):
+        """
+        从大表中获取采样数据
+        
+        Args:
+            table_name (str): 表名
+            columns (list, optional): 列名列表
+            sample_size (int, optional): 采样大小
+            method (str, optional): 采样方法
+            
+        Returns:
+            DataFrame: 采样数据
+        """
+        logging.info(f"使用大表采样策略采样表 {table_name}")
+        
+        # 构建选择的列
+        if columns:
+            columns_sql = sql.SQL(', ').join(sql.Identifier(col) for col in columns)
+        else:
+            columns_sql = sql.SQL('*')
+        
+        if method == 'system':
+            # 使用TABLESAMPLE系统采样
+            query = sql.SQL("""
+                SELECT {}
+                FROM {}.{}
+                TABLESAMPLE SYSTEM(1)
+                LIMIT %s
+            """).format(
+                columns_sql,
+                sql.Identifier(self.schema),
+                sql.Identifier(table_name)
+            )
+        elif method == 'random':
+            # 随机采样
+            query = sql.SQL("""
+                SELECT {}
+                FROM {}.{}
+                ORDER BY random()
+                LIMIT %s
+            """).format(
+                columns_sql,
+                sql.Identifier(self.schema),
+                sql.Identifier(table_name)
+            )
+        else:
+            # 顺序采样
+            query = sql.SQL("""
+                SELECT {}
+                FROM {}.{}
+                LIMIT %s
+            """).format(
+                columns_sql,
+                sql.Identifier(self.schema),
+                sql.Identifier(table_name)
+            )
+        
+        # 使用较短的超时并执行查询
+        return self.execute_query_df(query.as_string(self.conn), params=(sample_size,), timeout=30)
+    
+    def _sample_regular_table(self, table_name, columns=None, sample_size=1000, method='random'):
+        """
+        从普通大小的表中获取采样数据
+        
+        Args:
+            table_name (str): 表名
+            columns (list, optional): 列名列表
+            sample_size (int, optional): 采样大小
+            method (str, optional): 采样方法
+            
+        Returns:
+            DataFrame: 采样数据
+        """
+        # 构建选择的列
+        if columns:
+            columns_sql = sql.SQL(', ').join(sql.Identifier(col) for col in columns)
+        else:
+            columns_sql = sql.SQL('*')
+        
+        # 对于普通表使用原来的方法
+        if method == 'random':
+            query = sql.SQL("""
+                SELECT {}
+                FROM {}.{}
+                ORDER BY RANDOM()
+                LIMIT %s
+            """).format(
+                columns_sql,
+                sql.Identifier(self.schema),
+                sql.Identifier(table_name)
+            )
+        else:  # 顺序采样
+            query = sql.SQL("""
+                SELECT {}
+                FROM {}.{}
+                LIMIT %s
+            """).format(
+                columns_sql,
+                sql.Identifier(self.schema),
+                sql.Identifier(table_name)
+            )
+        
+        # 使用较短的超时
+        self.set_timeout(30)  # 30秒
+        
+        # 使用SQLAlchemy引擎执行查询
+        if self.engine:
+            df = pd.read_sql(query.as_string(self.conn), self.engine, params=(sample_size,))
+        else:
+            # 降级为直接使用psycopg2连接
+            df = pd.read_sql_query(query.as_string(self.conn), self.conn, params=(sample_size,))
+        
+        # 重置超时
+        self.reset_timeout()
+                
+        if df.empty:
+            logging.warning(f"表 {table_name} 采样返回空DataFrame")
+        return df
+        
     def get_foreign_keys(self, table_name):
         """
         获取表的外键关系

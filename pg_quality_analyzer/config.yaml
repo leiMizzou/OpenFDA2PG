@@ -13,8 +13,13 @@ database:
 analysis:
   sample_size: 100       # 减少采样大小以降低内存占用和提高性能
   sample_method: random  # random采样更高效
-  max_tables: 20         # 限制一次分析的表数量
-  exclude_tables: ["adverse_events", "event_texts", "event_devices"]  # 排除可能引起超时的大表
+  max_tables: 50         # 限制一次分析的表数量
+  large_table_threshold: 100000000   # 大表阈值（行数）
+  very_large_table_threshold: 1000000000  # 超大表阈值（行数）
+  large_table_sample_percent: 0.1   # 大表采样百分比
+  very_large_table_sample_percent: 0.01  # 超大表采样百分比
+  use_large_table_mode: true   # 启用大表模式 - 设置为true
+  exclude_tables: []  # 保留空列表，不排除任何表
   include_tables: []     # 可以指定仅分析特定表
 
 # 质量检查配置
@@ -36,7 +41,7 @@ gemini:
   model: gemini-2.0-flash  # 使用更快的模型
   temperature: 0.2
   max_tokens: 1024  # 减少token数
-  enable: false     # 暂时禁用AI功能
+  enable: true     # 暂时禁用AI功能
   custom_check_generation: false
   unstructured_analysis: false
 

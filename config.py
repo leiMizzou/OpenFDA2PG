@@ -5,11 +5,11 @@ import os
 
 # 数据库连接配置 - 修改为您的实际连接信息
 DB_CONFIG = {
-    'host': '192.168.2.2',
+    'host': 'localhost',
     'port': 5432,
     'dbname': 'fda_device',
     'user': 'postgres',
-    'password': '123456'
+    'password': '12345687'
 }
 
 # 配置文件路径 - 根据实际存放文件结构进行设置

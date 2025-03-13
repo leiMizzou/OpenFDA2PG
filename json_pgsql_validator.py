@@ -27,7 +27,7 @@ DATA_DIRS = {
 
 # Database configuration - update with actual credentials
 DB_CONFIG = {
-    'host': '192.168.2.2',
+    'host': 'localhost',
     'port': 5432,
     'dbname': 'fda_device',
     'user': 'postgres',

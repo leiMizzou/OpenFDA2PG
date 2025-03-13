@@ -4,6 +4,7 @@ Schema分析模块，负责分析数据库schema、表结构和关系
 import logging
 import pandas as pd
 from collections import defaultdict
+from tqdm import tqdm
 
 class SchemaAnalyzer:
     """PostgreSQL数据库Schema分析器"""
@@ -22,6 +23,8 @@ class SchemaAnalyzer:
         self.schema_info = {}
         self.tables_info = {}
         self.relationship_graph = None
+        self.large_table_threshold = config.get('analysis.large_table_threshold', 100000)
+        self.very_large_table_threshold = config.get('analysis.very_large_table_threshold', 1000000)
     
     def analyze_schema(self):
         """
@@ -38,11 +41,37 @@ class SchemaAnalyzer:
         # 应用表过滤
         filtered_tables = self._filter_tables(tables)
         
-        # 分析每个表
+        # 获取表大小信息
+        table_sizes = {}
+        for table_name in tqdm(filtered_tables, desc="评估表大小"):
+            try:
+                size_info = self.db.get_table_size_estimate(table_name)
+                table_sizes[table_name] = size_info
+            except Exception as e:
+                logging.error(f"评估表 {table_name} 大小失败: {str(e)}")
+        
+        # 分析每个表，对大表应用不同的分析策略
         tables_info = {}
-        for table_name in filtered_tables:
+        for table_name in tqdm(filtered_tables, desc="分析表结构"):
             logging.info(f"分析表: {table_name}")
-            table_info = self._analyze_table(table_name)
+            
+            # 获取表大小信息
+            size_info = table_sizes.get(table_name, {'row_estimate': 0})
+            row_estimate = size_info.get('row_estimate', 0)
+            
+            # 根据表大小选择分析策略
+            if row_estimate > self.very_large_table_threshold:
+                # 超大表使用轻量级分析
+                table_info = self._analyze_very_large_table(table_name, size_info)
+                logging.info(f"对超大表 {table_name} ({row_estimate} 行) 完成轻量级分析")
+            elif row_estimate > self.large_table_threshold:
+                # 大表使用中等级别分析
+                table_info = self._analyze_large_table(table_name, size_info)
+                logging.info(f"对大表 {table_name} ({row_estimate} 行) 完成中等级别分析")
+            else:
+                # 普通表使用完整分析
+                table_info = self._analyze_table(table_name)
+            
             tables_info[table_name] = table_info
         
         # 构建表关系图
@@ -97,7 +126,7 @@ class SchemaAnalyzer:
     
     def _analyze_table(self, table_name):
         """
-        分析单个表
+        分析单个普通表
         
         Args:
             table_name (str): 表名
@@ -152,6 +181,146 @@ class SchemaAnalyzer:
                 })
         
         table_analysis['high_null_columns'] = high_null_columns
+        
+        return table_analysis
+    
+    def _analyze_large_table(self, table_name, size_info):
+        """
+        分析大表（10万-100万行）- 使用中等级别分析
+        
+        Args:
+            table_name (str): 表名
+            size_info (dict): 表大小信息
+            
+        Returns:
+            dict: 表分析结果
+        """
+        # 获取表基本信息
+        table_info = self.db.get_table_info(table_name)
+        
+        # 合并大小信息
+        table_info.update(size_info)
+        
+        # 获取列信息 - 不获取详细统计
+        columns = self.db.get_columns(table_name)
+        column_info = []
+        
+        # 仅为前10列获取基本统计信息
+        priority_columns = columns[:10]
+        
+        for column in columns:
+            column_data = dict(column)
+            
+            # 只为优先列获取统计信息
+            if column in priority_columns:
+                try:
+                    # 获取简化的列统计信息
+                    stats = self.db.get_column_statistics(table_name, column['column_name'])
+                    column_data['statistics'] = stats
+                    
+                    # 计算空值率
+                    if stats.get('total_count', 0) > 0:
+                        column_data['null_rate'] = stats.get('null_count', 0) / stats['total_count']
+                    else:
+                        column_data['null_rate'] = 0
+                except Exception as e:
+                    logging.warning(f"获取大表 {table_name} 列 {column['column_name']} 统计信息失败: {str(e)}")
+                    column_data['statistics'] = {}
+                    column_data['null_rate'] = 0
+            else:
+                column_data['statistics'] = {}
+                column_data['null_rate'] = 0
+                
+            column_info.append(column_data)
+        
+        # 获取外键关系
+        foreign_keys = self.db.get_foreign_keys(table_name)
+        
+        # 构建表分析结果
+        table_analysis = {
+            'name': table_name,
+            'info': table_info,
+            'columns': column_info,
+            'foreign_keys': foreign_keys,
+            'column_count': len(column_info),
+            'is_large_table': True
+        }
+        
+        # 计算高空值率的列 - 仅对获取了统计信息的列
+        high_null_columns = []
+        null_threshold = self.config.get('quality_checks.null_threshold')
+        
+        for column in column_info:
+            if column.get('null_rate', 0) > null_threshold:
+                high_null_columns.append({
+                    'name': column['column_name'],
+                    'null_rate': column['null_rate']
+                })
+        
+        table_analysis['high_null_columns'] = high_null_columns
+        
+        return table_analysis
+    
+    def _analyze_very_large_table(self, table_name, size_info):
+        """
+        分析超大表（>100万行）- 使用轻量级分析
+        
+        Args:
+            table_name (str): 表名
+            size_info (dict): 表大小信息
+            
+        Returns:
+            dict: 表分析结果
+        """
+        # 获取表基本信息 - 不获取索引和约束信息以减少查询
+        try:
+            query = """
+                SELECT 
+                    c.reltuples::bigint AS approximate_row_count,
+                    pg_size_pretty(pg_total_relation_size(c.oid)) AS total_size,
+                    pg_total_relation_size(c.oid) AS total_bytes,
+                    obj_description(c.oid) AS description
+                FROM 
+                    pg_class c
+                JOIN 
+                    pg_namespace n ON n.oid = c.relnamespace
+                WHERE 
+                    n.nspname = %s
+                    AND c.relname = %s
+                    AND c.relkind = 'r'
+            """
+            result = self.db.execute_query(query, (self.schema, table_name))
+            table_info = dict(result[0]) if result else {}
+        except Exception as e:
+            logging.error(f"获取超大表 {table_name} 基本信息失败: {str(e)}")
+            table_info = {}
+        
+        # 合并大小信息
+        table_info.update(size_info)
+        
+        # 获取列信息 - 不获取统计
+        columns = self.db.get_columns(table_name)
+        column_info = []
+        
+        for column in columns:
+            column_data = dict(column)
+            column_data['statistics'] = {}
+            column_data['null_rate'] = 0  # 不计算真实空值率
+            column_info.append(column_data)
+        
+        # 获取外键关系
+        foreign_keys = self.db.get_foreign_keys(table_name)
+        
+        # 构建表分析结果
+        table_analysis = {
+            'name': table_name,
+            'info': table_info,
+            'columns': column_info,
+            'foreign_keys': foreign_keys,
+            'column_count': len(column_info),
+            'is_very_large_table': True,
+            'high_null_columns': []  # 不分析高空值率列
+        }
         
         return table_analysis
     
@@ -227,7 +396,9 @@ class SchemaAnalyzer:
                 'total_size': total_size,
                 'avg_null_rate': avg_null_rate,
                 'relationship_count': len(self.relationship_graph.get(table_name, [])),
-                'high_null_columns': len(table_info['high_null_columns'])
+                'high_null_columns': len(table_info['high_null_columns']),
+                'is_large_table': table_info.get('is_large_table', False),
+                'is_very_large_table': table_info.get('is_very_large_table', False)
             })
         
         # 创建DataFrame并排序
@@ -265,3 +436,64 @@ class SchemaAnalyzer:
         type_counts.columns = ['data_type', 'count']
         
         return type_counts
+        
+    def detect_potential_issues(self):
+        """
+        检测schema中的潜在问题
+        
+        Returns:
+            list: 潜在问题列表
+        """
+        issues = []
+        
+        # 检查缺少主键的表
+        for table_name, table_info in self.tables_info.items():
+            # 跳过超大表，因为可能没有获取索引信息
+            if table_info.get('is_very_large_table'):
+                continue
+                
+            has_primary_key = False
+            for index in table_info['info'].get('indexes', []):
+                if index.get('is_primary'):
+                    has_primary_key = True
+                    break
+            
+            if not has_primary_key:
+                issues.append({
+                    'table': table_name,
+                    'issue_type': 'missing_primary_key',
+                    'description': f"表 {table_name} 缺少主键"
+                })
+        
+        # 检查没有关系的表
+        tables_without_relations = []
+        for table_name in self.tables_info:
+            relations = self.relationship_graph.get(table_name, [])
+            if not relations:
+                tables_without_relations.append(table_name)
+        
+        if tables_without_relations:
+            issues.append({
+                'tables': tables_without_relations,
+                'issue_type': 'isolated_tables',
+                'description': f"有 {len(tables_without_relations)} 个表没有与其他表的关系"
+            })
+        
+        # 检查空值率高的表
+        high_null_tables = []
+        for table_name, table_info in self.tables_info.items():
+            if len(table_info['high_null_columns']) > 3:
+                high_null_tables.append({
+                    'table': table_name,
+                    'null_columns': len(table_info['high_null_columns']),
+                    'column_count': table_info['column_count']
+                })
+        
+        if high_null_tables:
+            issues.append({
+                'tables': high_null_tables,
+                'issue_type': 'high_null_rate',
+                'description': f"有 {len(high_null_tables)} 个表存在多个高空值率列"
+            })
+        
+        return issues
