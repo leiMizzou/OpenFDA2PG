@@ -16,7 +16,7 @@ from tqdm.auto import tqdm
 from typing import Dict, List, Any, Tuple, Optional
 
 # Base directory configurations - update with actual paths
-BASE_DIR = '../datafiles/unzip/device'  # Root directory
+BASE_DIR = '/Volumes/Lexar SSD NM1090 PRO 2TB/GitHub/FAERS/datafiles/unzip/device/'  # Root directory
 DATA_DIRS = {
     'classification_dir': os.path.join(BASE_DIR, 'classification'),
     'enforcement_dir': os.path.join(BASE_DIR, 'enforcement'),
