@@ -37,7 +37,7 @@ quality_checks:
 
 # Gemini API配置
 gemini:
-  api_key: AIzaSyCeV5Cu43yzOEkqFnHsU8Vi2RDDukYznWc
+  api_key: AIzaSyCeV5Cu43yzOEkqFnHsU8Vi2RDDukYznW
   model: gemini-2.0-flash  # 使用更快的模型
   temperature: 0.2
   max_tokens: 1024  # 减少token数
