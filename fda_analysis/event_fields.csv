@@ -1,0 +1,147 @@
+table_name,field_name,original_path,is_array,occurrence_count,occurrence_percent,sample_value,data_type
+event,manufacturer_contact_zip_ext,event.manufacturer_contact_zip_ext,No,709497,100.0%,[No sample available],VARCHAR(128)
+event,manufacturer_g1_address_2,event.manufacturer_g1_address_2,No,709497,100.0%,[No sample available],TEXT
+event,event_location,event.event_location,No,709497,100.0%,[No sample available],VARCHAR(255)
+event,report_to_fda,event.report_to_fda,No,709497,100.0%,[No sample available],TEXT
+event,manufacturer_contact_t_name,event.manufacturer_contact_t_name,No,709497,100.0%,MS,TEXT
+event,manufacturer_contact_state,event.manufacturer_contact_state,No,709497,100.0%,CA,VARCHAR(255)
+event,manufacturer_link_flag,event.manufacturer_link_flag,No,709497,100.0%,Y,BOOLEAN
+event,manufacturer_contact_address_2,event.manufacturer_contact_address_2,No,709497,100.0%,[No sample available],TEXT
+event,manufacturer_g1_city,event.manufacturer_g1_city,No,709497,100.0%,[No sample available],VARCHAR(255)
+event,manufacturer_contact_address_1,event.manufacturer_contact_address_1,No,709497,100.0%,6340 SEQUENCE DR.,TEXT
+event,manufacturer_contact_pcity,event.manufacturer_contact_pcity,No,709497,100.0%,85820002,DATE
+event,event_type,event.event_type,No,709497,100.0%,Malfunction,VARCHAR(128)
+event,report_number,event.report_number,No,709497,100.0%,3004753838-2024-305461,VARCHAR(128)
+event,type_of_report,event.type_of_report,No,709497,100.0%,[Array] 示例: 'Initial submission',TEXT
+event,type_of_report[],event.type_of_report[],Yes,709497,100.0%,Initial submission,TEXT
+event,product_problem_flag,event.product_problem_flag,No,709497,100.0%,Y,BOOLEAN
+event,date_received,event.date_received,No,709497,100.0%,20241120,DATE
+event,manufacturer_address_2,event.manufacturer_address_2,No,709497,100.0%,[No sample available],TEXT
+event,pma_pmn_number,event.pma_pmn_number,No,709497,100.0%,DEN170088,VARCHAR(128)
+event,reprocessed_and_reused_flag,event.reprocessed_and_reused_flag,No,709497,100.0%,N,BOOLEAN
+event,manufacturer_address_1,event.manufacturer_address_1,No,709497,100.0%,[No sample available],TEXT
+event,exemption_number,event.exemption_number,No,709497,100.0%,[No sample available],VARCHAR(128)
+event,manufacturer_contact_zip_code,event.manufacturer_contact_zip_code,No,709497,100.0%,92121,VARCHAR(128)
+event,reporter_occupation_code,event.reporter_occupation_code,No,709497,100.0%,OTHER,TEXT
+event,manufacturer_contact_plocal,event.manufacturer_contact_plocal,No,709497,100.0%,8582000200,VARCHAR(128)
+event,noe_summarized,event.noe_summarized,No,709497,100.0%,1,VARCHAR(128)
+event,manufacturer_contact_l_name,event.manufacturer_contact_l_name,No,709497,100.0%,SPOTO,TEXT
+event,source_type,event.source_type,No,709497,100.0%,[Array] 示例: 'Consumer',VARCHAR(128)
+event,source_type[],event.source_type[],Yes,709497,100.0%,Other,VARCHAR(128)
+event,distributor_zip_code_ext,event.distributor_zip_code_ext,No,709497,100.0%,[No sample available],VARCHAR(128)
+event,manufacturer_g1_postal_code,event.manufacturer_g1_postal_code,No,709497,100.0%,[No sample available],VARCHAR(128)
+event,manufacturer_g1_state,event.manufacturer_g1_state,No,709497,100.0%,[No sample available],VARCHAR(255)
+event,reporter_country_code,event.reporter_country_code,No,709497,100.0%,US,TEXT
+event,manufacturer_contact_area_code,event.manufacturer_contact_area_code,No,709497,100.0%,858,VARCHAR(128)
+event,date_added,event.date_added,No,709497,100.0%,20241121,DATE
+event,manufacturer_contact_f_name,event.manufacturer_contact_f_name,No,709497,100.0%,ASHLEY,TEXT
+event,previous_use_code,event.previous_use_code,No,709497,100.0%,I,TEXT
+event,device,event.device,No,709497,100.0%,[Array with 1 items],TEXT
+event,device[],event.device[],Yes,709497,100.0%,[Object] 示例键'device_event_key': '',TEXT
+event,manufacturer_zip_code,event.manufacturer_zip_code,No,709497,100.0%,[No sample available],VARCHAR(128)
+event,suppl_dates_mfr_received,event.suppl_dates_mfr_received,No,709497,100.0%,11/27/2024,DATE
+event,manufacturer_contact_country,event.manufacturer_contact_country,No,709497,100.0%,US,VARCHAR(255)
+event,date_changed,event.date_changed,No,709497,100.0%,20250110,DATE
+event,health_professional,event.health_professional,No,709497,100.0%,N,BOOLEAN
+event,summary_report_flag,event.summary_report_flag,No,709497,100.0%,N,BOOLEAN
+event,manufacturer_g1_zip_code_ext,event.manufacturer_g1_zip_code_ext,No,709497,100.0%,[No sample available],VARCHAR(128)
+event,manufacturer_contact_extension,event.manufacturer_contact_extension,No,709497,100.0%,[No sample available],VARCHAR(128)
+event,manufacturer_city,event.manufacturer_city,No,709497,100.0%,[No sample available],VARCHAR(255)
+event,manufacturer_contact_phone_number,event.manufacturer_contact_phone_number,No,709497,100.0%,8582,VARCHAR(128)
+event,patient,event.patient,No,709497,100.0%,[Array with 1 items],TEXT
+event,patient[],event.patient[],Yes,709497,100.0%,[Object] 示例键'patient_sequence_number': '1',TEXT
+event,distributor_city,event.distributor_city,No,709497,100.0%,[No sample available],VARCHAR(255)
+event,initial_report_to_fda,event.initial_report_to_fda,No,709497,100.0%,[No sample available],TEXT
+event,distributor_state,event.distributor_state,No,709497,100.0%,[No sample available],VARCHAR(255)
+event,event_key,event.event_key,No,709497,100.0%,[No sample available],VARCHAR(128)
+event,manufacturer_g1_country,event.manufacturer_g1_country,No,709497,100.0%,[No sample available],VARCHAR(255)
+event,manufacturer_contact_city,event.manufacturer_contact_city,No,709497,100.0%,SAN DIEGO,VARCHAR(255)
+event,mdr_report_key,event.mdr_report_key,No,709497,100.0%,20740705,DATE
+event,removal_correction_number,event.removal_correction_number,No,709497,100.0%,[No sample available],VARCHAR(128)
+event,number_devices_in_event,event.number_devices_in_event,No,709497,100.0%,[No sample available],VARCHAR(128)
+event,manufacturer_name,event.manufacturer_name,No,709497,100.0%,[No sample available],TEXT
+event,report_source_code,event.report_source_code,No,709497,100.0%,Manufacturer report,TEXT
+event,remedial_action,event.remedial_action,No,709497,100.0%,[Array] 示例: '',TEXT
+event,remedial_action[],event.remedial_action[],Yes,709497,100.0%,[Array] 示例: '',TEXT
+event,manufacturer_g1_zip_code,event.manufacturer_g1_zip_code,No,709497,100.0%,[No sample available],VARCHAR(128)
+event,report_to_manufacturer,event.report_to_manufacturer,No,709497,100.0%,[No sample available],TEXT
+event,manufacturer_zip_code_ext,event.manufacturer_zip_code_ext,No,709497,100.0%,[No sample available],VARCHAR(128)
+event,manufacturer_g1_name,event.manufacturer_g1_name,No,709497,100.0%,[No sample available],TEXT
+event,adverse_event_flag,event.adverse_event_flag,No,709497,100.0%,N,BOOLEAN
+event,distributor_address_1,event.distributor_address_1,No,709497,100.0%,[No sample available],TEXT
+event,manufacturer_state,event.manufacturer_state,No,709497,100.0%,[No sample available],VARCHAR(255)
+event,distributor_address_2,event.distributor_address_2,No,709497,100.0%,[No sample available],TEXT
+event,manufacturer_postal_code,event.manufacturer_postal_code,No,709497,100.0%,[No sample available],VARCHAR(128)
+event,single_use_flag,event.single_use_flag,No,709497,100.0%,Y,BOOLEAN
+event,manufacturer_country,event.manufacturer_country,No,709497,100.0%,[No sample available],VARCHAR(255)
+event,mdr_text,event.mdr_text,No,709497,100.0%,[Array with 4 items],TEXT
+event,mdr_text[],event.mdr_text[],Yes,709497,100.0%,[Object] 示例键'mdr_text_key': '357505780',TEXT
+event,number_patients_in_event,event.number_patients_in_event,No,709497,100.0%,[No sample available],VARCHAR(128)
+event,distributor_name,event.distributor_name,No,709497,100.0%,[No sample available],TEXT
+event,manufacturer_g1_address_1,event.manufacturer_g1_address_1,No,709497,100.0%,[No sample available],TEXT
+event,distributor_zip_code,event.distributor_zip_code,No,709497,100.0%,[No sample available],VARCHAR(128)
+event,manufacturer_contact_postal_code,event.manufacturer_contact_postal_code,No,709497,100.0%,92121,VARCHAR(128)
+event,manufacturer_contact_exchange,event.manufacturer_contact_exchange,No,709497,100.0%,858,VARCHAR(128)
+event,manufacturer_contact_pcountry,event.manufacturer_contact_pcountry,No,709497,100.0%,[No sample available],VARCHAR(255)
+event,suppl_dates_fda_received,event.suppl_dates_fda_received,No,709497,100.0%,12/20/2024,DATE
+event,product_problems,event.product_problems,No,703871,99.2%,[Array] 示例: 'Detachment of Device or Device Component',TEXT
+event,product_problems[],event.product_problems[],Yes,703871,99.2%,Adverse Event Without Identified Device or Use Problem,TEXT
+event,date_of_event,event.date_of_event,No,627277,88.4%,20241021,DATE
+event,date_report,event.date_report,No,583295,82.2%,20241220,DATE
+event,date_manufacturer_received,event.date_manufacturer_received,No,541846,76.4%,20241023,DATE
+event,device_date_of_manufacturer,event.device_date_of_manufacturer,No,480804,67.8%,20240514,DATE
+event,date_facility_aware,event.date_facility_aware,No,124738,17.6%,20250106,DATE
+event,report_date,event.report_date,No,44774,6.3%,20241016,DATE
+event,date_report_to_fda,event.date_report_to_fda,No,35227,5.0%,20241016,DATE
+event,date_report_to_manufacturer,event.date_report_to_manufacturer,No,12592,1.8%,20241016,DATE
+event_device,device_event_key,event.device[0].device_event_key,No,709496,100.0%,[No sample available],VARCHAR(128)
+event_device,implant_flag,event.device[0].implant_flag,No,709496,100.0%,[No sample available],BOOLEAN
+event_device,date_removed_flag,event.device[0].date_removed_flag,No,709496,100.0%,[No sample available],DATE
+event_device,device_sequence_number,event.device[0].device_sequence_number,No,709496,100.0%,1,VARCHAR(128)
+event_device,date_received,event.device[0].date_received,No,709496,100.0%,20241120,DATE
+event_device,brand_name,event.device[0].brand_name,No,709496,100.0%,DEXCOM G6 CONTINUOUS GLUCOSE MONITORING SYSTEM,TEXT
+event_device,generic_name,event.device[0].generic_name,No,709496,100.0%,CONTINUOUS GLUCOSE MONITOR,TEXT
+event_device,manufacturer_d_name,event.device[0].manufacturer_d_name,No,709496,100.0%,"DEXCOM, INC.",TEXT
+event_device,manufacturer_d_address_1,event.device[0].manufacturer_d_address_1,No,709496,100.0%,6340 SEQUENCE DR.,TEXT
+event_device,manufacturer_d_address_2,event.device[0].manufacturer_d_address_2,No,709496,100.0%,[No sample available],TEXT
+event_device,manufacturer_d_city,event.device[0].manufacturer_d_city,No,709496,100.0%,SAN DIEGO,VARCHAR(255)
+event_device,manufacturer_d_state,event.device[0].manufacturer_d_state,No,709496,100.0%,CA,VARCHAR(255)
+event_device,manufacturer_d_zip_code,event.device[0].manufacturer_d_zip_code,No,709496,100.0%,92121,VARCHAR(128)
+event_device,manufacturer_d_zip_code_ext,event.device[0].manufacturer_d_zip_code_ext,No,709496,100.0%,[No sample available],VARCHAR(128)
+event_device,manufacturer_d_country,event.device[0].manufacturer_d_country,No,709496,100.0%,US,VARCHAR(255)
+event_device,manufacturer_d_postal_code,event.device[0].manufacturer_d_postal_code,No,709496,100.0%,92121,VARCHAR(128)
+event_device,device_operator,event.device[0].device_operator,No,709496,100.0%,LAY USER/PATIENT,VARCHAR(128)
+event_device,model_number,event.device[0].model_number,No,709496,100.0%,9535-77,VARCHAR(128)
+event_device,catalog_number,event.device[0].catalog_number,No,709496,100.0%,STS-OM-003,VARCHAR(128)
+event_device,lot_number,event.device[0].lot_number,No,709496,100.0%,7348625,DATE
+event_device,other_id_number,event.device[0].other_id_number,No,709496,100.0%,[No sample available],VARCHAR(128)
+event_device,device_availability,event.device[0].device_availability,No,709496,100.0%,Device was returned to manufacturer,VARCHAR(128)
+event_device,device_report_product_code,event.device[0].device_report_product_code,No,709496,100.0%,QBJ,TEXT
+event_device,device_age_text,event.device[0].device_age_text,No,709496,100.0%,DA,TEXT
+event_device,device_evaluated_by_manufacturer,event.device[0].device_evaluated_by_manufacturer,No,709496,100.0%,Y,BOOLEAN
+event_device,combination_product_flag,event.device[0].combination_product_flag,No,709496,100.0%,Y,BOOLEAN
+event_device,udi_di,event.device[0].udi_di,No,709496,100.0%,00386270001047,VARCHAR(128)
+event_device,udi_public,event.device[0].udi_public,No,709496,100.0%,00386270001047,VARCHAR(128)
+event_device,openfda,event.device[0].openfda,No,709496,100.0%,"[Object] 示例键'device_name': 'Integrated Continuous Glucose Monitoring System, F'",TEXT
+event_device,date_returned_to_manufacturer,event.device[0].date_returned_to_manufacturer,No,145030,20.4%,20241106,DATE
+event_device,expiration_date_of_device,event.device[0].expiration_date_of_device,No,76396,10.8%,20240430,DATE
+event_device,device_name,event.device[0].openfda.device_name,No,709491,100.0%,"Integrated Continuous Glucose Monitoring System, Factory Calibrated",TEXT
+event_device,medical_specialty_description,event.device[0].openfda.medical_specialty_description,No,709491,100.0%,Clinical Chemistry,TEXT
+event_device,regulation_number,event.device[0].openfda.regulation_number,No,709491,100.0%,862.1355,VARCHAR(128)
+event_device,device_class,event.device[0].openfda.device_class,No,709491,100.0%,2,VARCHAR(128)
+event_device,registration_number,event.device[0].openfda.registration_number,No,8545,1.2%,[Array] 示例: '9612164',TEXT
+event_device,fei_number,event.device[0].openfda.fei_number,No,8545,1.2%,[Array] 示例: '3002806434',TEXT
+event_patient,patient_sequence_number,event.patient[0].patient_sequence_number,No,709496,100.0%,1,VARCHAR(128)
+event_patient,patient_problems,event.patient[0].patient_problems,No,709473,100.0%,"[Array] 示例: 'No Clinical Signs, Symptoms or Conditions'",TEXT
+event_patient,date_received,event.patient[0].date_received,No,656763,92.6%,20241120,DATE
+event_patient,sequence_number_treatment,event.patient[0].sequence_number_treatment,No,656763,92.6%,[Array] 示例: '',TEXT
+event_patient,sequence_number_outcome,event.patient[0].sequence_number_outcome,No,656763,92.6%,[Array] 示例: '',TEXT
+event_patient,patient_age,event.patient[0].patient_age,No,656763,92.6%,78 YR,VARCHAR(128)
+event_patient,patient_sex,event.patient[0].patient_sex,No,656763,92.6%,Male,VARCHAR(128)
+event_patient,patient_weight,event.patient[0].patient_weight,No,656763,92.6%,95 KG,VARCHAR(128)
+event_patient,patient_ethnicity,event.patient[0].patient_ethnicity,No,656763,92.6%,[No sample available],VARCHAR(255)
+event_patient,patient_race,event.patient[0].patient_race,No,656763,92.6%,[No sample available],VARCHAR(128)
+event_mdr_text,mdr_text_key,event.mdr_text[0].mdr_text_key,No,709461,100.0%,361062939,VARCHAR(128)
+event_mdr_text,text_type_code,event.mdr_text[0].text_type_code,No,709461,100.0%,Additional Manufacturer Narrative,TEXT
+event_mdr_text,patient_sequence_number,event.mdr_text[0].patient_sequence_number,No,709461,100.0%,0,VARCHAR(128)
+event_mdr_text,text,event.mdr_text[0].text,No,709461,100.0%,(B)(4).,TEXT

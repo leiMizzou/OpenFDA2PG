@@ -1,0 +1,33 @@
+table_name,field_name,original_path,is_array,occurrence_count,occurrence_percent,sample_value,data_type
+510k,third_party_flag,510k.third_party_flag,No,171029,100.0%,N,BOOLEAN
+510k,city,510k.city,No,171029,100.0%,ALBUQUERQUE,VARCHAR(255)
+510k,advisory_committee_description,510k.advisory_committee_description,No,171029,100.0%,Radiology,TEXT
+510k,address_1,510k.address_1,No,171029,100.0%,"12200 ACADEMY ROAD NE, # 931",TEXT
+510k,address_2,510k.address_2,No,171029,100.0%,[No sample available],TEXT
+510k,statement_or_summary,510k.statement_or_summary,No,171029,100.0%,Summary,TEXT
+510k,product_code,510k.product_code,No,171029,100.0%,LLZ,TEXT
+510k,openfda,510k.openfda,No,171029,100.0%,[Object with 6 keys],TEXT
+510k,zip_code,510k.zip_code,No,171029,100.0%,87111,VARCHAR(128)
+510k,applicant,510k.applicant,No,171029,100.0%,BARCO NV,VARCHAR(128)
+510k,decision_date,510k.decision_date,No,171029,100.0%,2004-04-12,DATE
+510k,decision_code,510k.decision_code,No,171029,100.0%,SESE,TEXT
+510k,country_code,510k.country_code,No,171029,100.0%,US,TEXT
+510k,device_name,510k.device_name,No,171029,100.0%,MFCD 2320,TEXT
+510k,advisory_committee,510k.advisory_committee,No,171029,100.0%,RA,VARCHAR(128)
+510k,contact,510k.contact,No,171029,100.0%,FRANK  FERGUSON,VARCHAR(128)
+510k,expedited_review_flag,510k.expedited_review_flag,No,171029,100.0%,[No sample available],BOOLEAN
+510k,k_number,510k.k_number,No,171029,100.0%,K040158,TEXT
+510k,state,510k.state,No,171029,100.0%,NM,VARCHAR(255)
+510k,date_received,510k.date_received,No,171029,100.0%,2004-01-23,DATE
+510k,review_advisory_committee,510k.review_advisory_committee,No,171029,100.0%,RA,VARCHAR(128)
+510k,postal_code,510k.postal_code,No,171029,100.0%,87111,VARCHAR(128)
+510k,decision_description,510k.decision_description,No,171029,100.0%,Substantially Equivalent,TEXT
+510k,clearance_type,510k.clearance_type,No,171029,100.0%,Traditional,VARCHAR(128)
+510k_openfda,device_name,510k.openfda.device_name,No,169370,99.0%,"System, Image Processing, Radiological",TEXT
+510k_openfda,medical_specialty_description,510k.openfda.medical_specialty_description,No,169370,99.0%,Radiology,TEXT
+510k_openfda,regulation_number,510k.openfda.regulation_number,No,169370,99.0%,892.2050,VARCHAR(128)
+510k_openfda,device_class,510k.openfda.device_class,No,169370,99.0%,2,VARCHAR(128)
+510k_openfda,registration_number,510k.openfda.registration_number,No,167940,98.2%,[Array] 示例: '',TEXT
+510k_openfda,fei_number,510k.openfda.fei_number,No,167940,98.2%,[Array] 示例: '',TEXT
+510k_openfda_registration_number,registration_number,510k.openfda.registration_number[],Yes,167940,98.2%,[Array] 示例: '',TEXT
+510k_openfda_fei_number,fei_number,510k.openfda.fei_number[],Yes,167940,98.2%,[Array] 示例: '',TEXT

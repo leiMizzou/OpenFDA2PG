@@ -1,0 +1,7 @@
+table_name,table_type,parent_table,field_count,has_arrays,path
+recall,main,,30,Yes,
+recall_openfda,object,recall,8,No,recall.openfda
+recall_openfda_registration_number,array,recall_openfda,1,Yes,recall.openfda.registration_number
+recall_openfda_fei_number,array,recall_openfda,1,Yes,recall.openfda.fei_number
+recall_openfda_k_number,array,recall_openfda,1,Yes,recall.openfda.k_number
+recall_openfda_pma_number,array,recall_openfda,1,Yes,recall.openfda.pma_number

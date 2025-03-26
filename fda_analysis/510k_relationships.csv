@@ -1,0 +1,4 @@
+child_table,parent_table,relationship_type,foreign_key_field,path,description
+510k_openfda,510k,一对多,510k_id,510k.openfda,510k_openfda是510k的object表
+510k_openfda_registration_number,510k_openfda,一对多,openfda_id,510k.openfda.registration_number,510k_openfda_registration_number是510k_openfda的array表
+510k_openfda_fei_number,510k_openfda,一对多,openfda_id,510k.openfda.fei_number,510k_openfda_fei_number是510k_openfda的array表

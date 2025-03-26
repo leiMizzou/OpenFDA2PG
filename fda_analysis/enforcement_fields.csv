@@ -1,0 +1,26 @@
+table_name,field_name,original_path,is_array,occurrence_count,occurrence_percent,sample_value,data_type
+enforcement,status,enforcement.status,No,35451,100.0%,Terminated,VARCHAR(128)
+enforcement,city,enforcement.city,No,35451,100.0%,Arden,VARCHAR(255)
+enforcement,state,enforcement.state,No,35451,100.0%,NC,VARCHAR(255)
+enforcement,country,enforcement.country,No,35451,100.0%,United States,VARCHAR(255)
+enforcement,classification,enforcement.classification,No,35451,100.0%,Class II,VARCHAR(128)
+enforcement,openfda,enforcement.openfda,No,35451,100.0%,[Object with 0 keys],TEXT
+enforcement,product_type,enforcement.product_type,No,35451,100.0%,Devices,VARCHAR(128)
+enforcement,event_id,enforcement.event_id,No,35451,100.0%,91066,VARCHAR(128)
+enforcement,recalling_firm,enforcement.recalling_firm,No,35451,100.0%,"Medical Action Industries, Inc. 306",VARCHAR(128)
+enforcement,address_1,enforcement.address_1,No,35451,100.0%,25 Heywood Rd,TEXT
+enforcement,address_2,enforcement.address_2,No,35451,100.0%,[No sample available],TEXT
+enforcement,postal_code,enforcement.postal_code,No,35451,100.0%,28704-9302,VARCHAR(128)
+enforcement,voluntary_mandated,enforcement.voluntary_mandated,No,35451,100.0%,Voluntary: Firm initiated,DATE
+enforcement,initial_firm_notification,enforcement.initial_firm_notification,No,35451,100.0%,Letter,TEXT
+enforcement,distribution_pattern,enforcement.distribution_pattern,No,35451,100.0%,"Distribution was made to FL, IL, IN, MA, MD, MO, OH, and VA.  There was no foreign/government/milita...",TEXT
+enforcement,recall_number,enforcement.recall_number,No,35451,100.0%,Z-0765-2023,VARCHAR(128)
+enforcement,product_description,enforcement.product_description,No,35451,100.0%,"Medical Action Industries Inc. Disposable Instrument Pack, Littauer Scissor, REF 56247, packaged 1/p...",TEXT
+enforcement,product_quantity,enforcement.product_quantity,No,35451,100.0%,145 cases (240 scissors/case),VARCHAR(128)
+enforcement,reason_for_recall,enforcement.reason_for_recall,No,35451,100.0%,Scissors contained debris.,TEXT
+enforcement,recall_initiation_date,enforcement.recall_initiation_date,No,35451,100.0%,20221012,DATE
+enforcement,report_date,enforcement.report_date,No,35451,100.0%,20221228,DATE
+enforcement,code_info,enforcement.code_info,No,35451,100.0%,"Lot #297668, UDI 10809160003473.",TEXT
+enforcement,center_classification_date,enforcement.center_classification_date,No,35450,100.0%,20221222,DATE
+enforcement,termination_date,enforcement.termination_date,No,25001,70.5%,20250219,DATE
+enforcement,more_code_info,enforcement.more_code_info,No,15972,45.1%,[No sample available],TEXT

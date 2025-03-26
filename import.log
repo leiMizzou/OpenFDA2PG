@@ -1,0 +1,7 @@
+2025-03-25 02:12:39 - INFO - FDA JSON导入工具启动
+2025-03-25 02:12:39 - INFO - 输入目录: /Volumes/Lexar SSD 4TB - RAID0/GitHub/FAERS/datafiles/unzip/device/event
+2025-03-25 02:12:39 - INFO - 数据库: fda_device @ localhost
+2025-03-25 02:12:39 - ERROR - 程序退出: 无法执行SQL脚本
+2025-03-25 02:13:26 - INFO - FDA JSON导入工具启动
+2025-03-25 02:13:26 - INFO - 输入目录: /Volumes/Lexar SSD 4TB - RAID0/GitHub/FAERS/datafiles/unzip/device/event
+2025-03-25 02:13:26 - INFO - 数据库: fda_device @ localhost

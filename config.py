@@ -13,7 +13,7 @@ DB_CONFIG = {
 }
 
 # 配置文件路径 - 根据实际存放文件结构进行设置
-BASE_DIR = '/Volumes/Lexar SSD NM1090 PRO 2TB/GitHub/FAERS/datafiles/unzip/device/'  # 根目录
+BASE_DIR = '/Volumes/Lexar SSD 4TB - RAID0/GitHub/FAERS/datafiles/unzip/device/'  # 根目录
 DATA_DIRS = {
     'classification_dir': os.path.join(BASE_DIR, 'classification'),
     'enforcement_dir': os.path.join(BASE_DIR, 'enforcement'),

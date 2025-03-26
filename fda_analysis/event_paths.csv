@@ -1,0 +1,206 @@
+path,count,percent,is_array,is_object,depth,sample
+event.adverse_event_flag,709497,100.0%,No,No,1,N
+event.date_added,709497,100.0%,No,No,1,20241121
+event.date_changed,709497,100.0%,No,No,1,20250110
+event.date_received,709497,100.0%,No,No,1,20241120
+event.device,709497,100.0%,No,No,1,[Array with 1 items]
+event.device[],709497,100.0%,Yes,No,1,[Object] 示例键'device_event_key': ''
+event.distributor_address_1,709497,100.0%,No,No,1,
+event.distributor_address_2,709497,100.0%,No,No,1,
+event.distributor_city,709497,100.0%,No,No,1,
+event.distributor_name,709497,100.0%,No,No,1,
+event.distributor_state,709497,100.0%,No,No,1,
+event.distributor_zip_code,709497,100.0%,No,No,1,
+event.distributor_zip_code_ext,709497,100.0%,No,No,1,
+event.event_key,709497,100.0%,No,No,1,
+event.event_location,709497,100.0%,No,No,1,
+event.event_type,709497,100.0%,No,No,1,Malfunction
+event.exemption_number,709497,100.0%,No,No,1,
+event.health_professional,709497,100.0%,No,No,1,N
+event.initial_report_to_fda,709497,100.0%,No,No,1,
+event.manufacturer_address_1,709497,100.0%,No,No,1,
+event.manufacturer_address_2,709497,100.0%,No,No,1,
+event.manufacturer_city,709497,100.0%,No,No,1,
+event.manufacturer_contact_address_1,709497,100.0%,No,No,1,6340 SEQUENCE DR.
+event.manufacturer_contact_address_2,709497,100.0%,No,No,1,
+event.manufacturer_contact_area_code,709497,100.0%,No,No,1,858
+event.manufacturer_contact_city,709497,100.0%,No,No,1,SAN DIEGO
+event.manufacturer_contact_country,709497,100.0%,No,No,1,US
+event.manufacturer_contact_exchange,709497,100.0%,No,No,1,858
+event.manufacturer_contact_extension,709497,100.0%,No,No,1,
+event.manufacturer_contact_f_name,709497,100.0%,No,No,1,ASHLEY
+event.manufacturer_contact_l_name,709497,100.0%,No,No,1,SPOTO
+event.manufacturer_contact_pcity,709497,100.0%,No,No,1,85820002
+event.manufacturer_contact_pcountry,709497,100.0%,No,No,1,
+event.manufacturer_contact_phone_number,709497,100.0%,No,No,1,8582
+event.manufacturer_contact_plocal,709497,100.0%,No,No,1,8582000200
+event.manufacturer_contact_postal_code,709497,100.0%,No,No,1,92121
+event.manufacturer_contact_state,709497,100.0%,No,No,1,CA
+event.manufacturer_contact_t_name,709497,100.0%,No,No,1,MS
+event.manufacturer_contact_zip_code,709497,100.0%,No,No,1,92121
+event.manufacturer_contact_zip_ext,709497,100.0%,No,No,1,
+event.manufacturer_country,709497,100.0%,No,No,1,
+event.manufacturer_g1_address_1,709497,100.0%,No,No,1,
+event.manufacturer_g1_address_2,709497,100.0%,No,No,1,
+event.manufacturer_g1_city,709497,100.0%,No,No,1,
+event.manufacturer_g1_country,709497,100.0%,No,No,1,
+event.manufacturer_g1_name,709497,100.0%,No,No,1,
+event.manufacturer_g1_postal_code,709497,100.0%,No,No,1,
+event.manufacturer_g1_state,709497,100.0%,No,No,1,
+event.manufacturer_g1_zip_code,709497,100.0%,No,No,1,
+event.manufacturer_g1_zip_code_ext,709497,100.0%,No,No,1,
+event.manufacturer_link_flag,709497,100.0%,No,No,1,Y
+event.manufacturer_name,709497,100.0%,No,No,1,
+event.manufacturer_postal_code,709497,100.0%,No,No,1,
+event.manufacturer_state,709497,100.0%,No,No,1,
+event.manufacturer_zip_code,709497,100.0%,No,No,1,
+event.manufacturer_zip_code_ext,709497,100.0%,No,No,1,
+event.mdr_report_key,709497,100.0%,No,No,1,20740705
+event.mdr_text,709497,100.0%,No,No,1,[Array with 4 items]
+event.mdr_text[],709497,100.0%,Yes,No,1,[Object] 示例键'mdr_text_key': '357505780'
+event.noe_summarized,709497,100.0%,No,No,1,1
+event.number_devices_in_event,709497,100.0%,No,No,1,
+event.number_patients_in_event,709497,100.0%,No,No,1,
+event.patient,709497,100.0%,No,No,1,[Array with 1 items]
+event.patient[],709497,100.0%,Yes,No,1,[Object] 示例键'patient_sequence_number': '1'
+event.pma_pmn_number,709497,100.0%,No,No,1,DEN170088
+event.previous_use_code,709497,100.0%,No,No,1,I
+event.product_problem_flag,709497,100.0%,No,No,1,Y
+event.remedial_action,709497,100.0%,No,No,1,[Array] 示例: ''
+event.remedial_action[],709497,100.0%,Yes,No,1,
+event.removal_correction_number,709497,100.0%,No,No,1,
+event.report_number,709497,100.0%,No,No,1,3004753838-2024-305461
+event.report_source_code,709497,100.0%,No,No,1,Manufacturer report
+event.report_to_fda,709497,100.0%,No,No,1,
+event.report_to_manufacturer,709497,100.0%,No,No,1,
+event.reporter_country_code,709497,100.0%,No,No,1,US
+event.reporter_occupation_code,709497,100.0%,No,No,1,OTHER
+event.reprocessed_and_reused_flag,709497,100.0%,No,No,1,N
+event.single_use_flag,709497,100.0%,No,No,1,Y
+event.source_type,709497,100.0%,No,No,1,[Array] 示例: 'Consumer'
+event.source_type[],709497,100.0%,Yes,No,1,Other
+event.summary_report_flag,709497,100.0%,No,No,1,N
+event.suppl_dates_fda_received,709497,100.0%,No,No,1,12/20/2024
+event.suppl_dates_mfr_received,709497,100.0%,No,No,1,11/27/2024
+event.type_of_report,709497,100.0%,No,No,1,[Array] 示例: 'Initial submission'
+event.type_of_report[],709497,100.0%,Yes,No,1,Initial submission
+event.device[0].brand_name,709496,100.0%,No,No,2,DEXCOM G6 CONTINUOUS GLUCOSE MONITORING SYSTEM
+event.device[0].catalog_number,709496,100.0%,No,No,2,STS-OM-003
+event.device[0].combination_product_flag,709496,100.0%,No,No,2,Y
+event.device[0].date_received,709496,100.0%,No,No,2,20241120
+event.device[0].date_removed_flag,709496,100.0%,No,No,2,
+event.device[0].device_age_text,709496,100.0%,No,No,2,DA
+event.device[0].device_availability,709496,100.0%,No,No,2,Device was returned to manufacturer
+event.device[0].device_evaluated_by_manufacturer,709496,100.0%,No,No,2,Y
+event.device[0].device_event_key,709496,100.0%,No,No,2,
+event.device[0].device_operator,709496,100.0%,No,No,2,LAY USER/PATIENT
+event.device[0].device_report_product_code,709496,100.0%,No,No,2,QBJ
+event.device[0].device_sequence_number,709496,100.0%,No,No,2,1
+event.device[0].generic_name,709496,100.0%,No,No,2,CONTINUOUS GLUCOSE MONITOR
+event.device[0].implant_flag,709496,100.0%,No,No,2,
+event.device[0].lot_number,709496,100.0%,No,No,2,7348625
+event.device[0].manufacturer_d_address_1,709496,100.0%,No,No,2,6340 SEQUENCE DR.
+event.device[0].manufacturer_d_address_2,709496,100.0%,No,No,2,
+event.device[0].manufacturer_d_city,709496,100.0%,No,No,2,SAN DIEGO
+event.device[0].manufacturer_d_country,709496,100.0%,No,No,2,US
+event.device[0].manufacturer_d_name,709496,100.0%,No,No,2,"DEXCOM, INC."
+event.device[0].manufacturer_d_postal_code,709496,100.0%,No,No,2,92121
+event.device[0].manufacturer_d_state,709496,100.0%,No,No,2,CA
+event.device[0].manufacturer_d_zip_code,709496,100.0%,No,No,2,92121
+event.device[0].manufacturer_d_zip_code_ext,709496,100.0%,No,No,2,
+event.device[0].model_number,709496,100.0%,No,No,2,9535-77
+event.device[0].openfda,709496,100.0%,No,Yes,2,"[Object] 示例键'device_name': 'Integrated Continuous Glucose Monitoring System, F'"
+event.device[0].other_id_number,709496,100.0%,No,No,2,
+event.device[0].udi_di,709496,100.0%,No,No,2,00386270001047
+event.device[0].udi_public,709496,100.0%,No,No,2,00386270001047
+event.patient[0].patient_sequence_number,709496,100.0%,No,No,2,1
+event.device[0].openfda.device_class,709491,100.0%,No,No,3,2
+event.device[0].openfda.device_name,709491,100.0%,No,No,3,"Integrated Continuous Glucose Monitoring System, Factory Calibrated"
+event.device[0].openfda.medical_specialty_description,709491,100.0%,No,No,3,Clinical Chemistry
+event.device[0].openfda.regulation_number,709491,100.0%,No,No,3,862.1355
+event.patient[0].patient_problems,709473,100.0%,No,No,2,"[Array] 示例: 'No Clinical Signs, Symptoms or Conditions'"
+event.patient[0].patient_problems[],709473,100.0%,Yes,No,2,Hemorrhage/Blood Loss/Bleeding
+event.mdr_text[0].mdr_text_key,709461,100.0%,No,No,2,361062939
+event.mdr_text[0].patient_sequence_number,709461,100.0%,No,No,2,0
+event.mdr_text[0].text,709461,100.0%,No,No,2,(B)(4).
+event.mdr_text[0].text_type_code,709461,100.0%,No,No,2,Additional Manufacturer Narrative
+event.product_problems,703871,99.2%,No,No,1,[Array] 示例: 'Detachment of Device or Device Component'
+event.product_problems[],703871,99.2%,Yes,No,1,Adverse Event Without Identified Device or Use Problem
+event.patient[0].date_received,656763,92.6%,No,No,2,20241120
+event.patient[0].patient_age,656763,92.6%,No,No,2,78 YR
+event.patient[0].patient_ethnicity,656763,92.6%,No,No,2,
+event.patient[0].patient_race,656763,92.6%,No,No,2,
+event.patient[0].patient_sex,656763,92.6%,No,No,2,Male
+event.patient[0].patient_weight,656763,92.6%,No,No,2,95 KG
+event.patient[0].sequence_number_outcome,656763,92.6%,No,No,2,[Array] 示例: ''
+event.patient[0].sequence_number_outcome[],656763,92.6%,Yes,No,2,
+event.patient[0].sequence_number_treatment,656763,92.6%,No,No,2,[Array] 示例: ''
+event.patient[0].sequence_number_treatment[],656763,92.6%,Yes,No,2,
+event.date_of_event,627277,88.4%,No,No,1,20241021
+event.mdr_text[1].mdr_text_key,586448,82.7%,No,No,2,361062940
+event.mdr_text[1].patient_sequence_number,586448,82.7%,No,No,2,0
+event.mdr_text[1].text,586448,82.7%,No,No,2,IT WAS REPORTED THAT A WIRE/NEEDLE/CANNULA DAMAGED OR MISSING OCCURRED. THE SENSOR WAS INSERTED INTO...
+event.mdr_text[1].text_type_code,586448,82.7%,No,No,2,Description of Event or Problem
+event.date_report,583295,82.2%,No,No,1,20241220
+event.date_manufacturer_received,541846,76.4%,No,No,1,20241023
+event.device_date_of_manufacturer,480804,67.8%,No,No,1,20240514
+event.device[0].date_returned_to_manufacturer,145030,20.4%,No,No,2,20241106
+event.mdr_text[2].mdr_text_key,131089,18.5%,No,No,2,358143061
+event.mdr_text[2].patient_sequence_number,131089,18.5%,No,No,2,0
+event.mdr_text[2].text,131089,18.5%,No,No,2,IT WAS REPORTED THAT A DETACHED OR MISSING SENSOR WIRE OCCURRED. THE SENSOR WAS INSERTED INTO THE AB...
+event.mdr_text[2].text_type_code,131089,18.5%,No,No,2,Description of Event or Problem
+event.date_facility_aware,124738,17.6%,No,No,1,20250106
+event.device[0].expiration_date_of_device,76396,10.8%,No,No,2,20240430
+event.report_date,44774,6.3%,No,No,1,20241016
+event.date_report_to_fda,35227,5.0%,No,No,1,20241016
+event.date_report_to_manufacturer,12592,1.8%,No,No,1,20241016
+event.device[0].openfda.fei_number,8545,1.2%,No,No,3,[Array] 示例: '3002806434'
+event.device[0].openfda.fei_number[],8545,1.2%,Yes,No,3,2023826
+event.device[0].openfda.registration_number,8545,1.2%,No,No,3,[Array] 示例: '9612164'
+event.device[0].openfda.registration_number[],8545,1.2%,Yes,No,3,2023826
+event.patient[1].date_received,5,0.0%,No,No,2,20241106
+event.patient[1].patient_age,5,0.0%,No,No,2,NA
+event.patient[1].patient_ethnicity,5,0.0%,No,No,2,
+event.patient[1].patient_problems,5,0.0%,No,No,2,"[Array] 示例: 'No Clinical Signs, Symptoms or Conditions'"
+event.patient[1].patient_problems[],5,0.0%,Yes,No,2,Insufficient Information
+event.patient[1].patient_race,5,0.0%,No,No,2,
+event.patient[1].patient_sequence_number,5,0.0%,No,No,2,1
+event.patient[1].patient_sex,5,0.0%,No,No,2,Unknown
+event.patient[1].patient_weight,5,0.0%,No,No,2,
+event.patient[1].sequence_number_outcome,5,0.0%,No,No,2,[Array] 示例: ''
+event.patient[1].sequence_number_outcome[],5,0.0%,Yes,No,2,
+event.patient[1].sequence_number_treatment,5,0.0%,No,No,2,[Array] 示例: ''
+event.patient[1].sequence_number_treatment[],5,0.0%,Yes,No,2,
+event.device[1].brand_name,3,0.0%,No,No,2,
+event.device[1].catalog_number,3,0.0%,No,No,2,
+event.device[1].combination_product_flag,3,0.0%,No,No,2,
+event.device[1].date_received,3,0.0%,No,No,2,20241218
+event.device[1].date_removed_flag,3,0.0%,No,No,2,
+event.device[1].device_age_text,3,0.0%,No,No,2,
+event.device[1].device_availability,3,0.0%,No,No,2,I
+event.device[1].device_evaluated_by_manufacturer,3,0.0%,No,No,2,*
+event.device[1].device_event_key,3,0.0%,No,No,2,
+event.device[1].device_operator,3,0.0%,No,No,2,0
+event.device[1].device_report_product_code,3,0.0%,No,No,2,REG
+event.device[1].device_sequence_number,3,0.0%,No,No,2,1
+event.device[1].generic_name,3,0.0%,No,No,2,
+event.device[1].implant_flag,3,0.0%,No,No,2,
+event.device[1].lot_number,3,0.0%,No,No,2,
+event.device[1].manufacturer_d_address_1,3,0.0%,No,No,2,
+event.device[1].manufacturer_d_address_2,3,0.0%,No,No,2,
+event.device[1].manufacturer_d_city,3,0.0%,No,No,2,
+event.device[1].manufacturer_d_country,3,0.0%,No,No,2,
+event.device[1].manufacturer_d_name,3,0.0%,No,No,2,
+event.device[1].manufacturer_d_postal_code,3,0.0%,No,No,2,
+event.device[1].manufacturer_d_state,3,0.0%,No,No,2,
+event.device[1].manufacturer_d_zip_code,3,0.0%,No,No,2,
+event.device[1].manufacturer_d_zip_code_ext,3,0.0%,No,No,2,
+event.device[1].model_number,3,0.0%,No,No,2,
+event.device[1].openfda,3,0.0%,No,Yes,2,[Object] 示例键'device_name': 'Suntan Lamp'
+event.device[1].other_id_number,3,0.0%,No,No,2,
+event.device[1].udi_di,3,0.0%,No,No,2,
+event.device[1].udi_public,3,0.0%,No,No,2,
+event.device[1].openfda.device_class,2,0.0%,No,No,3,2
+event.device[1].openfda.device_name,2,0.0%,No,No,3,Suntan Lamp
+event.device[1].openfda.medical_specialty_description,2,0.0%,No,No,3,"General, Plastic Surgery"
+event.device[1].openfda.regulation_number,2,0.0%,No,No,3,878.4635

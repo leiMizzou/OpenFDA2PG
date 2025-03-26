@@ -1,0 +1,868 @@
+JSON file: /Volumes/Lexar SSD 4TB - RAID0/GitHub/FAERS/datafiles/samples/device/device-event-0003-of-0003_sample.json
+Mapping CSV: ./fda_analysis/event_fields.csv
+Total JSON paths: 428
+Total mapping paths: 159
+Problem paths: 165
+
+Problem Paths:
+  Table: event, Field: manufacturer_contact_zip_ext
+  Path: event.manufacturer_contact_zip_ext
+  Found: False
+  Similar paths: results[2].manufacturer_contact_zip_ext, results[1].manufacturer_contact_zip_ext, results[0].manufacturer_contact_zip_ext, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_g1_address_2
+  Path: event.manufacturer_g1_address_2
+  Found: False
+  Similar paths: results[2].manufacturer_g1_address_2, results[1].manufacturer_g1_address_2, results[0].manufacturer_g1_address_2, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: event_location
+  Path: event.event_location
+  Found: False
+  Similar paths: results[2].event_location, results[1].event_location, results[0].event_location, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: report_to_fda
+  Path: event.report_to_fda
+  Found: False
+  Similar paths: results[2].report_to_fda, results[1].report_to_fda, results[0].report_to_fda, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_contact_t_name
+  Path: event.manufacturer_contact_t_name
+  Found: False
+  Similar paths: results[2].manufacturer_contact_t_name, results[1].manufacturer_contact_t_name, results[0].manufacturer_contact_t_name, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_contact_state
+  Path: event.manufacturer_contact_state
+  Found: False
+  Similar paths: results[2].manufacturer_contact_state, results[1].manufacturer_contact_state, results[0].manufacturer_contact_state, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_link_flag
+  Path: event.manufacturer_link_flag
+  Found: False
+  Similar paths: results[2].manufacturer_link_flag, results[1].manufacturer_link_flag, results[0].manufacturer_link_flag, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_contact_address_2
+  Path: event.manufacturer_contact_address_2
+  Found: False
+  Similar paths: results[2].manufacturer_contact_address_2, results[1].manufacturer_contact_address_2, results[0].manufacturer_contact_address_2, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_g1_city
+  Path: event.manufacturer_g1_city
+  Found: False
+  Similar paths: results[2].manufacturer_g1_city, results[1].manufacturer_g1_city, results[0].manufacturer_g1_city, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_contact_address_1
+  Path: event.manufacturer_contact_address_1
+  Found: False
+  Similar paths: results[2].manufacturer_contact_address_1, results[1].manufacturer_contact_address_1, results[0].manufacturer_contact_address_1, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_contact_pcity
+  Path: event.manufacturer_contact_pcity
+  Found: False
+  Similar paths: results[2].manufacturer_contact_pcity, results[1].manufacturer_contact_pcity, results[0].manufacturer_contact_pcity, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: event_type
+  Path: event.event_type
+  Found: False
+  Similar paths: results[2].event_type, results[1].event_type, results[0].event_type, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: report_number
+  Path: event.report_number
+  Found: False
+  Similar paths: results[2].report_number, results[1].report_number, results[0].report_number, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: type_of_report
+  Path: event.type_of_report
+  Found: False
+  Similar paths: results[2].type_of_report, results[1].type_of_report, results[0].type_of_report, results[2].type_of_report[0], results[2].number_patients_in_event
+
+  Table: event, Field: type_of_report[]
+  Path: event.type_of_report[]
+  Found: False
+  Similar paths: results[2].type_of_report, results[2].number_patients_in_event, results[2].number_devices_in_event, results[2].event_type, results[2].event_location
+
+  Table: event, Field: product_problem_flag
+  Path: event.product_problem_flag
+  Found: False
+  Similar paths: results[2].product_problem_flag, results[1].product_problem_flag, results[0].product_problem_flag, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: date_received
+  Path: event.date_received
+  Found: False
+  Similar paths: results[2].device[0].date_received, results[2].date_received, results[1].device[0].date_received, results[1].date_received, results[0].device[0].date_received
+
+  Table: event, Field: manufacturer_address_2
+  Path: event.manufacturer_address_2
+  Found: False
+  Similar paths: results[2].manufacturer_address_2, results[1].manufacturer_address_2, results[0].manufacturer_address_2, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: pma_pmn_number
+  Path: event.pma_pmn_number
+  Found: False
+  Similar paths: results[2].pma_pmn_number, results[1].pma_pmn_number, results[0].pma_pmn_number, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: reprocessed_and_reused_flag
+  Path: event.reprocessed_and_reused_flag
+  Found: False
+  Similar paths: results[2].reprocessed_and_reused_flag, results[1].reprocessed_and_reused_flag, results[0].reprocessed_and_reused_flag, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_address_1
+  Path: event.manufacturer_address_1
+  Found: False
+  Similar paths: results[2].manufacturer_address_1, results[1].manufacturer_address_1, results[0].manufacturer_address_1, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: exemption_number
+  Path: event.exemption_number
+  Found: False
+  Similar paths: results[2].exemption_number, results[1].exemption_number, results[0].exemption_number, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_contact_zip_code
+  Path: event.manufacturer_contact_zip_code
+  Found: False
+  Similar paths: results[2].manufacturer_contact_zip_code, results[1].manufacturer_contact_zip_code, results[0].manufacturer_contact_zip_code, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: reporter_occupation_code
+  Path: event.reporter_occupation_code
+  Found: False
+  Similar paths: results[2].reporter_occupation_code, results[1].reporter_occupation_code, results[0].reporter_occupation_code, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_contact_plocal
+  Path: event.manufacturer_contact_plocal
+  Found: False
+  Similar paths: results[2].manufacturer_contact_plocal, results[1].manufacturer_contact_plocal, results[0].manufacturer_contact_plocal, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: noe_summarized
+  Path: event.noe_summarized
+  Found: False
+  Similar paths: results[2].noe_summarized, results[1].noe_summarized, results[0].noe_summarized, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_contact_l_name
+  Path: event.manufacturer_contact_l_name
+  Found: False
+  Similar paths: results[2].manufacturer_contact_l_name, results[1].manufacturer_contact_l_name, results[0].manufacturer_contact_l_name, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: source_type
+  Path: event.source_type
+  Found: False
+  Similar paths: results[2].source_type, results[1].source_type, results[0].source_type, results[2].source_type[1], results[2].source_type[0]
+
+  Table: event, Field: source_type[]
+  Path: event.source_type[]
+  Found: False
+  Similar paths: results[2].source_type, results[2].number_patients_in_event, results[2].number_devices_in_event, results[2].event_type, results[2].event_location
+
+  Table: event, Field: distributor_zip_code_ext
+  Path: event.distributor_zip_code_ext
+  Found: False
+  Similar paths: results[2].distributor_zip_code_ext, results[1].distributor_zip_code_ext, results[0].distributor_zip_code_ext, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_g1_postal_code
+  Path: event.manufacturer_g1_postal_code
+  Found: False
+  Similar paths: results[2].manufacturer_g1_postal_code, results[1].manufacturer_g1_postal_code, results[0].manufacturer_g1_postal_code, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_g1_state
+  Path: event.manufacturer_g1_state
+  Found: False
+  Similar paths: results[2].manufacturer_g1_state, results[1].manufacturer_g1_state, results[0].manufacturer_g1_state, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: reporter_country_code
+  Path: event.reporter_country_code
+  Found: False
+  Similar paths: results[2].reporter_country_code, results[1].reporter_country_code, results[0].reporter_country_code, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_contact_area_code
+  Path: event.manufacturer_contact_area_code
+  Found: False
+  Similar paths: results[2].manufacturer_contact_area_code, results[1].manufacturer_contact_area_code, results[0].manufacturer_contact_area_code, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_contact_f_name
+  Path: event.manufacturer_contact_f_name
+  Found: False
+  Similar paths: results[2].manufacturer_contact_f_name, results[1].manufacturer_contact_f_name, results[0].manufacturer_contact_f_name, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: previous_use_code
+  Path: event.previous_use_code
+  Found: False
+  Similar paths: results[2].previous_use_code, results[1].previous_use_code, results[0].previous_use_code, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: device
+  Path: event.device
+  Found: False
+  Similar paths: results[2].device[0].device_event_key, results[1].device[0].device_event_key, results[0].device[0].device_event_key, results[2].number_devices_in_event, results[2].device[0].openfda.device_name
+
+  Table: event, Field: device[]
+  Path: event.device[]
+  Found: False
+  Similar paths: results[2].number_patients_in_event, results[2].number_devices_in_event, results[2].event_type, results[2].event_location, results[2].event_key
+
+  Table: event, Field: manufacturer_zip_code
+  Path: event.manufacturer_zip_code
+  Found: False
+  Similar paths: results[2].manufacturer_zip_code, results[1].manufacturer_zip_code, results[0].manufacturer_zip_code, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_contact_country
+  Path: event.manufacturer_contact_country
+  Found: False
+  Similar paths: results[2].manufacturer_contact_country, results[1].manufacturer_contact_country, results[0].manufacturer_contact_country, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: date_changed
+  Path: event.date_changed
+  Found: False
+  Similar paths: results[2].date_changed, results[1].date_changed, results[0].date_changed, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: health_professional
+  Path: event.health_professional
+  Found: False
+  Similar paths: results[2].health_professional, results[1].health_professional, results[0].health_professional, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: summary_report_flag
+  Path: event.summary_report_flag
+  Found: False
+  Similar paths: results[2].summary_report_flag, results[1].summary_report_flag, results[0].summary_report_flag, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_g1_zip_code_ext
+  Path: event.manufacturer_g1_zip_code_ext
+  Found: False
+  Similar paths: results[2].manufacturer_g1_zip_code_ext, results[1].manufacturer_g1_zip_code_ext, results[0].manufacturer_g1_zip_code_ext, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_contact_extension
+  Path: event.manufacturer_contact_extension
+  Found: False
+  Similar paths: results[2].manufacturer_contact_extension, results[1].manufacturer_contact_extension, results[0].manufacturer_contact_extension, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_city
+  Path: event.manufacturer_city
+  Found: False
+  Similar paths: results[2].manufacturer_city, results[1].manufacturer_city, results[0].manufacturer_city, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_contact_phone_number
+  Path: event.manufacturer_contact_phone_number
+  Found: False
+  Similar paths: results[2].manufacturer_contact_phone_number, results[1].manufacturer_contact_phone_number, results[0].manufacturer_contact_phone_number, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: patient
+  Path: event.patient
+  Found: False
+  Similar paths: results[2].patient[0].patient_sequence_number, results[2].patient[0].patient_problems[0], results[2].patient[0].patient_problems, results[2].patient, results[2].number_patients_in_event
+
+  Table: event, Field: patient[]
+  Path: event.patient[]
+  Found: False
+  Similar paths: results[2].patient, results[2].number_patients_in_event, results[2].number_devices_in_event, results[2].event_type, results[2].event_location
+
+  Table: event, Field: distributor_city
+  Path: event.distributor_city
+  Found: False
+  Similar paths: results[2].distributor_city, results[1].distributor_city, results[0].distributor_city, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: initial_report_to_fda
+  Path: event.initial_report_to_fda
+  Found: False
+  Similar paths: results[2].initial_report_to_fda, results[1].initial_report_to_fda, results[0].initial_report_to_fda, results[2].report_to_fda, results[2].number_patients_in_event
+
+  Table: event, Field: distributor_state
+  Path: event.distributor_state
+  Found: False
+  Similar paths: results[2].distributor_state, results[1].distributor_state, results[0].distributor_state, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: event_key
+  Path: event.event_key
+  Found: False
+  Similar paths: results[2].event_key, results[1].event_key, results[0].event_key, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event, Field: manufacturer_g1_country
+  Path: event.manufacturer_g1_country
+  Found: False
+  Similar paths: results[2].manufacturer_g1_country, results[1].manufacturer_g1_country, results[0].manufacturer_g1_country, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_contact_city
+  Path: event.manufacturer_contact_city
+  Found: False
+  Similar paths: results[2].manufacturer_contact_city, results[1].manufacturer_contact_city, results[0].manufacturer_contact_city, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: mdr_report_key
+  Path: event.mdr_report_key
+  Found: False
+  Similar paths: results[2].mdr_report_key, results[1].mdr_report_key, results[0].mdr_report_key, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: removal_correction_number
+  Path: event.removal_correction_number
+  Found: False
+  Similar paths: results[2].removal_correction_number, results[1].removal_correction_number, results[0].removal_correction_number, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: number_devices_in_event
+  Path: event.number_devices_in_event
+  Found: False
+  Similar paths: results[2].number_devices_in_event, results[1].number_devices_in_event, results[0].number_devices_in_event, results[2].number_patients_in_event, results[2].event_type
+
+  Table: event, Field: manufacturer_name
+  Path: event.manufacturer_name
+  Found: False
+  Similar paths: results[2].manufacturer_name, results[1].manufacturer_name, results[0].manufacturer_name, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: report_source_code
+  Path: event.report_source_code
+  Found: False
+  Similar paths: results[2].report_source_code, results[1].report_source_code, results[0].report_source_code, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: remedial_action
+  Path: event.remedial_action
+  Found: False
+  Similar paths: results[2].remedial_action, results[1].remedial_action, results[0].remedial_action, results[2].remedial_action[0], results[2].number_patients_in_event
+
+  Table: event, Field: remedial_action[]
+  Path: event.remedial_action[]
+  Found: False
+  Similar paths: results[2].remedial_action, results[2].number_patients_in_event, results[2].number_devices_in_event, results[2].event_type, results[2].event_location
+
+  Table: event, Field: manufacturer_g1_zip_code
+  Path: event.manufacturer_g1_zip_code
+  Found: False
+  Similar paths: results[2].manufacturer_g1_zip_code, results[1].manufacturer_g1_zip_code, results[0].manufacturer_g1_zip_code, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: report_to_manufacturer
+  Path: event.report_to_manufacturer
+  Found: False
+  Similar paths: results[2].report_to_manufacturer, results[1].report_to_manufacturer, results[0].report_to_manufacturer, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_zip_code_ext
+  Path: event.manufacturer_zip_code_ext
+  Found: False
+  Similar paths: results[2].manufacturer_zip_code_ext, results[1].manufacturer_zip_code_ext, results[0].manufacturer_zip_code_ext, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_g1_name
+  Path: event.manufacturer_g1_name
+  Found: False
+  Similar paths: results[2].manufacturer_g1_name, results[1].manufacturer_g1_name, results[0].manufacturer_g1_name, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: adverse_event_flag
+  Path: event.adverse_event_flag
+  Found: False
+  Similar paths: results[2].adverse_event_flag, results[1].adverse_event_flag, results[0].adverse_event_flag, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: distributor_address_1
+  Path: event.distributor_address_1
+  Found: False
+  Similar paths: results[2].distributor_address_1, results[1].distributor_address_1, results[0].distributor_address_1, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_state
+  Path: event.manufacturer_state
+  Found: False
+  Similar paths: results[2].manufacturer_state, results[1].manufacturer_state, results[0].manufacturer_state, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: distributor_address_2
+  Path: event.distributor_address_2
+  Found: False
+  Similar paths: results[2].distributor_address_2, results[1].distributor_address_2, results[0].distributor_address_2, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_postal_code
+  Path: event.manufacturer_postal_code
+  Found: False
+  Similar paths: results[2].manufacturer_postal_code, results[1].manufacturer_postal_code, results[0].manufacturer_postal_code, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: single_use_flag
+  Path: event.single_use_flag
+  Found: False
+  Similar paths: results[2].single_use_flag, results[1].single_use_flag, results[0].single_use_flag, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_country
+  Path: event.manufacturer_country
+  Found: False
+  Similar paths: results[2].manufacturer_country, results[1].manufacturer_country, results[0].manufacturer_country, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: mdr_text
+  Path: event.mdr_text
+  Found: False
+  Similar paths: results[2].mdr_text[1].text, results[2].mdr_text[1].mdr_text_key, results[2].mdr_text[0].text, results[2].mdr_text[0].mdr_text_key, results[2].mdr_text
+
+  Table: event, Field: mdr_text[]
+  Path: event.mdr_text[]
+  Found: False
+  Similar paths: results[2].number_patients_in_event, results[2].number_devices_in_event, results[2].mdr_text[1].text, results[2].mdr_text[0].text, results[2].mdr_text
+
+  Table: event, Field: number_patients_in_event
+  Path: event.number_patients_in_event
+  Found: False
+  Similar paths: results[2].number_patients_in_event, results[1].number_patients_in_event, results[0].number_patients_in_event, results[2].patient, results[2].number_devices_in_event
+
+  Table: event, Field: distributor_name
+  Path: event.distributor_name
+  Found: False
+  Similar paths: results[2].distributor_name, results[1].distributor_name, results[0].distributor_name, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_g1_address_1
+  Path: event.manufacturer_g1_address_1
+  Found: False
+  Similar paths: results[2].manufacturer_g1_address_1, results[1].manufacturer_g1_address_1, results[0].manufacturer_g1_address_1, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: distributor_zip_code
+  Path: event.distributor_zip_code
+  Found: False
+  Similar paths: results[2].distributor_zip_code, results[1].distributor_zip_code, results[0].distributor_zip_code, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_contact_postal_code
+  Path: event.manufacturer_contact_postal_code
+  Found: False
+  Similar paths: results[2].manufacturer_contact_postal_code, results[1].manufacturer_contact_postal_code, results[0].manufacturer_contact_postal_code, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_contact_exchange
+  Path: event.manufacturer_contact_exchange
+  Found: False
+  Similar paths: results[2].manufacturer_contact_exchange, results[1].manufacturer_contact_exchange, results[0].manufacturer_contact_exchange, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: manufacturer_contact_pcountry
+  Path: event.manufacturer_contact_pcountry
+  Found: False
+  Similar paths: results[2].manufacturer_contact_pcountry, results[1].manufacturer_contact_pcountry, results[0].manufacturer_contact_pcountry, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: suppl_dates_mfr_received
+  Path: event.suppl_dates_mfr_received
+  Found: False
+  Similar paths: results[2].suppl_dates_mfr_received, results[1].suppl_dates_mfr_received, results[0].suppl_dates_mfr_received, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: suppl_dates_fda_received
+  Path: event.suppl_dates_fda_received
+  Found: False
+  Similar paths: results[2].suppl_dates_fda_received, results[1].suppl_dates_fda_received, results[0].suppl_dates_fda_received, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: date_added
+  Path: event.date_added
+  Found: False
+  Similar paths: results[2].date_added, results[1].date_added, results[0].date_added, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: date_report
+  Path: event.date_report
+  Found: False
+  Similar paths: results[2].date_report, results[1].date_report, results[2].number_patients_in_event, results[2].number_devices_in_event, results[2].event_type
+
+  Table: event, Field: date_of_event
+  Path: event.date_of_event
+  Found: False
+  Similar paths: results[2].date_of_event, results[1].date_of_event, results[0].date_of_event, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: date_manufacturer_received
+  Path: event.date_manufacturer_received
+  Found: False
+  Similar paths: results[2].date_manufacturer_received, results[1].date_manufacturer_received, results[0].date_manufacturer_received, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: product_problems
+  Path: event.product_problems
+  Found: False
+  Similar paths: results[2].product_problems, results[1].product_problems, results[0].product_problems, results[2].product_problems[0], results[2].number_patients_in_event
+
+  Table: event, Field: product_problems[]
+  Path: event.product_problems[]
+  Found: False
+  Similar paths: results[2].product_problems, results[2].number_patients_in_event, results[2].number_devices_in_event, results[2].event_type, results[2].event_location
+
+  Table: event, Field: device_date_of_manufacturer
+  Path: event.device_date_of_manufacturer
+  Found: False
+  Similar paths: results[2].device_date_of_manufacturer, results[1].device_date_of_manufacturer, results[0].device_date_of_manufacturer, results[2].number_patients_in_event, results[2].number_devices_in_event
+
+  Table: event, Field: date_facility_aware
+  Path: event.date_facility_aware
+  Found: False
+  Similar paths: results[2].number_patients_in_event, results[2].number_devices_in_event, results[2].event_type, results[2].event_location, results[2].event_key
+
+  Table: event, Field: report_date
+  Path: event.report_date
+  Found: False
+  Similar paths: results[2].number_patients_in_event, results[2].number_devices_in_event, results[2].event_type, results[2].event_location, results[2].event_key
+
+  Table: event, Field: date_report_to_fda
+  Path: event.date_report_to_fda
+  Found: False
+  Similar paths: results[2].report_to_fda, results[2].number_patients_in_event, results[2].number_devices_in_event, results[2].event_type, results[2].event_location
+
+  Table: event, Field: date_report_to_manufacturer
+  Path: event.date_report_to_manufacturer
+  Found: False
+  Similar paths: results[2].report_to_manufacturer, results[2].number_patients_in_event, results[2].number_devices_in_event, results[2].event_type, results[2].event_location
+
+  Table: event_device, Field: device_event_key
+  Path: event.device[0].device_event_key
+  Found: False
+  Similar paths: results[2].device[0].device_event_key, results[1].device[0].device_event_key, results[0].device[0].device_event_key, results[2].event_key, results[2].device[0].udi_public
+
+  Table: event_device, Field: implant_flag
+  Path: event.device[0].implant_flag
+  Found: False
+  Similar paths: results[2].device[0].implant_flag, results[1].device[0].implant_flag, results[0].device[0].implant_flag, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: date_removed_flag
+  Path: event.device[0].date_removed_flag
+  Found: False
+  Similar paths: results[2].device[0].date_removed_flag, results[1].device[0].date_removed_flag, results[0].device[0].date_removed_flag, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: device_sequence_number
+  Path: event.device[0].device_sequence_number
+  Found: False
+  Similar paths: results[2].device[0].device_sequence_number, results[1].device[0].device_sequence_number, results[0].device[0].device_sequence_number, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: date_received
+  Path: event.device[0].date_received
+  Found: False
+  Similar paths: results[2].device[0].date_received, results[1].device[0].date_received, results[0].device[0].date_received, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: brand_name
+  Path: event.device[0].brand_name
+  Found: False
+  Similar paths: results[2].device[0].brand_name, results[1].device[0].brand_name, results[0].device[0].brand_name, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: generic_name
+  Path: event.device[0].generic_name
+  Found: False
+  Similar paths: results[2].device[0].generic_name, results[1].device[0].generic_name, results[0].device[0].generic_name, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: manufacturer_d_name
+  Path: event.device[0].manufacturer_d_name
+  Found: False
+  Similar paths: results[2].device[0].manufacturer_d_name, results[1].device[0].manufacturer_d_name, results[0].device[0].manufacturer_d_name, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: manufacturer_d_address_1
+  Path: event.device[0].manufacturer_d_address_1
+  Found: False
+  Similar paths: results[2].device[0].manufacturer_d_address_1, results[1].device[0].manufacturer_d_address_1, results[0].device[0].manufacturer_d_address_1, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: manufacturer_d_address_2
+  Path: event.device[0].manufacturer_d_address_2
+  Found: False
+  Similar paths: results[2].device[0].manufacturer_d_address_2, results[1].device[0].manufacturer_d_address_2, results[0].device[0].manufacturer_d_address_2, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: manufacturer_d_city
+  Path: event.device[0].manufacturer_d_city
+  Found: False
+  Similar paths: results[2].device[0].manufacturer_d_city, results[1].device[0].manufacturer_d_city, results[0].device[0].manufacturer_d_city, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: manufacturer_d_state
+  Path: event.device[0].manufacturer_d_state
+  Found: False
+  Similar paths: results[2].device[0].manufacturer_d_state, results[1].device[0].manufacturer_d_state, results[0].device[0].manufacturer_d_state, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: manufacturer_d_zip_code
+  Path: event.device[0].manufacturer_d_zip_code
+  Found: False
+  Similar paths: results[2].device[0].manufacturer_d_zip_code, results[1].device[0].manufacturer_d_zip_code, results[0].device[0].manufacturer_d_zip_code, results[2].device[0].manufacturer_d_zip_code_ext, results[2].device[0].device_event_key
+
+  Table: event_device, Field: manufacturer_d_zip_code_ext
+  Path: event.device[0].manufacturer_d_zip_code_ext
+  Found: False
+  Similar paths: results[2].device[0].manufacturer_d_zip_code_ext, results[1].device[0].manufacturer_d_zip_code_ext, results[0].device[0].manufacturer_d_zip_code_ext, results[2].device[0].manufacturer_d_zip_code, results[2].device[0].device_event_key
+
+  Table: event_device, Field: manufacturer_d_country
+  Path: event.device[0].manufacturer_d_country
+  Found: False
+  Similar paths: results[2].device[0].manufacturer_d_country, results[1].device[0].manufacturer_d_country, results[0].device[0].manufacturer_d_country, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: manufacturer_d_postal_code
+  Path: event.device[0].manufacturer_d_postal_code
+  Found: False
+  Similar paths: results[2].device[0].manufacturer_d_postal_code, results[1].device[0].manufacturer_d_postal_code, results[0].device[0].manufacturer_d_postal_code, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: model_number
+  Path: event.device[0].model_number
+  Found: False
+  Similar paths: results[2].device[0].model_number, results[1].device[0].model_number, results[0].device[0].model_number, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: catalog_number
+  Path: event.device[0].catalog_number
+  Found: False
+  Similar paths: results[2].device[0].catalog_number, results[1].device[0].catalog_number, results[0].device[0].catalog_number, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: lot_number
+  Path: event.device[0].lot_number
+  Found: False
+  Similar paths: results[2].device[0].lot_number, results[1].device[0].lot_number, results[0].device[0].lot_number, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: other_id_number
+  Path: event.device[0].other_id_number
+  Found: False
+  Similar paths: results[2].device[0].other_id_number, results[1].device[0].other_id_number, results[0].device[0].other_id_number, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: device_operator
+  Path: event.device[0].device_operator
+  Found: False
+  Similar paths: results[2].device[0].device_operator, results[1].device[0].device_operator, results[0].device[0].device_operator, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: device_availability
+  Path: event.device[0].device_availability
+  Found: False
+  Similar paths: results[2].device[0].device_availability, results[1].device[0].device_availability, results[0].device[0].device_availability, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: device_report_product_code
+  Path: event.device[0].device_report_product_code
+  Found: False
+  Similar paths: results[2].device[0].device_report_product_code, results[1].device[0].device_report_product_code, results[0].device[0].device_report_product_code, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: device_age_text
+  Path: event.device[0].device_age_text
+  Found: False
+  Similar paths: results[2].device[0].device_age_text, results[1].device[0].device_age_text, results[0].device[0].device_age_text, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: device_evaluated_by_manufacturer
+  Path: event.device[0].device_evaluated_by_manufacturer
+  Found: False
+  Similar paths: results[2].device[0].device_evaluated_by_manufacturer, results[1].device[0].device_evaluated_by_manufacturer, results[0].device[0].device_evaluated_by_manufacturer, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: openfda_fei_number
+  Path: event.device[0].openfda.fei_number
+  Found: False
+  Similar paths: results[2].device[0].openfda.regulation_number, results[2].device[0].openfda.medical_specialty_description, results[2].device[0].openfda.device_name, results[2].device[0].openfda.device_class, results[2].device[0].openfda
+
+  Table: event_device, Field: openfda_medical_specialty_description
+  Path: event.device[0].openfda.medical_specialty_description
+  Found: False
+  Similar paths: results[2].device[0].openfda.medical_specialty_description, results[1].device[0].openfda.medical_specialty_description, results[0].device[0].openfda.medical_specialty_description, results[2].device[0].openfda.regulation_number, results[2].device[0].openfda.device_name
+
+  Table: event_device, Field: openfda_fei_number[]
+  Path: event.device[0].openfda.fei_number[]
+  Found: False
+  Similar paths: results[2].device[0].openfda.regulation_number, results[2].device[0].openfda.medical_specialty_description, results[2].device[0].openfda.device_name, results[2].device[0].openfda.device_class, results[2].device[0].openfda
+
+  Table: event_device, Field: openfda_registration_number
+  Path: event.device[0].openfda.registration_number
+  Found: False
+  Similar paths: results[2].device[0].openfda.regulation_number, results[2].device[0].openfda.medical_specialty_description, results[2].device[0].openfda.device_name, results[2].device[0].openfda.device_class, results[2].device[0].openfda
+
+  Table: event_device, Field: openfda_device_class
+  Path: event.device[0].openfda.device_class
+  Found: False
+  Similar paths: results[2].device[0].openfda.device_class, results[1].device[0].openfda.device_class, results[0].device[0].openfda.device_class, results[2].device[0].openfda.regulation_number, results[2].device[0].openfda.medical_specialty_description
+
+  Table: event_device, Field: openfda_registration_number[]
+  Path: event.device[0].openfda.registration_number[]
+  Found: False
+  Similar paths: results[2].device[0].openfda.regulation_number, results[2].device[0].openfda.medical_specialty_description, results[2].device[0].openfda.device_name, results[2].device[0].openfda.device_class, results[2].device[0].openfda
+
+  Table: event_device, Field: openfda_device_name
+  Path: event.device[0].openfda.device_name
+  Found: False
+  Similar paths: results[2].device[0].openfda.device_name, results[1].device[0].openfda.device_name, results[0].device[0].openfda.device_name, results[2].device[0].openfda.regulation_number, results[2].device[0].openfda.medical_specialty_description
+
+  Table: event_device, Field: openfda_regulation_number
+  Path: event.device[0].openfda.regulation_number
+  Found: False
+  Similar paths: results[2].device[0].openfda.regulation_number, results[1].device[0].openfda.regulation_number, results[0].device[0].openfda.regulation_number, results[2].device[0].openfda.medical_specialty_description, results[2].device[0].openfda.device_name
+
+  Table: event_device, Field: combination_product_flag
+  Path: event.device[0].combination_product_flag
+  Found: False
+  Similar paths: results[2].device[0].combination_product_flag, results[1].device[0].combination_product_flag, results[0].device[0].combination_product_flag, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: udi_di
+  Path: event.device[0].udi_di
+  Found: False
+  Similar paths: results[2].device[0].udi_di, results[1].device[0].udi_di, results[0].device[0].udi_di, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: udi_public
+  Path: event.device[0].udi_public
+  Found: False
+  Similar paths: results[2].device[0].udi_public, results[1].device[0].udi_public, results[0].device[0].udi_public, results[2].device[0].device_event_key, results[1].device[0].device_event_key
+
+  Table: event_device, Field: date_returned_to_manufacturer
+  Path: event.device[0].date_returned_to_manufacturer
+  Found: False
+  Similar paths: results[2].device[0].device_event_key, results[1].device[0].device_event_key, results[0].device[0].device_event_key, results[2].device[0].udi_public, results[2].device[0].udi_di
+
+  Table: event_device, Field: expiration_date_of_device
+  Path: event.device[0].expiration_date_of_device
+  Found: False
+  Similar paths: results[0].device[0].expiration_date_of_device, results[2].device[0].device_event_key, results[1].device[0].device_event_key, results[0].device[0].device_event_key, results[2].device[0].udi_public
+
+  Table: event_device, Field: baseline_510_k__flag
+  Path: event.device[0].baseline_510_k__flag
+  Found: False
+  Similar paths: results[2].device[0].device_event_key, results[1].device[0].device_event_key, results[0].device[0].device_event_key, results[2].device[0].udi_public, results[2].device[0].udi_di
+
+  Table: event_device, Field: baseline_510_k__number
+  Path: event.device[0].baseline_510_k__number
+  Found: False
+  Similar paths: results[2].device[0].device_event_key, results[1].device[0].device_event_key, results[0].device[0].device_event_key, results[2].device[0].udi_public, results[2].device[0].udi_di
+
+  Table: event_device, Field: baseline_510_k__exempt_flag
+  Path: event.device[0].baseline_510_k__exempt_flag
+  Found: False
+  Similar paths: results[2].device[0].device_event_key, results[1].device[0].device_event_key, results[0].device[0].device_event_key, results[2].device[0].udi_public, results[2].device[0].udi_di
+
+  Table: event_device, Field: device_name
+  Path: event.device[0].openfda.device_name
+  Found: False
+  Similar paths: results[2].device[0].openfda.device_name, results[1].device[0].openfda.device_name, results[0].device[0].openfda.device_name, results[2].device[0].openfda.regulation_number, results[2].device[0].openfda.medical_specialty_description
+
+  Table: event_device, Field: medical_specialty_description
+  Path: event.device[0].openfda.medical_specialty_description
+  Found: False
+  Similar paths: results[2].device[0].openfda.medical_specialty_description, results[1].device[0].openfda.medical_specialty_description, results[0].device[0].openfda.medical_specialty_description, results[2].device[0].openfda.regulation_number, results[2].device[0].openfda.device_name
+
+  Table: event_device, Field: regulation_number
+  Path: event.device[0].openfda.regulation_number
+  Found: False
+  Similar paths: results[2].device[0].openfda.regulation_number, results[1].device[0].openfda.regulation_number, results[0].device[0].openfda.regulation_number, results[2].device[0].openfda.medical_specialty_description, results[2].device[0].openfda.device_name
+
+  Table: event_device, Field: device_class
+  Path: event.device[0].openfda.device_class
+  Found: False
+  Similar paths: results[2].device[0].openfda.device_class, results[1].device[0].openfda.device_class, results[0].device[0].openfda.device_class, results[2].device[0].openfda.regulation_number, results[2].device[0].openfda.medical_specialty_description
+
+  Table: event_device, Field: registration_number
+  Path: event.device[0].openfda.registration_number
+  Found: False
+  Similar paths: results[2].device[0].openfda.regulation_number, results[2].device[0].openfda.medical_specialty_description, results[2].device[0].openfda.device_name, results[2].device[0].openfda.device_class, results[2].device[0].openfda
+
+  Table: event_device, Field: fei_number
+  Path: event.device[0].openfda.fei_number
+  Found: False
+  Similar paths: results[2].device[0].openfda.regulation_number, results[2].device[0].openfda.medical_specialty_description, results[2].device[0].openfda.device_name, results[2].device[0].openfda.device_class, results[2].device[0].openfda
+
+  Table: event_patient, Field: patient_sequence_number
+  Path: event.patient[0].patient_sequence_number
+  Found: False
+  Similar paths: results[2].patient[0].patient_sequence_number, results[1].patient[0].patient_sequence_number, results[0].patient[0].patient_sequence_number, results[2].patient[0].patient_problems[0], results[2].patient[0].patient_problems
+
+  Table: event_patient, Field: date_received
+  Path: event.patient[0].date_received
+  Found: False
+  Similar paths: results[2].patient[0].patient_sequence_number, results[2].patient[0].patient_problems[0], results[2].patient[0].patient_problems, results[2].patient[0], results[2].device[0].date_received
+
+  Table: event_patient, Field: sequence_number_treatment
+  Path: event.patient[0].sequence_number_treatment
+  Found: False
+  Similar paths: results[2].patient[0].patient_sequence_number, results[2].patient[0].patient_problems[0], results[2].patient[0].patient_problems, results[2].patient[0], results[1].patient[0].patient_sequence_number
+
+  Table: event_patient, Field: sequence_number_outcome
+  Path: event.patient[0].sequence_number_outcome
+  Found: False
+  Similar paths: results[2].patient[0].patient_sequence_number, results[2].patient[0].patient_problems[0], results[2].patient[0].patient_problems, results[2].patient[0], results[1].patient[0].patient_sequence_number
+
+  Table: event_patient, Field: patient_age
+  Path: event.patient[0].patient_age
+  Found: False
+  Similar paths: results[2].patient[0].patient_sequence_number, results[2].patient[0].patient_problems[0], results[2].patient[0].patient_problems, results[2].patient[0], results[2].patient
+
+  Table: event_patient, Field: patient_sex
+  Path: event.patient[0].patient_sex
+  Found: False
+  Similar paths: results[2].patient[0].patient_sequence_number, results[2].patient[0].patient_problems[0], results[2].patient[0].patient_problems, results[2].patient[0], results[2].patient
+
+  Table: event_patient, Field: patient_weight
+  Path: event.patient[0].patient_weight
+  Found: False
+  Similar paths: results[2].patient[0].patient_sequence_number, results[2].patient[0].patient_problems[0], results[2].patient[0].patient_problems, results[2].patient[0], results[2].patient
+
+  Table: event_patient, Field: patient_ethnicity
+  Path: event.patient[0].patient_ethnicity
+  Found: False
+  Similar paths: results[2].patient[0].patient_sequence_number, results[2].patient[0].patient_problems[0], results[2].patient[0].patient_problems, results[2].patient[0], results[2].patient
+
+  Table: event_patient, Field: patient_race
+  Path: event.patient[0].patient_race
+  Found: False
+  Similar paths: results[2].patient[0].patient_sequence_number, results[2].patient[0].patient_problems[0], results[2].patient[0].patient_problems, results[2].patient[0], results[2].patient
+
+  Table: event_patient, Field: patient_problems
+  Path: event.patient[0].patient_problems
+  Found: False
+  Similar paths: results[2].patient[0].patient_problems, results[1].patient[0].patient_problems, results[0].patient[0].patient_problems, results[2].patient[0].patient_problems[0], results[1].patient[0].patient_problems[0]
+
+  Table: event_mdr_text, Field: mdr_text_key
+  Path: event.mdr_text[0].mdr_text_key
+  Found: False
+  Similar paths: results[2].mdr_text[0].text, results[2].mdr_text[0].mdr_text_key, results[1].mdr_text[0].text, results[1].mdr_text[0].mdr_text_key, results[0].mdr_text[0].text
+
+  Table: event_mdr_text, Field: text_type_code
+  Path: event.mdr_text[0].text_type_code
+  Found: False
+  Similar paths: results[2].mdr_text[0].text_type_code, results[2].mdr_text[0].text, results[1].mdr_text[0].text_type_code, results[1].mdr_text[0].text, results[0].mdr_text[0].text_type_code
+
+  Table: event_mdr_text, Field: patient_sequence_number
+  Path: event.mdr_text[0].patient_sequence_number
+  Found: False
+  Similar paths: results[2].mdr_text[0].patient_sequence_number, results[1].mdr_text[0].patient_sequence_number, results[0].mdr_text[0].patient_sequence_number, results[2].mdr_text[0].text, results[1].mdr_text[0].text
+
+  Table: event_mdr_text, Field: text
+  Path: event.mdr_text[0].text
+  Found: False
+  Similar paths: results[2].mdr_text[0].text, results[1].mdr_text[0].text, results[0].mdr_text[0].text, results[2].mdr_text[1].text, results[2].mdr_text[0].text_type_code
+
+  Table: event_type_of_report, Field: type_of_report_value
+  Path: event.type_of_report.value
+  Found: False
+  Similar paths: results[2].type_of_report, results[1].type_of_report, results[0].type_of_report, results[2].type_of_report[0], results[2].number_patients_in_event
+
+  Table: event_source_type, Field: source_type_value
+  Path: event.source_type.value
+  Found: False
+  Similar paths: results[2].source_type, results[1].source_type, results[0].source_type, results[2].source_type[1], results[2].source_type[0]
+
+  Table: event_patient_sequence_number_treatment, Field: sequence_number_treatment_value
+  Path: event.patient[10].sequence_number_treatment.value
+  Found: False
+  Similar paths: results[2].patient[0].patient_sequence_number, results[2].patient[0].patient_problems[0], results[2].patient[0].patient_problems, results[2].patient[0], results[1].patient[0].patient_sequence_number
+
+  Table: event_patient_sequence_number_outcome, Field: sequence_number_outcome_value
+  Path: event.patient[47].sequence_number_outcome.value
+  Found: False
+  Similar paths: results[2].patient[0].patient_sequence_number, results[2].patient[0].patient_problems[0], results[2].patient[0].patient_problems, results[2].patient[0], results[1].patient[0].patient_sequence_number
+
+  Table: event_remedial_action, Field: remedial_action_value
+  Path: event.remedial_action.value
+  Found: False
+  Similar paths: results[2].remedial_action, results[1].remedial_action, results[0].remedial_action, results[2].remedial_action[0], results[2].number_patients_in_event
+
+  Table: event_913f_openfda_registration_number, Field: registration_number_value
+  Path: event.device[2].openfda.registration_number.value
+  Found: False
+  Similar paths: results[2].device[0].openfda.regulation_number, results[2].device[0].openfda.medical_specialty_description, results[2].device[0].openfda.device_name, results[2].device[0].openfda.device_class, results[2].device[0].openfda
+
+  Table: event_913f_openfda_fei_number, Field: fei_number_value
+  Path: event.device[2].openfda.fei_number.value
+  Found: False
+  Similar paths: results[2].device[0].openfda.regulation_number, results[2].device[0].openfda.medical_specialty_description, results[2].device[0].openfda.device_name, results[2].device[0].openfda.device_class, results[2].device[0].openfda
+
+  Table: event_product_problems, Field: product_problems_value
+  Path: event.product_problems.value
+  Found: False
+  Similar paths: results[2].product_problems, results[1].product_problems, results[0].product_problems, results[2].product_problems[0], results[2].number_patients_in_event
+
+  Table: event_patient_patient_problems, Field: patient_problems_value
+  Path: event.patient[4].patient_problems.value
+  Found: False
+  Similar paths: results[2].patient[0].patient_problems, results[1].patient[0].patient_problems, results[0].patient[0].patient_problems, results[2].patient[0].patient_problems[0], results[1].patient[0].patient_problems[0]
+
+
+Sample JSON Structure:
+{
+  "manufacturer_contact_zip_ext": "",
+  "manufacturer_g1_address_2": "",
+  "event_location": "",
+  "report_to_fda": "",
+  "manufacturer_contact_t_name": "MS.",
+  "manufacturer_contact_state": "IN",
+  "manufacturer_link_flag": "Y",
+  "manufacturer_contact_address_2": "",
+  "manufacturer_g1_city": "BLACKPOOL",
+  "manufacturer_contact_address_1": "700 ORTHOPAEDIC DR.",
+  "manufacturer_contact_pcity": "30355268",
+  "event_type": "Injury",
+  "report_number": "1818910-2025-01249",
+  "type_of_report": [
+    "Initial submission",
+    "Followup"
+  ],
+  "product_problem_flag": "N",
+  "date_received": "20250121",
+  "manufacturer_address_2": "",
+  "pma_pmn_number": "K081155",
+  "date_of_event": "20230918",
+  "reprocessed_and_reused_flag": "N",
+  "manufacturer_address_1": "",
+  "exemption_number": "",
+  "manufacturer_contact_zip_code": "46581",
+  "reporter_occupation_code": "OTHER HEALTH CARE PROFESSIONAL",
+  "manufacturer_contact_plocal": "3035526892",
+  "noe_summarized": "1",
+  "manufacturer_co...
+
+Suggested Fixes:
+Fixed mappings written to ./fda_analysis/event_fields_fixed.csv

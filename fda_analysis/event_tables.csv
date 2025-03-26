@@ -1,0 +1,5 @@
+table_name,table_type,parent_table,field_count,has_arrays,path
+event,main,,95,Yes,
+event_device,array,event,37,Yes,event.device
+event_patient,array,event,10,Yes,event.patient
+event_mdr_text,array,event,4,No,event.mdr_text

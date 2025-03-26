@@ -1,0 +1,33 @@
+path,count,percent,is_array,is_object,depth,sample
+510k.address_1,171029,100.0%,No,No,1,"12200 ACADEMY ROAD NE, # 931"
+510k.address_2,171029,100.0%,No,No,1,
+510k.advisory_committee,171029,100.0%,No,No,1,RA
+510k.advisory_committee_description,171029,100.0%,No,No,1,Radiology
+510k.applicant,171029,100.0%,No,No,1,BARCO NV
+510k.city,171029,100.0%,No,No,1,ALBUQUERQUE
+510k.clearance_type,171029,100.0%,No,No,1,Traditional
+510k.contact,171029,100.0%,No,No,1,FRANK  FERGUSON
+510k.country_code,171029,100.0%,No,No,1,US
+510k.date_received,171029,100.0%,No,No,1,2004-01-23
+510k.decision_code,171029,100.0%,No,No,1,SESE
+510k.decision_date,171029,100.0%,No,No,1,2004-04-12
+510k.decision_description,171029,100.0%,No,No,1,Substantially Equivalent
+510k.device_name,171029,100.0%,No,No,1,MFCD 2320
+510k.expedited_review_flag,171029,100.0%,No,No,1,
+510k.k_number,171029,100.0%,No,No,1,K040158
+510k.openfda,171029,100.0%,No,Yes,1,[Object with 6 keys]
+510k.postal_code,171029,100.0%,No,No,1,87111
+510k.product_code,171029,100.0%,No,No,1,LLZ
+510k.review_advisory_committee,171029,100.0%,No,No,1,RA
+510k.state,171029,100.0%,No,No,1,NM
+510k.statement_or_summary,171029,100.0%,No,No,1,Summary
+510k.third_party_flag,171029,100.0%,No,No,1,N
+510k.zip_code,171029,100.0%,No,No,1,87111
+510k.openfda.device_class,169370,99.0%,No,No,2,2
+510k.openfda.device_name,169370,99.0%,No,No,2,"System, Image Processing, Radiological"
+510k.openfda.medical_specialty_description,169370,99.0%,No,No,2,Radiology
+510k.openfda.regulation_number,169370,99.0%,No,No,2,892.2050
+510k.openfda.fei_number,167940,98.2%,No,No,2,[Array] 示例: ''
+510k.openfda.fei_number[],167940,98.2%,Yes,No,2,
+510k.openfda.registration_number,167940,98.2%,No,No,2,[Array] 示例: ''
+510k.openfda.registration_number[],167940,98.2%,Yes,No,2,

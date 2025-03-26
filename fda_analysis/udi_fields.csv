@@ -1,0 +1,86 @@
+table_name,field_name,original_path,is_array,occurrence_count,occurrence_percent,sample_value,data_type
+udi,has_donation_id_number,udi.has_donation_id_number,No,436508,100.0%,false,BOOLEAN
+udi,mri_safety,udi.mri_safety,No,436508,100.0%,Labeling does not contain MRI Safety Information,VARCHAR(128)
+udi,record_status,udi.record_status,No,436508,100.0%,Published,VARCHAR(128)
+udi,is_labeled_as_nrl,udi.is_labeled_as_nrl,No,436508,100.0%,false,BOOLEAN
+udi,commercial_distribution_status,udi.commercial_distribution_status,No,436508,100.0%,In Commercial Distribution,TEXT
+udi,public_device_record_key,udi.public_device_record_key,No,436508,100.0%,70c189e9-2b1c-44ff-b891-d483a8ab6bf5,VARCHAR(128)
+udi,has_serial_number,udi.has_serial_number,No,436508,100.0%,false,BOOLEAN
+udi,public_version_date,udi.public_version_date,No,436508,100.0%,2023-11-08,DATE
+udi,public_version_number,udi.public_version_number,No,436508,100.0%,1,VARCHAR(128)
+udi,labeler_duns_number,udi.labeler_duns_number,No,436508,100.0%,659506974,VARCHAR(128)
+udi,identifiers,udi.identifiers,No,436508,100.0%,[Array with 3 items],TEXT
+udi,identifiers[],udi.identifiers[],Yes,436508,100.0%,[Object] 示例键'id': 'D00115116L873R0',TEXT
+udi,is_single_use,udi.is_single_use,No,436508,100.0%,true,BOOLEAN
+udi,has_manufacturing_date,udi.has_manufacturing_date,No,436508,100.0%,true,DATE
+udi,brand_name,udi.brand_name,No,436508,100.0%,Gen-X®,TEXT
+udi,product_codes,udi.product_codes,No,436508,100.0%,[Array with 1 items],TEXT
+udi,product_codes[],udi.product_codes[],Yes,436508,100.0%,[Object] 示例键'code': 'ELM',TEXT
+udi,device_count_in_base_package,udi.device_count_in_base_package,No,436508,100.0%,100,VARCHAR(128)
+udi,is_pm_exempt,udi.is_pm_exempt,No,436508,100.0%,false,BOOLEAN
+udi,has_lot_or_batch_number,udi.has_lot_or_batch_number,No,436508,100.0%,true,BOOLEAN
+udi,public_version_status,udi.public_version_status,No,436508,100.0%,New,VARCHAR(128)
+udi,has_expiration_date,udi.has_expiration_date,No,436508,100.0%,true,DATE
+udi,gmdn_terms,udi.gmdn_terms,No,436508,100.0%,[Array with 1 items],TEXT
+udi,gmdn_terms[],udi.gmdn_terms[],Yes,436508,100.0%,[Object] 示例键'code': '38643',TEXT
+udi,publish_date,udi.publish_date,No,436508,100.0%,2023-10-31,DATE
+udi,company_name,udi.company_name,No,436507,100.0%,SMART GLOVE INTERNATIONAL PTE. LTD.,TEXT
+udi,sterilization,udi.sterilization,No,436506,100.0%,[Object] 示例键'is_sterile': 'false',TEXT
+udi,version_or_model_number,udi.version_or_model_number,No,436503,100.0%,NPFEMD,VARCHAR(128)
+udi,is_rx,udi.is_rx,No,436501,100.0%,false,BOOLEAN
+udi,is_otc,udi.is_otc,No,436501,100.0%,false,BOOLEAN
+udi,is_combination_product,udi.is_combination_product,No,436495,100.0%,false,BOOLEAN
+udi,is_kit,udi.is_kit,No,436495,100.0%,false,BOOLEAN
+udi,is_hct_p,udi.is_hct_p,No,436478,100.0%,false,BOOLEAN
+udi,is_labeled_as_no_nrl,udi.is_labeled_as_no_nrl,No,436462,100.0%,false,BOOLEAN
+udi,is_direct_marking_exempt,udi.is_direct_marking_exempt,No,436435,100.0%,false,BOOLEAN
+udi,device_description,udi.device_description,No,346448,79.4%,"EC Nitrile Examination Gloves, Powder Free (Chemotherapy Drugs Tested and Fentanyl Protection) Blue ...",TEXT
+udi,customer_contacts,udi.customer_contacts,No,256390,58.7%,[Array with 1 items],TEXT
+udi,customer_contacts[],udi.customer_contacts[],Yes,256390,58.7%,[Object] 示例键'phone': '+1(800)243-1942',TEXT
+udi,catalog_number,udi.catalog_number,No,252723,57.9%,880814,DATE
+udi,premarket_submissions,udi.premarket_submissions,No,139219,31.9%,[Array with 1 items],TEXT
+udi,premarket_submissions[],udi.premarket_submissions[],Yes,139219,31.9%,[Object] 示例键'submission_number': 'K171389',TEXT
+udi,device_sizes,udi.device_sizes,No,86998,19.9%,[Array with 3 items],TEXT
+udi,device_sizes[],udi.device_sizes[],Yes,86998,19.9%,[Object] 示例键'type': 'Outer Diameter',TEXT
+udi,storage,udi.storage,No,61924,14.2%,[Array with 1 items],TEXT
+udi,storage[],udi.storage[],Yes,61924,14.2%,[Object] 示例键'type': 'Storage Environment Temperature',TEXT
+udi,commercial_distribution_end_date,udi.commercial_distribution_end_date,No,28655,6.6%,2024-01-30,DATE
+udi_identifiers,id,udi.identifiers[0].id,No,436508,100.0%,19551005270557,VARCHAR(128)
+udi_identifiers,type,udi.identifiers[0].type,No,436508,100.0%,Package,VARCHAR(128)
+udi_identifiers,issuing_agency,udi.identifiers[0].issuing_agency,No,436508,100.0%,GS1,VARCHAR(128)
+udi_identifiers,quantity_per_package,udi.identifiers[0].quantity_per_package,No,75976,17.4%,10,VARCHAR(128)
+udi_identifiers,unit_of_use_id,udi.identifiers[0].unit_of_use_id,No,75961,17.4%,09551005270550,VARCHAR(128)
+udi_identifiers,package_status,udi.identifiers[0].package_status,No,75956,17.4%,In Commercial Distribution,VARCHAR(128)
+udi_identifiers,package_type,udi.identifiers[0].package_type,No,61498,14.1%,carton,VARCHAR(128)
+udi_identifiers,package_discontinue_date,udi.identifiers[0].package_discontinue_date,No,4568,1.0%,2018-03-21,DATE
+udi_gmdn_terms,code,udi.gmdn_terms[0].code,No,436508,100.0%,56286,TEXT
+udi_gmdn_terms,name,udi.gmdn_terms[0].name,No,436508,100.0%,"Nitrile examination/treatment glove, non-powdered, non-antimicrobial",TEXT
+udi_gmdn_terms,definition,udi.gmdn_terms[0].definition,No,436508,100.0%,A device made of nitrile intended as a protective barrier when worn on the hands of healthcare provi...,TEXT
+udi_gmdn_terms,implantable,udi.gmdn_terms[0].implantable,No,436508,100.0%,false,BOOLEAN
+udi_gmdn_terms,code_status,udi.gmdn_terms[0].code_status,No,436508,100.0%,Active,TEXT
+udi_sterilization,is_sterile,udi.sterilization.is_sterile,No,436506,100.0%,false,BOOLEAN
+udi_sterilization,is_sterilization_prior_use,udi.sterilization.is_sterilization_prior_use,No,436505,100.0%,false,BOOLEAN
+udi_sterilization,sterilization_methods,udi.sterilization.sterilization_methods,No,167365,38.3%,Moist Heat or Steam Sterilization,VARCHAR(128)
+udi_product_codes,code,udi.product_codes[0].code,No,433519,99.3%,LZA,TEXT
+udi_product_codes,name,udi.product_codes[0].name,No,433519,99.3%,Polymer Patient Examination Glove,TEXT
+udi_product_codes,openfda,udi.product_codes[0].openfda,No,433519,99.3%,[Object] 示例键'device_name': 'Polymer Patient Examination Glove',TEXT
+udi_product_codes,device_name,udi.product_codes[0].openfda.device_name,No,433501,99.3%,Polymer Patient Examination Glove,TEXT
+udi_product_codes,medical_specialty_description,udi.product_codes[0].openfda.medical_specialty_description,No,433501,99.3%,General Hospital,TEXT
+udi_product_codes,regulation_number,udi.product_codes[0].openfda.regulation_number,No,433501,99.3%,880.6250,VARCHAR(128)
+udi_product_codes,device_class,udi.product_codes[0].openfda.device_class,No,433501,99.3%,1,VARCHAR(128)
+udi_customer_contacts,phone,udi.customer_contacts[0].phone,No,256390,58.7%,+3228808220,VARCHAR(128)
+udi_customer_contacts,email,udi.customer_contacts[0].email,No,256390,58.7%,helpdesk@sasmar.com,VARCHAR(128)
+udi_customer_contacts,ext,udi.customer_contacts[0].ext,No,11068,2.5%,204,VARCHAR(128)
+udi_premarket_submissions,submission_number,udi.premarket_submissions[0].submission_number,No,139219,31.9%,K131084,VARCHAR(128)
+udi_premarket_submissions,supplement_number,udi.premarket_submissions[0].supplement_number,No,139219,31.9%,000,VARCHAR(128)
+udi_device_sizes,type,udi.device_sizes[0].type,No,86998,19.9%,Outer Diameter,VARCHAR(128)
+udi_device_sizes,unit,udi.device_sizes[0].unit,No,50336,11.5%,Millimeter,VARCHAR(128)
+udi_device_sizes,value,udi.device_sizes[0].value,No,50335,11.5%,2.4,"DECIMAL(12,2)"
+udi_device_sizes,text,udi.device_sizes[0].text,No,36569,8.4%,Size: Large,TEXT
+udi_storage,type,udi.storage[0].type,No,61924,14.2%,"Special Storage Condition, Specify",VARCHAR(128)
+udi_storage,high,udi.storage[0].high,No,45754,10.5%,[Object] 示例键'unit': 'Degrees Celsius',TEXT
+udi_storage,low,udi.storage[0].low,No,40247,9.2%,[Object] 示例键'unit': 'Degrees Celsius',TEXT
+udi_storage,special_conditions,udi.storage[0].special_conditions,No,15665,3.6%,"Store in a clean, dry place",TEXT
+udi_storage,unit,udi.storage[0].high.unit,No,45754,10.5%,Degrees Celsius,VARCHAR(128)
+udi_storage,value,udi.storage[0].high.value,No,45707,10.5%,30,VARCHAR(128)
+udi_sterilization_sterilization_methods,sterilization_methods,udi.sterilization.sterilization_methods[],Yes,3441,0.8%,Radiation Sterilization,VARCHAR(128)

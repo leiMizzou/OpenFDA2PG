@@ -1,0 +1,11 @@
+table_name,table_type,parent_table,field_count,has_arrays,path
+udi,main,,46,Yes,
+udi_identifiers,array,udi,8,No,udi.identifiers
+udi_gmdn_terms,array,udi,5,No,udi.gmdn_terms
+udi_sterilization,object,udi,3,No,udi.sterilization
+udi_product_codes,array,udi,7,No,udi.product_codes
+udi_customer_contacts,array,udi,3,No,udi.customer_contacts
+udi_premarket_submissions,array,udi,2,No,udi.premarket_submissions
+udi_device_sizes,array,udi,4,No,udi.device_sizes
+udi_storage,array,udi,6,No,udi.storage
+udi_sterilization_sterilization_methods,array,udi_sterilization,1,Yes,udi.sterilization.sterilization_methods

@@ -1,0 +1,4 @@
+child_table,parent_table,relationship_type,foreign_key_field,path,description
+event_device,event,一对多,event_id,event.device,event_device是event的array表
+event_patient,event,一对多,event_id,event.patient,event_patient是event的array表
+event_mdr_text,event,一对多,event_id,event.mdr_text,event_mdr_text是event的array表

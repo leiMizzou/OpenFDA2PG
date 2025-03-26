@@ -1,0 +1,53 @@
+path,count,percent,is_array,is_object,depth,sample
+recall.code_info,54687,100.0%,No,No,1,"UDI-DI: N/A
+Lot Numbers:
+RB0444532
+RB0450357
+RB0450370
+RB0450372
+RB0450378
+RB0450379
+RB0450407
+RB045..."
+recall.event_date_initiated,54687,100.0%,No,No,1,2024-08-29
+recall.openfda,54687,100.0%,No,Yes,1,[Object with 7 keys]
+recall.product_description,54687,100.0%,No,No,1,Biofinity Toric Multifocal Lenses - Soft Contact lenses Indicated for the correction of ametropia (m...
+recall.product_res_number,54687,100.0%,No,No,1,Z-3311-2024
+recall.recall_status,54687,100.0%,No,No,1,"Open, Classified"
+recall.res_event_number,54687,100.0%,No,No,1,95299
+recall.cfres_id,54679,100.0%,No,No,1,209937
+recall.root_cause_description,54676,100.0%,No,No,1,Process control
+recall.distribution_pattern,54643,99.9%,No,No,1,Worldwide distribution - US Nationwide and the country of Canada.
+recall.reason_for_recall,54640,99.9%,No,No,1,"Manufactured with a misaligned axis resulting in lenses with the incorrect power, may experience poo..."
+recall.action,54362,99.4%,No,No,1,CooperVision issued Urgent Medical Device Correction letter (Customer specific) beginning 8/30/24 to...
+recall.product_code,54329,99.3%,No,No,1,LPM
+recall.recalling_firm,54048,98.8%,No,No,1,"CooperVision, Inc."
+recall.openfda.device_class,53411,97.7%,No,No,2,3
+recall.openfda.device_name,53411,97.7%,No,No,2,"Lenses, Soft Contact, Extended Wear"
+recall.openfda.medical_specialty_description,53411,97.7%,No,No,2,Ophthalmic
+recall.openfda.regulation_number,53411,97.7%,No,No,2,886.5925
+recall.openfda.fei_number,53112,97.1%,No,No,2,[Array] 示例: '3014233026'
+recall.openfda.fei_number[],53112,97.1%,Yes,No,2,3007981285
+recall.openfda.registration_number,53112,97.1%,No,No,2,[Array] 示例: '3014233026'
+recall.openfda.registration_number[],53112,97.1%,Yes,No,2,3007981285
+recall.city,51356,93.9%,No,No,1,West Henrietta
+recall.state,51155,93.5%,No,No,1,NY
+recall.postal_code,51149,93.5%,No,No,1,14586-9798
+recall.product_quantity,51095,93.4%,No,No,1,2443 lenses
+recall.address_1,50453,92.3%,No,No,1,180 Thruway Park Dr
+recall.additional_info_contact,48572,88.8%,No,No,1,"Annette Nelson
+585-756-9300"
+recall.openfda.k_number,48377,88.5%,No,No,2,[Array] 示例: 'K942066'
+recall.openfda.k_number[],48377,88.5%,Yes,No,2,DEN220014
+recall.event_date_terminated,44165,80.8%,No,No,1,2024-08-20
+recall.event_date_posted,41106,75.2%,No,No,1,2024-09-30
+recall.k_numbers,36182,66.2%,No,No,1,[Array] 示例: 'K770977'
+recall.k_numbers[],36182,66.2%,Yes,No,1,K012389
+recall.firm_fei_number,25156,46.0%,No,No,1,2517506
+recall.event_date_created,13581,24.8%,No,No,1,2022-09-02
+recall.openfda.pma_number,6891,12.6%,No,No,2,[Array] 示例: 'P010019'
+recall.openfda.pma_number[],6891,12.6%,Yes,No,2,P150001
+recall.address_2,5599,10.2%,No,No,1,Suite 301
+recall.other_submission_description,4969,9.1%,No,No,1,Exempt
+recall.pma_numbers,3126,5.7%,No,No,1,[Array] 示例: 'P160026'
+recall.pma_numbers[],3126,5.7%,Yes,No,1,P150001

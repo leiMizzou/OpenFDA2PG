@@ -1,0 +1,161 @@
+path,count,percent,is_array,is_object,depth,sample
+udi.brand_name,436508,100.0%,No,No,1,Gen-X®
+udi.commercial_distribution_status,436508,100.0%,No,No,1,In Commercial Distribution
+udi.device_count_in_base_package,436508,100.0%,No,No,1,100
+udi.gmdn_terms,436508,100.0%,No,No,1,[Array with 1 items]
+udi.gmdn_terms[0].code,436508,100.0%,No,No,2,56286
+udi.gmdn_terms[0].code_status,436508,100.0%,No,No,2,Active
+udi.gmdn_terms[0].definition,436508,100.0%,No,No,2,A device made of nitrile intended as a protective barrier when worn on the hands of healthcare provi...
+udi.gmdn_terms[0].implantable,436508,100.0%,No,No,2,false
+udi.gmdn_terms[0].name,436508,100.0%,No,No,2,"Nitrile examination/treatment glove, non-powdered, non-antimicrobial"
+udi.gmdn_terms[],436508,100.0%,Yes,No,1,[Object] 示例键'code': '38643'
+udi.has_donation_id_number,436508,100.0%,No,No,1,false
+udi.has_expiration_date,436508,100.0%,No,No,1,true
+udi.has_lot_or_batch_number,436508,100.0%,No,No,1,true
+udi.has_manufacturing_date,436508,100.0%,No,No,1,true
+udi.has_serial_number,436508,100.0%,No,No,1,false
+udi.identifiers,436508,100.0%,No,No,1,[Array with 3 items]
+udi.identifiers[0].id,436508,100.0%,No,No,2,19551005270557
+udi.identifiers[0].issuing_agency,436508,100.0%,No,No,2,GS1
+udi.identifiers[0].type,436508,100.0%,No,No,2,Package
+udi.identifiers[],436508,100.0%,Yes,No,1,[Object] 示例键'id': 'D00115116L873R0'
+udi.is_labeled_as_nrl,436508,100.0%,No,No,1,false
+udi.is_pm_exempt,436508,100.0%,No,No,1,false
+udi.is_single_use,436508,100.0%,No,No,1,true
+udi.labeler_duns_number,436508,100.0%,No,No,1,659506974
+udi.mri_safety,436508,100.0%,No,No,1,Labeling does not contain MRI Safety Information
+udi.product_codes,436508,100.0%,No,No,1,[Array with 1 items]
+udi.product_codes[],436508,100.0%,Yes,No,1,[Object] 示例键'code': 'ELM'
+udi.public_device_record_key,436508,100.0%,No,No,1,70c189e9-2b1c-44ff-b891-d483a8ab6bf5
+udi.public_version_date,436508,100.0%,No,No,1,2023-11-08
+udi.public_version_number,436508,100.0%,No,No,1,1
+udi.public_version_status,436508,100.0%,No,No,1,New
+udi.publish_date,436508,100.0%,No,No,1,2023-10-31
+udi.record_status,436508,100.0%,No,No,1,Published
+udi.company_name,436507,100.0%,No,No,1,SMART GLOVE INTERNATIONAL PTE. LTD.
+udi.sterilization,436506,100.0%,No,Yes,1,[Object] 示例键'is_sterile': 'false'
+udi.sterilization.is_sterile,436506,100.0%,No,No,2,false
+udi.sterilization.is_sterilization_prior_use,436505,100.0%,No,No,2,false
+udi.version_or_model_number,436503,100.0%,No,No,1,NPFEMD
+udi.is_otc,436501,100.0%,No,No,1,false
+udi.is_rx,436501,100.0%,No,No,1,false
+udi.is_combination_product,436495,100.0%,No,No,1,false
+udi.is_kit,436495,100.0%,No,No,1,false
+udi.is_hct_p,436478,100.0%,No,No,1,false
+udi.is_labeled_as_no_nrl,436462,100.0%,No,No,1,false
+udi.is_direct_marking_exempt,436435,100.0%,No,No,1,false
+udi.product_codes[0].code,433519,99.3%,No,No,2,LZA
+udi.product_codes[0].name,433519,99.3%,No,No,2,Polymer Patient Examination Glove
+udi.product_codes[0].openfda,433519,99.3%,No,Yes,2,[Object] 示例键'device_name': 'Polymer Patient Examination Glove'
+udi.product_codes[0].openfda.device_class,433501,99.3%,No,No,3,1
+udi.product_codes[0].openfda.device_name,433501,99.3%,No,No,3,Polymer Patient Examination Glove
+udi.product_codes[0].openfda.medical_specialty_description,433501,99.3%,No,No,3,General Hospital
+udi.product_codes[0].openfda.regulation_number,433501,99.3%,No,No,3,880.6250
+udi.device_description,346448,79.4%,No,No,1,"EC Nitrile Examination Gloves, Powder Free (Chemotherapy Drugs Tested and Fentanyl Protection) Blue ..."
+udi.customer_contacts,256390,58.7%,No,No,1,[Array with 1 items]
+udi.customer_contacts[0].email,256390,58.7%,No,No,2,helpdesk@sasmar.com
+udi.customer_contacts[0].phone,256390,58.7%,No,No,2,+3228808220
+udi.customer_contacts[],256390,58.7%,Yes,No,1,[Object] 示例键'phone': '+1(800)243-1942'
+udi.catalog_number,252723,57.9%,No,No,1,880814
+udi.sterilization.sterilization_methods,167365,38.3%,No,No,2,Moist Heat or Steam Sterilization
+udi.premarket_submissions,139219,31.9%,No,No,1,[Array with 1 items]
+udi.premarket_submissions[0].submission_number,139219,31.9%,No,No,2,K131084
+udi.premarket_submissions[0].supplement_number,139219,31.9%,No,No,2,000
+udi.premarket_submissions[],139219,31.9%,Yes,No,1,[Object] 示例键'submission_number': 'K171389'
+udi.identifiers[1].id,117765,27.0%,No,No,2,09551005270550
+udi.identifiers[1].issuing_agency,117765,27.0%,No,No,2,GS1
+udi.identifiers[1].type,117765,27.0%,No,No,2,Primary
+udi.device_sizes,86998,19.9%,No,No,1,[Array with 3 items]
+udi.device_sizes[0].type,86998,19.9%,No,No,2,Outer Diameter
+udi.device_sizes[],86998,19.9%,Yes,No,1,[Object] 示例键'type': 'Outer Diameter'
+udi.identifiers[0].quantity_per_package,75976,17.4%,No,No,2,10
+udi.identifiers[0].unit_of_use_id,75961,17.4%,No,No,2,09551005270550
+udi.identifiers[0].package_status,75956,17.4%,No,No,2,In Commercial Distribution
+udi.storage,61924,14.2%,No,No,1,[Array with 1 items]
+udi.storage[0].type,61924,14.2%,No,No,2,"Special Storage Condition, Specify"
+udi.storage[],61924,14.2%,Yes,No,1,[Object] 示例键'type': 'Storage Environment Temperature'
+udi.identifiers[0].package_type,61498,14.1%,No,No,2,carton
+udi.product_codes[1].code,52488,12.0%,No,No,2,HWC
+udi.product_codes[1].name,52488,12.0%,No,No,2,"Screw, fixation, bone"
+udi.product_codes[1].openfda,52488,12.0%,No,Yes,2,"[Object] 示例键'device_name': 'Screw, Fixation, Bone'"
+udi.product_codes[1].openfda.device_class,52488,12.0%,No,No,3,2
+udi.product_codes[1].openfda.device_name,52488,12.0%,No,No,3,"Screw, Fixation, Bone"
+udi.product_codes[1].openfda.medical_specialty_description,52488,12.0%,No,No,3,Orthopedic
+udi.product_codes[1].openfda.regulation_number,52488,12.0%,No,No,3,888.3040
+udi.device_sizes[0].unit,50336,11.5%,No,No,2,Millimeter
+udi.device_sizes[0].value,50335,11.5%,No,No,2,2.4
+udi.storage[0].high,45754,10.5%,No,Yes,2,[Object] 示例键'unit': 'Degrees Celsius'
+udi.storage[0].high.unit,45754,10.5%,No,No,3,Degrees Celsius
+udi.storage[0].high.value,45707,10.5%,No,No,3,30
+udi.device_sizes[1].type,45339,10.4%,No,No,2,Length
+udi.storage[0].low,40247,9.2%,No,Yes,2,[Object] 示例键'unit': 'Degrees Celsius'
+udi.storage[0].low.unit,40247,9.2%,No,No,3,Degrees Celsius
+udi.device_sizes[0].text,36569,8.4%,No,No,2,Size: Large
+udi.storage[0].low.value,36241,8.3%,No,No,3,1
+udi.device_sizes[1].unit,34195,7.8%,No,No,2,Millimeter
+udi.device_sizes[1].value,34195,7.8%,No,No,2,16
+udi.product_codes[2].code,29640,6.8%,No,No,2,DJG
+udi.product_codes[2].name,29640,6.8%,No,No,2,"ENZYME IMMUNOASSAY, OPIATES"
+udi.product_codes[2].openfda,29640,6.8%,No,Yes,2,"[Object] 示例键'device_name': 'Enzyme Immunoassay, Opiates'"
+udi.product_codes[2].openfda.device_class,29639,6.8%,No,No,3,2
+udi.product_codes[2].openfda.device_name,29639,6.8%,No,No,3,"Enzyme Immunoassay, Opiates"
+udi.product_codes[2].openfda.medical_specialty_description,29639,6.8%,No,No,3,Clinical Toxicology
+udi.product_codes[2].openfda.regulation_number,29639,6.8%,No,No,3,862.3650
+udi.commercial_distribution_end_date,28655,6.6%,No,No,1,2024-01-30
+udi.device_sizes[2].type,18545,4.2%,No,No,2,"Device Size Text, specify"
+udi.storage[0].special_conditions,15665,3.6%,No,No,2,"Store in a clean, dry place"
+udi.storage[1].type,13685,3.1%,No,No,2,Storage Environment Humidity
+udi.device_sizes[2].unit,13022,3.0%,No,No,2,Milliliter
+udi.device_sizes[2].value,13022,3.0%,No,No,2,8
+udi.identifiers[2].id,12760,2.9%,No,No,2,29551005270554
+udi.identifiers[2].issuing_agency,12760,2.9%,No,No,2,GS1
+udi.identifiers[2].type,12760,2.9%,No,No,2,Unit of Use
+udi.device_sizes[1].text,11101,2.5%,No,No,2,Right
+udi.customer_contacts[0].ext,11068,2.5%,No,No,2,204
+udi.identifiers[1].quantity_per_package,10365,2.4%,No,No,2,6
+udi.identifiers[1].package_status,10357,2.4%,No,No,2,In Commercial Distribution
+udi.identifiers[1].unit_of_use_id,10350,2.4%,No,No,2,09337213008143
+udi.premarket_submissions[1].submission_number,10049,2.3%,No,No,2,K214011
+udi.premarket_submissions[1].supplement_number,10049,2.3%,No,No,2,000
+udi.storage[1].high,9780,2.2%,No,Yes,2,[Object] 示例键'unit': 'Percent (%) Relative Humidity'
+udi.storage[1].high.unit,9780,2.2%,No,No,3,Percent (%) Relative Humidity
+udi.storage[1].high.value,9742,2.2%,No,No,3,85
+udi.storage[1].low,9479,2.2%,No,Yes,2,[Object] 示例键'unit': 'Percent (%) Relative Humidity'
+udi.storage[1].low.unit,9479,2.2%,No,No,3,Percent (%) Relative Humidity
+udi.storage[1].low.value,9179,2.1%,No,No,3,15
+udi.identifiers[1].package_type,8618,2.0%,No,No,2,Inner Pack (bundle)
+udi.device_sizes[2].text,5502,1.3%,No,No,2,Non-Locking
+udi.storage[2].type,5320,1.2%,No,No,2,"Special Storage Condition, Specify"
+udi.identifiers[0].package_discontinue_date,4568,1.0%,No,No,2,2018-03-21
+udi.identifiers[2].quantity_per_package,4566,1.0%,No,No,2,250
+udi.identifiers[2].unit_of_use_id,4566,1.0%,No,No,2,00834061000231
+udi.identifiers[2].package_status,4562,1.0%,No,No,2,In Commercial Distribution
+udi.storage[2].high,4198,1.0%,No,Yes,2,[Object] 示例键'unit': 'KiloPascal'
+udi.storage[2].high.unit,4198,1.0%,No,No,3,KiloPascal
+udi.storage[2].high.value,4196,1.0%,No,No,3,110
+udi.storage[2].low,4173,1.0%,No,Yes,2,[Object] 示例键'unit': 'KiloPascal'
+udi.storage[2].low.unit,4173,1.0%,No,No,3,KiloPascal
+udi.storage[2].low.value,4124,0.9%,No,No,3,57
+udi.gmdn_terms[1].code,3867,0.9%,No,No,2,34131
+udi.gmdn_terms[1].code_status,3867,0.9%,No,No,2,Active
+udi.gmdn_terms[1].definition,3867,0.9%,No,No,2,"A non-sterile substance (e.g., a gel or jelly) designed to lubricate the vagina to facilitate entry ..."
+udi.gmdn_terms[1].implantable,3867,0.9%,No,No,2,false
+udi.gmdn_terms[1].name,3867,0.9%,No,No,2,Vaginal lubricant
+udi.identifiers[2].package_type,3521,0.8%,No,No,2,Case
+udi.storage[1].special_conditions,3475,0.8%,No,No,2,Keep Dry
+udi.sterilization.sterilization_methods[],3441,0.8%,Yes,No,2,Radiation Sterilization
+udi.premarket_submissions[2].submission_number,3371,0.8%,No,No,2,K102488
+udi.premarket_submissions[2].supplement_number,3371,0.8%,No,No,2,000
+udi.customer_contacts[1].email,2922,0.7%,No,No,2,intl@pmtcorp.com
+udi.customer_contacts[1].phone,2922,0.7%,No,No,2,800-626-5463
+udi.storage[2].special_conditions,990,0.2%,No,No,2,"Cool Dry Place, Away from Extreme Temperature, Humidity and Direct Sunlight"
+udi.gmdn_terms[2].code,789,0.2%,No,No,2,44225
+udi.gmdn_terms[2].code_status,789,0.2%,No,No,2,Active
+udi.gmdn_terms[2].definition,789,0.2%,No,No,2,An independent mechanical device designed for accurate mixing of air and oxygen (O2) with O2 concent...
+udi.gmdn_terms[2].implantable,789,0.2%,No,No,2,false
+udi.gmdn_terms[2].name,789,0.2%,No,No,2,"Oxygen/air breathing gas mixer, hospital"
+udi.identifiers[1].package_discontinue_date,587,0.1%,No,No,2,2020-08-25
+udi.customer_contacts[1].ext,361,0.1%,No,No,2,2203
+udi.identifiers[2].package_discontinue_date,358,0.1%,No,No,2,2022-12-15
+udi.customer_contacts[2].email,70,0.0%,No,No,2,enquiries@implantsinternational.com
+udi.customer_contacts[2].phone,70,0.0%,No,No,2,+4401642769080

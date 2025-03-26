@@ -1,0 +1,26 @@
+path,count,percent,is_array,is_object,depth,sample
+enforcement.address_1,35451,100.0%,No,No,1,25 Heywood Rd
+enforcement.address_2,35451,100.0%,No,No,1,
+enforcement.city,35451,100.0%,No,No,1,Arden
+enforcement.classification,35451,100.0%,No,No,1,Class II
+enforcement.code_info,35451,100.0%,No,No,1,"Lot #297668, UDI 10809160003473."
+enforcement.country,35451,100.0%,No,No,1,United States
+enforcement.distribution_pattern,35451,100.0%,No,No,1,"Distribution was made to FL, IL, IN, MA, MD, MO, OH, and VA.  There was no foreign/government/milita..."
+enforcement.event_id,35451,100.0%,No,No,1,91066
+enforcement.initial_firm_notification,35451,100.0%,No,No,1,Letter
+enforcement.openfda,35451,100.0%,No,Yes,1,[Object with 0 keys]
+enforcement.postal_code,35451,100.0%,No,No,1,28704-9302
+enforcement.product_description,35451,100.0%,No,No,1,"Medical Action Industries Inc. Disposable Instrument Pack, Littauer Scissor, REF 56247, packaged 1/p..."
+enforcement.product_quantity,35451,100.0%,No,No,1,145 cases (240 scissors/case)
+enforcement.product_type,35451,100.0%,No,No,1,Devices
+enforcement.reason_for_recall,35451,100.0%,No,No,1,Scissors contained debris.
+enforcement.recall_initiation_date,35451,100.0%,No,No,1,20221012
+enforcement.recall_number,35451,100.0%,No,No,1,Z-0765-2023
+enforcement.recalling_firm,35451,100.0%,No,No,1,"Medical Action Industries, Inc. 306"
+enforcement.report_date,35451,100.0%,No,No,1,20221228
+enforcement.state,35451,100.0%,No,No,1,NC
+enforcement.status,35451,100.0%,No,No,1,Terminated
+enforcement.voluntary_mandated,35451,100.0%,No,No,1,Voluntary: Firm initiated
+enforcement.center_classification_date,35450,100.0%,No,No,1,20221222
+enforcement.termination_date,25001,70.5%,No,No,1,20250219
+enforcement.more_code_info,15972,45.1%,No,No,1,

@@ -1,0 +1,5 @@
+table_name,table_type,parent_table,field_count,has_arrays,path
+510k,main,,24,No,
+510k_openfda,object,510k,6,No,510k.openfda
+510k_openfda_registration_number,array,510k_openfda,1,Yes,510k.openfda.registration_number
+510k_openfda_fei_number,array,510k_openfda,1,Yes,510k.openfda.fei_number
